@@ -61,13 +61,13 @@ With the WARDOGS arsenal in the foreground, **Ctrl + Shift + R** can read a visi
 | **Ctrl + Shift + Space** | Hide or show the companion |
 | **Ctrl + Shift + R** | Read the foreground arsenal; experimental, confirmation required |
 
-Close older companion instances, including hidden ones, before opening a new copy. If another application owns a shortcut, the app reports it and Minimize remains available.
+Only one interactive companion can run per Windows session. If it is already open, use Ctrl + Shift + Space to bring it back. Close older companion instances, including hidden ones, before opening this release. If another application owns a shortcut, the app reports it and Minimize remains available.
 
 **Portable users:** extract the entire ZIP into a writable folder and open `wardog-companion.exe`. Keep `Data/` and `About/` with it. No installer, Python runtime or account is required to run the portable app.
 
 ### Installation and updates
 
-- **Installer:** per-user installation, Start menu shortcut, optional desktop shortcut and standard Windows uninstallation. Upgrades preserve the existing profile and external dataset.
+- **Installer:** per-user installation, Start menu shortcut, optional desktop shortcut and standard Windows uninstallation. Uninstall requires the companion to be closed. Upgrades preserve the existing profile and external dataset.
 - **App updates:** open **Settings → App updates**. Check, review the release notes, download, then choose **Install & close app**. Setup guides the installation. No startup polling or silent self-replacement.
 - **Game-data updates:** open **Settings → Data & updates**. Review before installing. **Restore previous data** validates and restores the previous snapshot. This is separate from app updates.
 - **Integrity:** the app accepts the expected installer asset from this repository, verifies its length and GitHub-provided SHA-256 digest, and checks it again before execution. Release downloads also include `SHA256SUMS.txt`.
@@ -145,4 +145,3 @@ Created by [Carlos Carvalho](https://github.com/cccarv82), with contributions we
 - **Built with:** [Rust](https://www.rust-lang.org/), [Iced](https://iced.rs/) and [Inno Setup](https://jrsoftware.org/isinfo.php).
 
 Game names, trademarks and underlying game content belong to their respective owners. This independent community project is not affiliated with BULKHEAD, Team17 or WARDOGS WEAPONS. Bundled data is not relicensed under the app's MIT license. No game binaries, icons or textures are distributed.
-

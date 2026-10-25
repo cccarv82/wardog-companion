@@ -49,3 +49,5 @@ Version 1.0 is unsigned. No signing keys are stored in this repository or workfl
 ## Rollback
 
 Game-data rollback is available in the app. App binary rollback is a separate manual operation using an earlier release; automatic rollback and background replacement are not implemented. Retain a profile backup before trying an older application schema. Never overwrite or retag published releases to roll back.
+
+The interactive app holds a session-local named mutex. Uninstall checks the same mutex and refuses to proceed while the companion is running. Diagnostic CLI modes do not acquire it. Close the app before uninstalling; a hidden panel still counts as running.

@@ -45,6 +45,7 @@ SolidCompression=yes
 OutputDir={#ReleaseDir}
 OutputBaseFilename=WARDOG-Companion-{#AppVersion}-Setup
 UninstallDisplayName=WARDOG Companion
+AppMutex=Local\WARDOGCompanion.71A60EC5-9053-4606-B796-2D23E8B69089
 SetupLogging=yes
 
 [Languages]

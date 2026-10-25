@@ -20,4 +20,3 @@ foreach($size in $sizes){$scaled=[Drawing.Bitmap]::new($size,$size);$sg=[Drawing
 $file=[IO.File]::Create((Join-Path $root 'wardog.ico'));$writer=[IO.BinaryWriter]::new($file);$writer.Write([uint16]0);$writer.Write([uint16]1);$writer.Write([uint16]$sizes.Count);$offset=6+16*$sizes.Count
 for($i=0;$i -lt $sizes.Count;$i++){$dimension=$sizes[$i]%256;$writer.Write([byte]$dimension);$writer.Write([byte]$dimension);$writer.Write([uint16]0);$writer.Write([uint16]1);$writer.Write([uint16]32);$writer.Write([uint32]$images[$i].Length);$writer.Write([uint32]$offset);$offset+=$images[$i].Length}
 foreach($bytes in $images){$writer.Write([byte[]]$bytes)};$writer.Dispose();$bitmap.Dispose()
-

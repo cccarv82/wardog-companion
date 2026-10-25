@@ -6,6 +6,7 @@ mod costs;
 mod engine;
 mod hotkey;
 mod insights;
+mod instance;
 mod lab;
 mod patch;
 mod range;
@@ -57,6 +58,13 @@ fn main() -> iced::Result {
         }
         return Ok(());
     }
+    let _instance = match instance::acquire() {
+        Ok(instance) => instance,
+        Err(error) => {
+            instance::notify(&error);
+            return Ok(());
+        }
+    };
     iced::application(App::boot, App::update, App::view)
         .title(concat!("WARDOG Companion · ", env!("CARGO_PKG_VERSION")))
         .theme(|_: &App| {
