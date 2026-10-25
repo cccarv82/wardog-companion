@@ -1,0 +1,1738 @@
+{
+  "schema_version": 1,
+  "game_build": "25937608",
+  "local_build_at_import": "25937608",
+  "imported_on": "2026-10-24",
+  "source_commit": "e4ca3e9f1c48d980ba531202642884c358208304",
+  "source_url": "https://github.com/warpuppies/wardogs-data",
+  "weapon": {
+    "id": "Id.Item.AK74M",
+    "name": "AK74",
+    "rpm": 650,
+    "muzzle_velocity": 880,
+    "effective_range": 500,
+    "accuracy": 0.825,
+    "ads_time": 0.8
+  },
+  "items": [
+    {
+      "id": "Id.Item.3xScope",
+      "name": "Spitfire 3X",
+      "slot": "Sight",
+      "is_default": false,
+      "unlock": {
+        "role": "Wardog",
+        "level": 31,
+        "cost": 25000
+      },
+      "weight": 0.26,
+      "vendor": [],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 3
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        },
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 300
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.1
+        }
+      ],
+      "character_modifiers": [
+        {
+          "attribute": "Character.WeaponSway.StabilizationTimeMultiplier",
+          "op": "multiply",
+          "value": 1.35
+        }
+      ],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.4xElcanSpectr",
+      "name": "4x Elcan Spectr",
+      "slot": "Sight",
+      "is_default": false,
+      "unlock": {
+        "role": "Infantry",
+        "level": 43,
+        "cost": 15000
+      },
+      "weight": 0.66,
+      "vendor": [
+        {
+          "tag": "Id.Item.4xElcanSpectr",
+          "price": 800
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 400
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        }
+      ],
+      "character_modifiers": [
+        {
+          "attribute": "Character.WeaponSway.StabilizationTimeMultiplier",
+          "op": "multiply",
+          "value": 1.5
+        }
+      ],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.AK74MExtendedMagazine",
+      "name": "AK74 60 RND Magazine",
+      "slot": "Magazine",
+      "is_default": false,
+      "unlock": {
+        "role": "Infantry",
+        "level": 25,
+        "cost": 30000
+      },
+      "weight": 0.93,
+      "vendor": [
+        {
+          "tag": "Id.Item.AK74MExtendedMagazine",
+          "price": 150
+        },
+        {
+          "tag": "Id.Item.AK74MExtendedMagazine.ArmorPiercing",
+          "price": 390
+        },
+        {
+          "tag": "Id.Item.AK74MExtendedMagazine.ArmorPiercingTracer",
+          "price": 390
+        },
+        {
+          "tag": "Id.Item.AK74MExtendedMagazine.FMJ",
+          "price": 240
+        },
+        {
+          "tag": "Id.Item.AK74MExtendedMagazine.FMJTracer",
+          "price": 240
+        },
+        {
+          "tag": "Id.Item.AK74MExtendedMagazine.HollowPoint",
+          "price": 300
+        },
+        {
+          "tag": "Id.Item.AK74MExtendedMagazine.HollowPointTracer",
+          "price": 300
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.19
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.19
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.21
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        }
+      ],
+      "character_modifiers": [
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.21
+        }
+      ],
+      "magazine_capacity": 60
+    },
+    {
+      "id": "Id.Item.AK74MMagazine",
+      "name": "AK74 30 RND Magazine",
+      "slot": "Magazine",
+      "is_default": true,
+      "unlock": null,
+      "weight": 0.55,
+      "vendor": [
+        {
+          "tag": "Id.Item.AK74MMagazine",
+          "price": 35
+        },
+        {
+          "tag": "Id.Item.AK74MMagazine.ArmorPiercing",
+          "price": 155
+        },
+        {
+          "tag": "Id.Item.AK74MMagazine.ArmorPiercingTracer",
+          "price": 155
+        },
+        {
+          "tag": "Id.Item.AK74MMagazine.FMJ",
+          "price": 80
+        },
+        {
+          "tag": "Id.Item.AK74MMagazine.FMJTracer",
+          "price": 80
+        },
+        {
+          "tag": "Id.Item.AK74MMagazine.HollowPoint",
+          "price": 110
+        },
+        {
+          "tag": "Id.Item.AK74MMagazine.HollowPointTracer",
+          "price": 110
+        }
+      ],
+      "modifiers": [],
+      "character_modifiers": [],
+      "magazine_capacity": 30
+    },
+    {
+      "id": "Id.Item.AK74MMagazine75rnd",
+      "name": "AK74 75 RND Drum Magazine",
+      "slot": "Magazine",
+      "is_default": false,
+      "unlock": {
+        "role": "Infantry",
+        "level": 36,
+        "cost": 75000
+      },
+      "weight": 2.08,
+      "vendor": [
+        {
+          "tag": "Id.Item.AK74MMagazine75rnd",
+          "price": 200
+        },
+        {
+          "tag": "Id.Item.AK74MMagazine75rnd.ArmorPiercing",
+          "price": 500
+        },
+        {
+          "tag": "Id.Item.AK74MMagazine75rnd.ArmorPiercingTracer",
+          "price": 500
+        },
+        {
+          "tag": "Id.Item.AK74MMagazine75rnd.FMJ",
+          "price": 312
+        },
+        {
+          "tag": "Id.Item.AK74MMagazine75rnd.FMJTracer",
+          "price": 312
+        },
+        {
+          "tag": "Id.Item.AK74MMagazine75rnd.HollowPoint",
+          "price": 387.5
+        },
+        {
+          "tag": "Id.Item.AK74MMagazine75rnd.HollowPointTracer",
+          "price": 387.5
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.26
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.22
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.24
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        }
+      ],
+      "character_modifiers": [
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.24
+        }
+      ],
+      "magazine_capacity": 75
+    },
+    {
+      "id": "Id.Item.BasicRedDot",
+      "name": "Compact T-2 Red Dot",
+      "slot": "Sight",
+      "is_default": false,
+      "unlock": {
+        "role": "Wardog",
+        "level": 17,
+        "cost": 5000
+      },
+      "weight": 0.13,
+      "vendor": [],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.9
+        }
+      ],
+      "character_modifiers": [],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.EotechHoloSight",
+      "name": "Holographic Sight",
+      "slot": "Sight",
+      "is_default": false,
+      "unlock": {
+        "role": "Medic",
+        "level": 6,
+        "cost": 20000
+      },
+      "weight": 0.25,
+      "vendor": [
+        {
+          "tag": "Id.Item.EotechHoloSight",
+          "price": 620
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        },
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 100
+        }
+      ],
+      "character_modifiers": [],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.FGP_02",
+      "name": "TDG Vertical Foregrip",
+      "slot": "Underbarrel",
+      "is_default": false,
+      "unlock": {
+        "role": "Wardog",
+        "level": 58,
+        "cost": 25000
+      },
+      "weight": 0.13,
+      "vendor": [
+        {
+          "tag": "Id.Item.FGP_02",
+          "price": 820
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.7
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.85
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.83
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.1
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        }
+      ],
+      "character_modifiers": [
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Character.AimSwayHorizontalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        },
+        {
+          "attribute": "Character.AimSwayVerticalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.74
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.78
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.7
+        }
+      ],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.FGP_03",
+      "name": "AFG Angled Foregrip",
+      "slot": "Underbarrel",
+      "is_default": false,
+      "unlock": {
+        "role": "Medic",
+        "level": 11,
+        "cost": 10000
+      },
+      "weight": 0.08,
+      "vendor": [
+        {
+          "tag": "Id.Item.FGP_03",
+          "price": 800
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.94
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.75
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.78
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.85
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.1
+        }
+      ],
+      "character_modifiers": [
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Character.AimSwayHorizontalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Character.AimSwayVerticalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.88
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.8
+        }
+      ],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.FGP_04",
+      "name": "Grip Pod",
+      "slot": "Underbarrel",
+      "is_default": false,
+      "unlock": {
+        "role": "Support",
+        "level": 50,
+        "cost": 50000
+      },
+      "weight": 0.26,
+      "vendor": [
+        {
+          "tag": "Id.Item.FGP_04",
+          "price": 1500
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.88
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.94
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.1
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.98
+        }
+      ],
+      "character_modifiers": [
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Character.AimSwayHorizontalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Character.AimSwayVerticalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.88
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.78
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.6
+        }
+      ],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.FGRP_006",
+      "name": "RVG Vertical Foregrip",
+      "slot": "Underbarrel",
+      "is_default": false,
+      "unlock": {
+        "role": "Infantry",
+        "level": 38,
+        "cost": 25000
+      },
+      "weight": 0.12,
+      "vendor": [
+        {
+          "tag": "Id.Item.FGRP_006",
+          "price": 720
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.75
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.87
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.81
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.07
+        }
+      ],
+      "character_modifiers": [
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        },
+        {
+          "attribute": "Character.AimSwayHorizontalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Character.AimSwayVerticalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.78
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.85
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.75
+        }
+      ],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.FGRP_007",
+      "name": "Shift Foregrip",
+      "slot": "Underbarrel",
+      "is_default": false,
+      "unlock": {
+        "role": "Infantry",
+        "level": 48,
+        "cost": 30000
+      },
+      "weight": 0.12,
+      "vendor": [
+        {
+          "tag": "Id.Item.FGRP_007",
+          "price": 840
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.71
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.76
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.87
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.15
+        }
+      ],
+      "character_modifiers": [
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.88
+        },
+        {
+          "attribute": "Character.AimSwayHorizontalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Character.AimSwayVerticalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.88
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.86
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.78
+        }
+      ],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.FGRP_014",
+      "name": "CQR Tactical Front Rail Grip",
+      "slot": "Underbarrel",
+      "is_default": false,
+      "unlock": {
+        "role": "Infantry",
+        "level": 14,
+        "cost": 10000
+      },
+      "weight": 0.15,
+      "vendor": [
+        {
+          "tag": "Id.Item.FGRP_014",
+          "price": 950
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.7
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.97
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.91
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.15
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.09
+        }
+      ],
+      "character_modifiers": [
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Character.AimSwayHorizontalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.05
+        },
+        {
+          "attribute": "Character.AimSwayVerticalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.73
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.92
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.85
+        }
+      ],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.FGRP_015",
+      "name": "Rubberized Ergonomic Foregrip",
+      "slot": "Underbarrel",
+      "is_default": false,
+      "unlock": {
+        "role": "Infantry",
+        "level": 11,
+        "cost": 7500
+      },
+      "weight": 0.11,
+      "vendor": [
+        {
+          "tag": "Id.Item.FGRP_015",
+          "price": 540
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.82
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.84
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.02
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.98
+        }
+      ],
+      "character_modifiers": [
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Character.AimSwayHorizontalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Character.AimSwayVerticalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.7
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.8
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.72
+        }
+      ],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.FGRP_016",
+      "name": "45° Angled Foregrip",
+      "slot": "Underbarrel",
+      "is_default": false,
+      "unlock": {
+        "role": "Wardog",
+        "level": 33,
+        "cost": 15000
+      },
+      "weight": 0.09,
+      "vendor": [
+        {
+          "tag": "Id.Item.FGRP_016",
+          "price": 640
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.05
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.82
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.82
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.83
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.13
+        }
+      ],
+      "character_modifiers": [
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Character.AimSwayVerticalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.96
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.92
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.84
+        }
+      ],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.FGRP_017",
+      "name": "Angled Tactical Foregrip",
+      "slot": "Underbarrel",
+      "is_default": false,
+      "unlock": null,
+      "weight": 0.11,
+      "vendor": [
+        {
+          "tag": "Id.Item.FGRP_017",
+          "price": 650
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.02
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.84
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.84
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.88
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.09
+        }
+      ],
+      "character_modifiers": [
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Character.AimSwayHorizontalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.98
+        },
+        {
+          "attribute": "Character.AimSwayVerticalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.9
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.82
+        }
+      ],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.FGRP_018",
+      "name": "Mini Angled Foregrip",
+      "slot": "Underbarrel",
+      "is_default": false,
+      "unlock": {
+        "role": "Wardog",
+        "level": 38,
+        "cost": 12500
+      },
+      "weight": 0.08,
+      "vendor": [
+        {
+          "tag": "Id.Item.FGRP_018",
+          "price": 680
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.77
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.8
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.86
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.1
+        }
+      ],
+      "character_modifiers": [
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Character.AimSwayHorizontalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.96
+        },
+        {
+          "attribute": "Character.AimSwayVerticalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.9
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.82
+        }
+      ],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.MUZL_020",
+      "name": "Ballista Brake",
+      "slot": "Muzzle",
+      "is_default": false,
+      "unlock": {
+        "role": "Medic",
+        "level": 12,
+        "cost": 15000
+      },
+      "weight": 0.09,
+      "vendor": [
+        {
+          "tag": "Id.Item.MUZL_020",
+          "price": 380
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.02
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.8
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.04
+        }
+      ],
+      "compatibility_source": "https://wardogsweapons.com/api/weapon/ak74/attachments/MUZZLE",
+      "character_modifiers": [],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.MUZL_039",
+      "name": "Birdcage Flash Hider",
+      "slot": "Muzzle",
+      "is_default": false,
+      "unlock": {
+        "role": "Infantry",
+        "level": 2,
+        "cost": 5000
+      },
+      "weight": 0.09,
+      "vendor": [
+        {
+          "tag": "Id.Item.MUZL_039",
+          "price": 600
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.99
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.98
+        }
+      ],
+      "compatibility_source": "https://wardogsweapons.com/api/weapon/ak74/attachments/MUZZLE",
+      "character_modifiers": [],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.MZL_09",
+      "name": "PBS-4 Suppressor",
+      "slot": "Muzzle",
+      "is_default": false,
+      "unlock": {
+        "role": "Infantry",
+        "level": 19,
+        "cost": 25000
+      },
+      "weight": 0.8,
+      "vendor": [
+        {
+          "tag": "Id.Item.MZL_09",
+          "price": 1260
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.86
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.88
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.12
+        }
+      ],
+      "compatibility_source": "https://wardogsweapons.com/api/weapon/ak74/attachments/MUZZLE",
+      "character_modifiers": [],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.MZL_10",
+      "name": "TGP-A Suppressor 5.45",
+      "slot": "Muzzle",
+      "is_default": false,
+      "unlock": {
+        "role": "Infantry",
+        "level": 27,
+        "cost": 17500
+      },
+      "weight": 0.7,
+      "vendor": [
+        {
+          "tag": "Id.Item.MZL_10",
+          "price": 1160
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.94
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.91
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.1
+        }
+      ],
+      "compatibility_source": "https://wardogsweapons.com/api/weapon/ak74/attachments/MUZZLE",
+      "character_modifiers": [],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.OPT_08",
+      "name": "2.5x Combat Optic",
+      "slot": "Sight",
+      "is_default": false,
+      "unlock": {
+        "role": "Infantry",
+        "level": 17,
+        "cost": 10000
+      },
+      "weight": 0.4,
+      "vendor": [
+        {
+          "tag": "Id.Item.OPT_08",
+          "price": 690
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.05
+        },
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 2.5
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        },
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 300
+        }
+      ],
+      "character_modifiers": [],
+      "magazine_capacity": null
+    },
+    {
+      "id": "ID.Item.PWSCQB74Muzzle",
+      "name": "CQB 74 Brake",
+      "slot": "Muzzle",
+      "is_default": false,
+      "unlock": {
+        "role": "Infantry",
+        "level": 16,
+        "cost": 15000
+      },
+      "weight": 0.22,
+      "vendor": [
+        {
+          "tag": "ID.Item.PWSCQB74Muzzle",
+          "price": 680
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.8
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.97
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.96
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.04
+        }
+      ],
+      "compatibility_source": "https://wardogsweapons.com/api/weapon/ak74/attachments/MUZZLE",
+      "character_modifiers": [],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.RK6ForeGrip",
+      "name": "RK6 Tactical Foregrip",
+      "slot": "Underbarrel",
+      "is_default": false,
+      "unlock": {
+        "role": "Wardog",
+        "level": 15,
+        "cost": 7500
+      },
+      "weight": 1.05,
+      "vendor": [
+        {
+          "tag": "Id.Item.RK6ForeGrip",
+          "price": 380
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.85
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.85
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.1
+        }
+      ],
+      "character_modifiers": [
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Character.AimSwayVerticalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.88
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.88
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.78
+        }
+      ],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.SGHT_009",
+      "name": "Kobra Reflex",
+      "slot": "Sight",
+      "is_default": false,
+      "unlock": {
+        "role": "Wardog",
+        "level": 4,
+        "cost": 7500
+      },
+      "weight": 0.41,
+      "vendor": [
+        {
+          "tag": "Id.Item.SGHT_009",
+          "price": 520
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.85
+        }
+      ],
+      "character_modifiers": [],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.SGHT_016",
+      "name": "Four Reticle Reflex",
+      "slot": "Sight",
+      "is_default": false,
+      "unlock": {
+        "role": "Infantry",
+        "level": 22,
+        "cost": 10000
+      },
+      "weight": 0.12,
+      "vendor": [],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.85
+        }
+      ],
+      "character_modifiers": [],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.SGHT_023",
+      "name": "OKP 7 Reflex",
+      "slot": "Sight",
+      "is_default": false,
+      "unlock": {
+        "role": "Infantry",
+        "level": 26,
+        "cost": 30000
+      },
+      "weight": 0.48,
+      "vendor": [
+        {
+          "tag": "Id.Item.SGHT_023",
+          "price": 840
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.85
+        }
+      ],
+      "character_modifiers": [],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.SGHT_026",
+      "name": "Tricon 1.5x Compact Prism Scope",
+      "slot": "Sight",
+      "is_default": false,
+      "unlock": {
+        "role": "Wardog",
+        "level": 26,
+        "cost": 10000
+      },
+      "weight": 0.2,
+      "vendor": [],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.97
+        },
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 1.5
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        },
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 200
+        }
+      ],
+      "character_modifiers": [],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.SGHT_027",
+      "name": "Vektor Frenix-X Micro Reflex Sight",
+      "slot": "Sight",
+      "is_default": false,
+      "unlock": {
+        "role": "Medic",
+        "level": 19,
+        "cost": 15000
+      },
+      "weight": 0.03,
+      "vendor": [],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.87
+        }
+      ],
+      "character_modifiers": [],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.SGHT_028",
+      "name": "CQ-2x Prism Combat Scope",
+      "slot": "Sight",
+      "is_default": false,
+      "unlock": {
+        "role": "Infantry",
+        "level": 12,
+        "cost": 15000
+      },
+      "weight": 0.31,
+      "vendor": [],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.05
+        },
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 2
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        },
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 300
+        }
+      ],
+      "character_modifiers": [],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.SGHT_029",
+      "name": "3x Tactical Prism Scope",
+      "slot": "Sight",
+      "is_default": false,
+      "unlock": {
+        "role": "Infantry",
+        "level": 33,
+        "cost": 15000
+      },
+      "weight": 0.43,
+      "vendor": [],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 3
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        },
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 300
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.1
+        }
+      ],
+      "character_modifiers": [],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.SGHT_030",
+      "name": "4x Combat Prism Scope with Reflex",
+      "slot": "Sight",
+      "is_default": false,
+      "unlock": {
+        "role": "Support",
+        "level": 21,
+        "cost": 35000
+      },
+      "weight": 0.42,
+      "vendor": [],
+      "modifiers": [
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 400
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        }
+      ],
+      "character_modifiers": [
+        {
+          "attribute": "Character.WeaponSway.StabilizationTimeMultiplier",
+          "op": "multiply",
+          "value": 1.5
+        }
+      ],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.SGHT_033",
+      "name": "CGM4 Scope",
+      "slot": "Sight",
+      "is_default": false,
+      "unlock": null,
+      "weight": 0.06,
+      "vendor": [],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 1.2
+        }
+      ],
+      "character_modifiers": [],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.SGHT_037",
+      "name": "MMGL Sight",
+      "slot": "Sight",
+      "is_default": false,
+      "unlock": null,
+      "weight": 0.13,
+      "vendor": [],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 1.2
+        }
+      ],
+      "character_modifiers": [],
+      "magazine_capacity": null
+    },
+    {
+      "id": "Id.Item.SGHT_038",
+      "name": "Compact P-1 Red Dot",
+      "slot": "Sight",
+      "is_default": false,
+      "unlock": {
+        "role": "Wardog",
+        "level": 21,
+        "cost": 12500
+      },
+      "weight": 0.13,
+      "vendor": [],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 1.2
+        }
+      ],
+      "character_modifiers": [],
+      "magazine_capacity": null
+    }
+  ],
+  "muzzle_compatibility": {
+    "url": "https://wardogsweapons.com/api/weapon/ak74/attachments/MUZZLE",
+    "checked_on": "2026-10-24",
+    "sha256": "6769b8ad86826da74a55bc6b432ec43160d120fef89756f7eabb66ef96db6e9b",
+    "scope": "AK-74 muzzle compatibility only; numeric values cross-checked against pinned wardogs-data. Neither source verifies runtime behavior.",
+    "mapping": [
+      {
+        "site_id": "ballista-brake",
+        "item_id": "Id.Item.MUZL_020",
+        "name": "Ballista Brake"
+      },
+      {
+        "site_id": "birdcage-flash-hider",
+        "item_id": "Id.Item.MUZL_039",
+        "name": "Birdcage Flash Hider"
+      },
+      {
+        "site_id": "pwscqb74muzzle",
+        "item_id": "ID.Item.PWSCQB74Muzzle",
+        "name": "CQB 74 Brake"
+      },
+      {
+        "site_id": "pbs-4-suppressor",
+        "item_id": "Id.Item.MZL_09",
+        "name": "PBS-4 Suppressor"
+      },
+      {
+        "site_id": "tgp-a-suppressor-5-45",
+        "item_id": "Id.Item.MZL_10",
+        "name": "TGP-A Suppressor 5.45"
+      }
+    ]
+  }
+}

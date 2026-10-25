@@ -1,0 +1,134 @@
+{
+  "status": "validated",
+  "applied": true,
+  "old_build": "25937608",
+  "new_build": "25937608",
+  "revision": "e4ca3e9f1c48d980ba531202642884c358208304",
+  "weapon_count": 40,
+  "attachment_count": 298,
+  "changed_weapons": [
+    "Id.Item.M249",
+    "Id.Item.M4",
+    "Id.Item.TAR21",
+    "Id.Item.WEPN_028",
+    "Id.Item.WEPN_029",
+    "Id.Item.WEPN_037"
+  ],
+  "removed_weapons": [],
+  "notes": [
+    {
+      "weapon": "Id.Item.ArtilleryBarrelTest",
+      "note": "Ideal TTK unavailable: ambiguous/unsupported projectile baseline or test record"
+    },
+    {
+      "weapon": "Id.Item.CGM4",
+      "note": "Ideal TTK unavailable: ambiguous/unsupported projectile baseline or test record"
+    },
+    {
+      "weapon": "Id.Item.CombatBow",
+      "note": "Ideal TTK unavailable: ambiguous/unsupported projectile baseline or test record"
+    },
+    {
+      "weapon": "Id.Item.Launcher_04",
+      "note": "Ideal TTK unavailable: ambiguous/unsupported projectile baseline or test record"
+    },
+    {
+      "weapon": "Id.Item.LeapordBarrel",
+      "note": "Ideal TTK unavailable: ambiguous/unsupported projectile baseline or test record"
+    },
+    {
+      "weapon": "Id.Item.M500",
+      "note": "Ideal TTK unavailable: ambiguous/unsupported projectile baseline or test record"
+    },
+    {
+      "weapon": "Id.Item.MMGL",
+      "note": "Ideal TTK unavailable: ambiguous/unsupported projectile baseline or test record"
+    },
+    {
+      "weapon": "Id.Item.MP43",
+      "note": "Ideal TTK unavailable: ambiguous/unsupported projectile baseline or test record"
+    },
+    {
+      "weapon": "Id.Item.RPG7",
+      "note": "Ideal TTK unavailable: ambiguous/unsupported projectile baseline or test record"
+    },
+    {
+      "weapon": "Id.Item.A91",
+      "note": "Supplemental muzzle coverage: weapon \u2014 HTTP Error 404: Not Found"
+    },
+    {
+      "weapon": "Id.Item.ArtilleryBarrelTest",
+      "note": "Supplemental muzzle coverage: weapon \u2014 No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.CGM4",
+      "note": "Supplemental muzzle coverage: weapon \u2014 No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.CombatBow",
+      "note": "Supplemental muzzle coverage: weapon \u2014 No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.Glock17",
+      "note": "Supplemental muzzle coverage: weapon \u2014 No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.Judge",
+      "note": "Supplemental muzzle coverage: weapon \u2014 No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.KH2002",
+      "note": "Supplemental muzzle coverage: weapon \u2014 HTTP Error 404: Not Found"
+    },
+    {
+      "weapon": "Id.Item.Launcher_04",
+      "note": "Supplemental muzzle coverage: weapon \u2014 No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.LeapordBarrel",
+      "note": "Supplemental muzzle coverage: weapon \u2014 No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.MMGL",
+      "note": "Supplemental muzzle coverage: weapon \u2014 No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.RPG7",
+      "note": "Supplemental muzzle coverage: weapon \u2014 No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.WEPN_026",
+      "note": "Supplemental muzzle coverage: weapon \u2014 No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.WEPN_027",
+      "note": "Supplemental muzzle coverage: weapon \u2014 No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.WEPN_032",
+      "note": "Supplemental muzzle coverage: weapon \u2014 No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.WEPN_033",
+      "note": "Supplemental muzzle coverage: weapon \u2014 HTTP Error 404: Not Found"
+    },
+    {
+      "weapon": "Id.Item.M249",
+      "note": "TopComp Brake \u2014 Compatibility cross-checked; multiply stacking is not modeled, so automatic suggestions exclude this part"
+    },
+    {
+      "weapon": "Id.Item.M4",
+      "note": "TopComp Brake \u2014 Compatibility cross-checked; multiply stacking is not modeled, so automatic suggestions exclude this part"
+    },
+    {
+      "weapon": "Id.Item.TAR21",
+      "note": "TopComp Brake \u2014 Compatibility cross-checked; multiply stacking is not modeled, so automatic suggestions exclude this part"
+    },
+    {
+      "weapon": "Id.Item.WEPN_029",
+      "note": "TopComp Brake \u2014 Compatibility cross-checked; multiply stacking is not modeled, so automatic suggestions exclude this part"
+    }
+  ],
+  "changed_attachments": [],
+  "removed_attachments": []
+}

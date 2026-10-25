@@ -1,0 +1,25 @@
+WARDOG COMPANION 1.0
+
+INSTALLER
+Open WARDOG-Companion-1.0.0-Setup.exe from the official GitHub release.
+Install for your Windows user and launch from the Start menu shortcut.
+
+PORTABLE
+Extract the complete ZIP into a writable folder, then open wardog-companion.exe.
+Keep Data/ and About/ beside the executable.
+
+FIRST SETUP
+Close earlier companion copies, including hidden windows.
+Set your levels and attachment budget; choose Done.
+Choose your weapon and Control / Balanced / Agility.
+
+CTRL + SHIFT + SPACE    Hide/show the panel
+CTRL + SHIFT + R        Read the arsenal (experimental; confirm the match)
+
+Settings > App updates checks for a new app release.
+Settings > Data & updates checks game data and offers data rollback.
+Your profile stays in LocalAppData > WardogCompanion.
+
+Version 1.0 is not code-signed. Never disable Windows security to run it.
+Recommendations are community-data estimates. Read README.md and VALIDATION.md.
+https://github.com/cccarv82/wardog-companion

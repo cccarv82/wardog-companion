@@ -1,0 +1,1636 @@
+{
+  "schemaVersion": 1,
+  "gameBuild": "25937608",
+  "tags": [
+    {
+      "tag": "Attribute.Meta.XP.Role.Driver",
+      "text": "DRIVER",
+      "source": "Roles"
+    },
+    {
+      "tag": "Attribute.Meta.XP.Role.Infantry",
+      "text": "ASSAULT",
+      "source": "Roles"
+    },
+    {
+      "tag": "Attribute.Meta.XP.Role.Medic",
+      "text": "MEDIC",
+      "source": "Roles"
+    },
+    {
+      "tag": "Attribute.Meta.XP.Role.Pilot",
+      "text": "PILOT",
+      "source": "Roles"
+    },
+    {
+      "tag": "Attribute.Meta.XP.Role.Recon",
+      "text": "RECON",
+      "source": "Roles"
+    },
+    {
+      "tag": "Attribute.Meta.XP.Role.Support",
+      "text": "SUPPORT",
+      "source": "Roles"
+    },
+    {
+      "tag": "EventLog.Category.Damage",
+      "text": "Damage",
+      "source": "EventLog"
+    },
+    {
+      "tag": "EventLog.Category.Damage.Dealt",
+      "text": "Damage Dealt",
+      "source": "EventLog"
+    },
+    {
+      "tag": "EventLog.Category.Damage.Received",
+      "text": "Damage Received",
+      "source": "EventLog"
+    },
+    {
+      "tag": "EventLog.Category.Healing",
+      "text": "Healing",
+      "source": "EventLog"
+    },
+    {
+      "tag": "EventLog.Category.Misc",
+      "text": "Misc",
+      "source": "EventLog"
+    },
+    {
+      "tag": "EventLog.Category.Reward",
+      "text": "Cash",
+      "source": "EventLog"
+    },
+    {
+      "tag": "Id.Item.DroneProjectile",
+      "text": "Stingray",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Id.Item.MunitionsSupplies",
+      "text": "Ammo Supplies",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Id.Item.SparePartsSupplies",
+      "text": "Spare Parts",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Id.Vehicle.WeaponExtension.ROT_01.MountedMachineGun",
+      "text": "Machine Gun",
+      "source": "Categories"
+    },
+    {
+      "tag": "Id.Vehicle.WeaponExtension.ROT_02.122mm",
+      "text": "Rockets",
+      "source": "Categories"
+    },
+    {
+      "tag": "Id.Vehicle.WeaponExtension.ROT_02.30mmCannon",
+      "text": "Cannon",
+      "source": "Categories"
+    },
+    {
+      "tag": "Id.Vehicle.WeaponExtension.ROT_03.MountedMachineGun",
+      "text": "Machine Gun",
+      "source": "Categories"
+    },
+    {
+      "tag": "Id.Vehicle.WeaponExtension.ROT_03.RocketPods",
+      "text": "Rockets",
+      "source": "Categories"
+    },
+    {
+      "tag": "Id.Vehicle.WeaponExtension.ROT_04.MountedMachineGun",
+      "text": "Machine Gun",
+      "source": "Categories"
+    },
+    {
+      "tag": "Id.Vehicle.WeaponExtension.TNK_01.AntiAir",
+      "text": "Cannon",
+      "source": "Categories"
+    },
+    {
+      "tag": "Id.Vehicle.WeaponExtension.TNK_01.Artillery",
+      "text": "Artillery",
+      "source": "Categories"
+    },
+    {
+      "tag": "Id.Vehicle.WeaponExtension.TNK_01.Artillery.Sandbox",
+      "text": "Artillery",
+      "source": "Categories"
+    },
+    {
+      "tag": "Id.Vehicle.WeaponExtension.TNK_01.Heavy",
+      "text": "Heavy",
+      "source": "Categories"
+    },
+    {
+      "tag": "Id.Vehicle.WeaponExtension.TNK_01.MachineGun",
+      "text": "Coaxial Gun",
+      "source": "Categories"
+    },
+    {
+      "tag": "Id.Vehicle.WeaponExtension.TNK_01.MountedMachineGun",
+      "text": "Machine Gun",
+      "source": "Categories"
+    },
+    {
+      "tag": "Id.Vehicle.WeaponExtension.TNK_04.Default",
+      "text": "Heavy",
+      "source": "Categories"
+    },
+    {
+      "tag": "Id.Vehicle.WeaponExtension.TNK_04.MachineGun",
+      "text": "Coaxial Gun",
+      "source": "Categories"
+    },
+    {
+      "tag": "Id.Vehicle.WeaponExtension.TNK_04.MountedMachineGun",
+      "text": "Machine Gun",
+      "source": "Categories"
+    },
+    {
+      "tag": "Id.Vehicle.WeaponExtension.WHL_02.SUV.RingTurret",
+      "text": "Machine Gun",
+      "source": "Categories"
+    },
+    {
+      "tag": "Id.Vehicle.WeaponExtension.WHL_05.RingMinigun",
+      "text": "Minigun",
+      "source": "Categories"
+    },
+    {
+      "tag": "Id.Vehicle.WeaponExtension.WHL_05.RingTurret",
+      "text": "Machine Gun",
+      "source": "Categories"
+    },
+    {
+      "tag": "Id.Vehicle.WeaponExtension.WHL_07.MachineGun",
+      "text": "Machine Gun",
+      "source": "Categories"
+    },
+    {
+      "tag": "Id.Vehicle.WeaponExtension.WHL_08.RingTurret",
+      "text": "Machine Gun",
+      "source": "Categories"
+    },
+    {
+      "tag": "Input.NamedActions.ItemSmith.CollapseStats",
+      "text": "Collapse Stats",
+      "source": "Itemsmith"
+    },
+    {
+      "tag": "Input.NamedActions.ItemSmith.ExpandStats",
+      "text": "Expand Stats",
+      "source": "Itemsmith"
+    },
+    {
+      "tag": "Inventory.Slot.Armor",
+      "text": "Armor",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Inventory.Slot.Arms",
+      "text": "Arms",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Inventory.Slot.Backpack",
+      "text": "Backpack",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Inventory.Slot.Chest",
+      "text": "Chest",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Inventory.Slot.Eyewear",
+      "text": "Eyewear",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Inventory.Slot.Face",
+      "text": "Face",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Inventory.Slot.Feet",
+      "text": "Feet",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Inventory.Slot.FOB.BuildSuppliesContainer",
+      "text": "Build Supplies",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Inventory.Slot.FOB.FuelSuppliesContainer",
+      "text": "Fuel Supplies",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Inventory.Slot.FOB.MunitionSuppliesContainer",
+      "text": "Ammo Supplies",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Inventory.Slot.FOB.SparePartsSuppliesContainer",
+      "text": "Mechanical Supplies",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Inventory.Slot.Hair",
+      "text": "Hair",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Inventory.Slot.Hands",
+      "text": "Hands",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Inventory.Slot.Head",
+      "text": "Head",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Inventory.Slot.Helmet",
+      "text": "Helmet",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Inventory.Slot.Legs",
+      "text": "Legs",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Inventory.Slot.Melee",
+      "text": "Melee",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Inventory.Slot.Primary",
+      "text": "Primary Weapon",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Inventory.Slot.Secondary",
+      "text": "Secondary Weapon",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Inventory.Slot.Sidearm",
+      "text": "Sidearm",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Inventory.Slot.Specialist",
+      "text": "Spec. Item",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Inventory.Slot.Traversal",
+      "text": "Traversal",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Inventory.Slot.Vest",
+      "text": "Tac-Vest",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Item.Ammo",
+      "text": "Ammo",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Item.Ammo.Type.ArmorPiercing",
+      "text": "AP",
+      "source": "Ammunition"
+    },
+    {
+      "tag": "Item.Ammo.Type.ArmorPiercing.Tracer",
+      "text": "AP",
+      "source": "Ammunition"
+    },
+    {
+      "tag": "Item.Ammo.Type.Buckshot",
+      "text": "BCK",
+      "source": "Ammunition"
+    },
+    {
+      "tag": "Item.Ammo.Type.FMJ",
+      "text": "FMJ",
+      "source": "Ammunition"
+    },
+    {
+      "tag": "Item.Ammo.Type.FMJ.Tracer",
+      "text": "FMJ",
+      "source": "Ammunition"
+    },
+    {
+      "tag": "Item.Ammo.Type.HollowPoint",
+      "text": "HP",
+      "source": "Ammunition"
+    },
+    {
+      "tag": "Item.Ammo.Type.HollowPoint.Tracer",
+      "text": "HP",
+      "source": "Ammunition"
+    },
+    {
+      "tag": "Item.Ammo.Type.Slug",
+      "text": "SLG",
+      "source": "Ammunition"
+    },
+    {
+      "tag": "Item.Archetype.AR",
+      "text": "Assault Rifle",
+      "source": "Archetypes"
+    },
+    {
+      "tag": "Item.Archetype.Bobblehead",
+      "text": "Bobblehead",
+      "source": "Archetypes"
+    },
+    {
+      "tag": "Item.Archetype.Bow",
+      "text": "Bow",
+      "source": "Archetypes"
+    },
+    {
+      "tag": "Item.Archetype.DMR",
+      "text": "DMR",
+      "source": "Archetypes"
+    },
+    {
+      "tag": "Item.Archetype.Grenade",
+      "text": "Grenade",
+      "source": "Archetypes"
+    },
+    {
+      "tag": "Item.Archetype.Launcher",
+      "text": "Launcher",
+      "source": "Archetypes"
+    },
+    {
+      "tag": "Item.Archetype.LMG",
+      "text": "LMG",
+      "source": "Archetypes"
+    },
+    {
+      "tag": "Item.Archetype.Melee",
+      "text": "Melee",
+      "source": "Archetypes"
+    },
+    {
+      "tag": "Item.Archetype.Parachute",
+      "text": "Parachute",
+      "source": "Archetypes"
+    },
+    {
+      "tag": "Item.Archetype.Pistol",
+      "text": "Pistol",
+      "source": "Archetypes"
+    },
+    {
+      "tag": "Item.Archetype.Shotgun",
+      "text": "Shotgun",
+      "source": "Archetypes"
+    },
+    {
+      "tag": "Item.Archetype.SMG",
+      "text": "SMG",
+      "source": "Archetypes"
+    },
+    {
+      "tag": "Item.Archetype.Sniper",
+      "text": "Sniper Rifle",
+      "source": "Archetypes"
+    },
+    {
+      "tag": "Item.Attachment.Barrel",
+      "text": "BARREL",
+      "source": "Components"
+    },
+    {
+      "tag": "Item.Attachment.Barrel",
+      "text": "Barrel",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Item.Attachment.CantedSight",
+      "text": "Canted Sight",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Item.Attachment.Chamber",
+      "text": "Chamber",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Item.Attachment.Charm",
+      "text": "Charm",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Item.Attachment.DustCover",
+      "text": "DUST COVER",
+      "source": "Components"
+    },
+    {
+      "tag": "Item.Attachment.Grip",
+      "text": "GRIP",
+      "source": "Components"
+    },
+    {
+      "tag": "Item.Attachment.Grip",
+      "text": "Grip",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Item.Attachment.Handguard",
+      "text": "HANDGUARD",
+      "source": "Components"
+    },
+    {
+      "tag": "Item.Attachment.Handguard",
+      "text": "Handguard",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Item.Attachment.Magazine",
+      "text": "Magazine",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Item.Attachment.Muzzle",
+      "text": "Muzzle",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Item.Attachment.Receiver",
+      "text": "RECIEVER",
+      "source": "Components"
+    },
+    {
+      "tag": "Item.Attachment.Receiver",
+      "text": "Receiver",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Item.Attachment.Sight",
+      "text": "Sight",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Item.Attachment.SightMount",
+      "text": "Sight Mount",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Item.Attachment.Stock",
+      "text": "STOCK",
+      "source": "Components"
+    },
+    {
+      "tag": "Item.Attachment.Stock",
+      "text": "Stock",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Item.Attachment.Trigger",
+      "text": "TRIGGER",
+      "source": "Components"
+    },
+    {
+      "tag": "Item.Attachment.Underbarrel",
+      "text": "Underbarrel",
+      "source": "InventorySlots"
+    },
+    {
+      "tag": "Item.Caliber.115mm",
+      "text": "115mm",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.120x570mm",
+      "text": "120mm HEAT-MP Shell",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.122mm",
+      "text": "122mm",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.122mm.Havoc",
+      "text": "122mm",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.125x570mm",
+      "text": "125mm HEAT-MP Shell",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.12g",
+      "text": "12g",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.12g.RifledSlug",
+      "text": "12g Rifled Slug",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.155mm",
+      "text": "155mm HE Shell",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.20x102mm",
+      "text": "20x102mm",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.308Win",
+      "text": ".308 Win",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.30mm",
+      "text": "30mm HE Cannon",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.338Nor",
+      "text": "338Nor",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.35x228mm",
+      "text": "35x228mm Anti-Air Cannon",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.40mm",
+      "text": "40mm",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.45ACP",
+      "text": ".45 ACP",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.45Colt",
+      "text": ".45 Colt",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.50AE",
+      "text": "50AE",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.50Cal",
+      "text": ".50Cal",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.545mm",
+      "text": "5.45x39mm",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.556mm",
+      "text": "5.56x45mm",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.70mm",
+      "text": "70mm",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.762mm",
+      "text": "7.62x39mm",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.762x51mm",
+      "text": "7.62x51mm",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.762x54mm",
+      "text": "7.62x54mm",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.7mmBuck",
+      "text": "12g 7mm Buckshot",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.84mm",
+      "text": "84mm",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.93mm",
+      "text": "93mm",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Caliber.9mm",
+      "text": "9x19mm",
+      "source": "Calibers"
+    },
+    {
+      "tag": "Item.Category.Ammunition",
+      "text": "Ammo",
+      "source": "Categories"
+    },
+    {
+      "tag": "Item.Category.Armor",
+      "text": "Armor",
+      "source": "Categories"
+    },
+    {
+      "tag": "Item.Category.Attachment",
+      "text": "Attachment",
+      "source": "Categories"
+    },
+    {
+      "tag": "Item.Category.Deployable",
+      "text": "Deployable",
+      "source": "Categories"
+    },
+    {
+      "tag": "Item.Category.Health",
+      "text": "Health",
+      "source": "Categories"
+    },
+    {
+      "tag": "Item.Category.Storage",
+      "text": "Storage",
+      "source": "Categories"
+    },
+    {
+      "tag": "Item.Category.Throwable",
+      "text": "Throwable",
+      "source": "Categories"
+    },
+    {
+      "tag": "Item.Category.Weapon.Melee",
+      "text": "Melee Weapon",
+      "source": "Categories"
+    },
+    {
+      "tag": "Item.Category.Weapon.Ranged",
+      "text": "Ranged Weapon",
+      "source": "Categories"
+    },
+    {
+      "tag": "Meta.Damage.AmmoModifier.ArmorPiercing",
+      "text": "AP",
+      "source": "Ammunition"
+    },
+    {
+      "tag": "Meta.Damage.AmmoModifier.ArmorPiercing.Tracer",
+      "text": "AP",
+      "source": "Ammunition"
+    },
+    {
+      "tag": "Meta.Damage.AmmoModifier.FMJ",
+      "text": "FMJ",
+      "source": "Ammunition"
+    },
+    {
+      "tag": "Meta.Damage.AmmoModifier.HollowPoint",
+      "text": "HP",
+      "source": "Ammunition"
+    },
+    {
+      "tag": "Meta.Damage.AmmoModifier.HollowPoint.Tracer",
+      "text": "HP",
+      "source": "Ammunition"
+    },
+    {
+      "tag": "Meta.Damage.AmmoModifier.Tracer",
+      "text": "FMJ",
+      "source": "Ammunition"
+    },
+    {
+      "tag": "Meta.Damage.DamageType.BackBlast",
+      "text": "Backblast Damage",
+      "source": "Damage"
+    },
+    {
+      "tag": "Meta.Damage.DamageType.Dismantle",
+      "text": "Melee Damage",
+      "source": "Damage"
+    },
+    {
+      "tag": "Meta.Damage.DamageType.Enviroment",
+      "text": "Environmental Damage",
+      "source": "Damage"
+    },
+    {
+      "tag": "Meta.Damage.DamageType.Explosive",
+      "text": "Explosive Damage",
+      "source": "Damage"
+    },
+    {
+      "tag": "Meta.Damage.DamageType.Fall",
+      "text": "Fall Damage",
+      "source": "Damage"
+    },
+    {
+      "tag": "Meta.Damage.DamageType.Impact",
+      "text": "Impact Damage",
+      "source": "Damage"
+    },
+    {
+      "tag": "Meta.Damage.DamageType.Melee",
+      "text": "Melee Damage",
+      "source": "Damage"
+    },
+    {
+      "tag": "Meta.Damage.DamageType.Utility",
+      "text": "Impact Damage",
+      "source": "Damage"
+    },
+    {
+      "tag": "Meta.Damage.Kinetic.Impact.Ricochet",
+      "text": "ricocheted",
+      "source": "Damage"
+    },
+    {
+      "tag": "Meta.Role.Driver",
+      "text": "DRIVER",
+      "source": "Roles"
+    },
+    {
+      "tag": "Meta.Role.Infantry",
+      "text": "ASSAULT",
+      "source": "Roles"
+    },
+    {
+      "tag": "Meta.Role.Medic",
+      "text": "MEDIC",
+      "source": "Roles"
+    },
+    {
+      "tag": "Meta.Role.Pilot",
+      "text": "PILOT",
+      "source": "Roles"
+    },
+    {
+      "tag": "Meta.Role.Recon",
+      "text": "RECON",
+      "source": "Roles"
+    },
+    {
+      "tag": "Meta.Role.Support",
+      "text": "SUPPORT",
+      "source": "Roles"
+    },
+    {
+      "tag": "Meta.Role.Wardog",
+      "text": "WARDOG",
+      "source": "Roles"
+    },
+    {
+      "tag": "Server.Descriptor.ChangeTeamDisabled",
+      "text": "No Team Change",
+      "source": "ServerTags"
+    },
+    {
+      "tag": "Server.Descriptor.CommunityHosted",
+      "text": "Community",
+      "source": "ServerTags"
+    },
+    {
+      "tag": "Server.Descriptor.DownedStateDisabled",
+      "text": "No Downed State",
+      "source": "ServerTags"
+    },
+    {
+      "tag": "Server.Descriptor.GiveUpDisabled",
+      "text": "No Give Up",
+      "source": "ServerTags"
+    },
+    {
+      "tag": "Server.Descriptor.Hardcore",
+      "text": "Hardcore",
+      "source": "ServerTags"
+    },
+    {
+      "tag": "Server.Descriptor.InfantryOnly",
+      "text": "Infantry Only",
+      "source": "ServerTags"
+    },
+    {
+      "tag": "Server.Descriptor.MaxAllowedPing",
+      "text": "Max Allowed Ping {Value} ms",
+      "source": "ServerTags"
+    },
+    {
+      "tag": "Server.Descriptor.MaxPlayerCash",
+      "text": "Max {Value}",
+      "source": "ServerTags"
+    },
+    {
+      "tag": "Server.Descriptor.MaxPlayerLevel",
+      "text": "Max Lvl {Value}",
+      "source": "ServerTags"
+    },
+    {
+      "tag": "Server.Descriptor.MinPlayerCash",
+      "text": "Min {Value}",
+      "source": "ServerTags"
+    },
+    {
+      "tag": "Server.Descriptor.MinPlayerLevel",
+      "text": "Min Lvl {Value}",
+      "source": "ServerTags"
+    },
+    {
+      "tag": "Server.Descriptor.PlayerLootingDisabled",
+      "text": "No Player Looting",
+      "source": "ServerTags"
+    },
+    {
+      "tag": "Server.Descriptor.RebuyDisabled",
+      "text": "No Rebuy",
+      "source": "ServerTags"
+    },
+    {
+      "tag": "Server.Descriptor.ReducedHUD",
+      "text": "Reduced HUD",
+      "source": "ServerTags"
+    },
+    {
+      "tag": "Server.Descriptor.ReducedHUD.CashFeed",
+      "text": "Cash Feed",
+      "source": "ServerTags"
+    },
+    {
+      "tag": "Server.Descriptor.ReducedHUD.DynamicCrosshair",
+      "text": "Dynamic Crosshair",
+      "source": "ServerTags"
+    },
+    {
+      "tag": "Server.Descriptor.ReducedHUD.HudAmmo",
+      "text": "HUD Ammo",
+      "source": "ServerTags"
+    },
+    {
+      "tag": "Server.Descriptor.ReducedHUD.KillfeedSquadOnly",
+      "text": "Killfeed (Squad Only)",
+      "source": "ServerTags"
+    },
+    {
+      "tag": "Server.Descriptor.ReducedHUD.MinimapHealth",
+      "text": "Minimap Health",
+      "source": "ServerTags"
+    },
+    {
+      "tag": "Server.Descriptor.ReducedHUD.QuickSlots",
+      "text": "QuickSlots",
+      "source": "ServerTags"
+    },
+    {
+      "tag": "Server.Descriptor.ReturnToSpawnDisabled",
+      "text": "No Return To Spawn",
+      "source": "ServerTags"
+    },
+    {
+      "tag": "Server.Descriptor.VaultDisabled",
+      "text": "No Vault",
+      "source": "ServerTags"
+    },
+    {
+      "tag": "State.Player.Weight.Heavy",
+      "text": "Heavy",
+      "source": "PlayerStates"
+    },
+    {
+      "tag": "State.Player.Weight.Heavy",
+      "text": "HEAVY",
+      "source": "Tooltips"
+    },
+    {
+      "tag": "State.Player.Weight.Light",
+      "text": "Light",
+      "source": "PlayerStates"
+    },
+    {
+      "tag": "State.Player.Weight.Light",
+      "text": "LIGHT",
+      "source": "Tooltips"
+    },
+    {
+      "tag": "State.Player.Weight.Lightest",
+      "text": "Lightest",
+      "source": "PlayerStates"
+    },
+    {
+      "tag": "State.Player.Weight.Lightest",
+      "text": "LIGHTEST",
+      "source": "Tooltips"
+    },
+    {
+      "tag": "State.Player.Weight.Medium",
+      "text": "Medium",
+      "source": "PlayerStates"
+    },
+    {
+      "tag": "State.Player.Weight.Medium",
+      "text": "MEDIUM",
+      "source": "Tooltips"
+    },
+    {
+      "tag": "State.Player.Weight.SuperHeavy",
+      "text": "Super Heavy",
+      "source": "PlayerStates"
+    },
+    {
+      "tag": "State.Player.Weight.SuperHeavy",
+      "text": "SUPER HEAVY",
+      "source": "Tooltips"
+    },
+    {
+      "tag": "Tutorials.BuyingYourLoadout",
+      "text": "Buying Your Loadout",
+      "source": "Tutorials"
+    },
+    {
+      "tag": "Tutorials.TheBasics",
+      "text": "The Basics",
+      "source": "Tutorials"
+    },
+    {
+      "tag": "Tutorials.TravelToObjective",
+      "text": "Travel To Objective",
+      "source": "Tutorials"
+    },
+    {
+      "tag": "Tutorials.UsingEquipment",
+      "text": "Using Equipment",
+      "source": "Tutorials"
+    },
+    {
+      "tag": "Tutorials.Vehicles",
+      "text": "Vehicles",
+      "source": "Tutorials"
+    },
+    {
+      "tag": "UI.Action.Feature.Inventory.Discard",
+      "text": "Drop",
+      "source": "Prompts"
+    },
+    {
+      "tag": "UI.Action.Feature.Vendor.Destroy",
+      "text": "Delete Item / Stack",
+      "source": "Prompts"
+    },
+    {
+      "tag": "UI.Action.Feature.Vendor.Purchase",
+      "text": "Add to Loadout",
+      "source": "Prompts"
+    },
+    {
+      "tag": "UI.Action.Feature.Vendor.Refund",
+      "text": "Remove from Loadout",
+      "source": "Prompts"
+    },
+    {
+      "tag": "UI.Features.ServerBrowser.Filter.GameMode.Standard",
+      "text": "Standard",
+      "source": "ServerTags"
+    },
+    {
+      "tag": "UI.Item.Purchase.Requirement.Incomplete.Reason.TeamScore",
+      "text": "Locked until match score reaches {Value}",
+      "source": "Tooltips"
+    },
+    {
+      "tag": "UI.Scene.Frontend.Blackmarket",
+      "text": "Black Market",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Frontend.Blackmarket.Investments",
+      "text": "Investments",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Frontend.Blackmarket.Missions",
+      "text": "Missions",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Frontend.Blackmarket.Unlocks",
+      "text": "Unlocks",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Frontend.Career",
+      "text": "Unlock",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Frontend.Collection",
+      "text": "Collection",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Frontend.Customize",
+      "text": "Customize",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Frontend.DeploymentSelect",
+      "text": "Deploy",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Frontend.FindMatch",
+      "text": "Server Browser",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Frontend.GoldMarket",
+      "text": "Gold Market",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Frontend.Home",
+      "text": "Play",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Frontend.LearnToPlay",
+      "text": "Learn To Play",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Frontend.Loadouts",
+      "text": "Loadouts",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Frontend.Mailbox",
+      "text": "Mailbox",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Frontend.Progression",
+      "text": "Progression",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Frontend.Tutorials",
+      "text": "Tutorials",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Frontend.Vault",
+      "text": "Vault",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Frontend.Wardog",
+      "text": "Wardog",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Frontend.Wardog.Customize",
+      "text": "Customize",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Frontend.Wardog.Mastery.Roles",
+      "text": "Role Mastery",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Match.GameOver",
+      "text": "Score",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Match.GameOver.Scoreboard",
+      "text": "Scoreboard",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Match.GameOver.XPProgression",
+      "text": "Progression",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Match.Inventory",
+      "text": "Inventory",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Match.Scoreboard",
+      "text": "Scoreboard",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Match.VehicleSupplyCrate",
+      "text": "Supply Crate",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Match.Vendor.Equipment",
+      "text": "Equipment Vendor",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Match.Vendor.Garage",
+      "text": "Garage Vendor",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Match.Vendor.Vehicles",
+      "text": "Vehicle Vendor",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Match.Vendor.Wagers",
+      "text": "Wager Vendor",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Match.WagerStatus",
+      "text": "Wager",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Scene.Shared.Settings",
+      "text": "Settings",
+      "source": "SceneNames"
+    },
+    {
+      "tag": "UI.Tooltip.Layout.ItemDescription.Entry.Warning.Container.Empty",
+      "text": "(Empty)",
+      "source": "Tooltips"
+    },
+    {
+      "tag": "UI.Tooltip.Layout.ItemDescription.Entry.Warning.Container.Full",
+      "text": "(Full)",
+      "source": "Tooltips"
+    },
+    {
+      "tag": "UI.Tooltip.Layout.ItemDescription.Entry.Warning.Container.Partial",
+      "text": "(Partial)",
+      "source": "Tooltips"
+    },
+    {
+      "tag": "UI.Tooltip.Layout.ItemDescription.Entry.Warning.NonRefundable",
+      "text": "Cannot refund purchased item",
+      "source": "Tooltips"
+    },
+    {
+      "tag": "Vehicle.Archetype.Air.Rotary",
+      "text": "Rotary",
+      "source": "Archetypes"
+    },
+    {
+      "tag": "Vehicle.Archetype.Land.Tracked",
+      "text": "Tracked",
+      "source": "Archetypes"
+    },
+    {
+      "tag": "Vehicle.Archetype.Land.Wheeled",
+      "text": "Wheeled",
+      "source": "Archetypes"
+    },
+    {
+      "tag": "Vendor.Category.All",
+      "text": "All",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Ammo",
+      "text": "Ammo",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Ammo.Type.ArmorPiercing",
+      "text": "Armor Piercing (AP)",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Ammo.Type.ArmorPiercingTracer",
+      "text": "Armor Piercing (AP)",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Ammo.Type.Arrow",
+      "text": "Arrow",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Ammo.Type.Cartridge",
+      "text": "Cartridge",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Ammo.Type.FMJ",
+      "text": "Standard (FMJ)",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Ammo.Type.FMJTracer",
+      "text": "Standard (FMJ)",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Ammo.Type.HollowPoint",
+      "text": "Flesh Damage (HP)",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Ammo.Type.HollowPointTracer",
+      "text": "Flesh Damage (HP)",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Ammo.Type.Standard",
+      "text": "Rockets",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Ammo.Type.Tracer",
+      "text": "Tracer",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Attachment",
+      "text": "Attachment",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Attachment.Barrel",
+      "text": "Barrel",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Attachment.Barrel.FlashHider",
+      "text": "Flash Hider",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Attachment.Bipod",
+      "text": "Bipod",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Attachment.Grip",
+      "text": "Grip",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Attachment.Grip.Angled",
+      "text": "Angled",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Attachment.Grip.Vertical",
+      "text": "Vertical",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Attachment.Magazine",
+      "text": "Magazine",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Attachment.Sight",
+      "text": "Sight",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Attachment.Sight.Canted",
+      "text": "Canted",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Attachment.Sight.Range.Long",
+      "text": "Long",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Attachment.Sight.Range.Medium",
+      "text": "Medium",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Attachment.Sight.Range.Short",
+      "text": "Short",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Attachment.Underbarrel",
+      "text": "Underbarrel",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Blueprint",
+      "text": "Blueprints",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Garage.Overview",
+      "text": "Overview",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Garage.SupplyCrate",
+      "text": "Supply Crate",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Garage.VehicleStorage",
+      "text": "Vehicle Storage",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Gear",
+      "text": "Gear",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Gear.Armor",
+      "text": "Armor",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Gear.Backpack",
+      "text": "Backpack",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Gear.Camouflage",
+      "text": "Camouflage",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Gear.Headgear",
+      "text": "Headgear",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Gear.Helmet",
+      "text": "Helmet",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Gear.Traversal",
+      "text": "Traversal",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Gear.VehicleUse",
+      "text": "Vehicle Use",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Gear.Vest",
+      "text": "Vest",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Magazine.Size",
+      "text": "Magazine Size",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Magazine.Size.Extended",
+      "text": "Extended",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Magazine.Size.Standard",
+      "text": "Rockets",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Recommended",
+      "text": "Recommended",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Sub.Vehicle.Air.Combat",
+      "text": "Combat",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Sub.Vehicle.Air.Transport",
+      "text": "Transport",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Sub.Vehicle.Land.Artillery",
+      "text": "Artillery",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Sub.Vehicle.Land.Tank",
+      "text": "Tank",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Sub.Vehicle.Land.Transport",
+      "text": "Transport",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Sub.Vehicle.Logistics.FOB",
+      "text": "FOB",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Sub.Vehicle.Logistics.Pallet",
+      "text": "Supply Pallets",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Sub.Vehicle.SupplyCrate.Large",
+      "text": "Large Crates",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Sub.Vehicle.SupplyCrate.Small",
+      "text": "Small Crates",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Utility",
+      "text": "Utility",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Utility.Type.Building",
+      "text": "Building",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Utility.Type.Medical",
+      "text": "Medical",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Utility.Type.Misc",
+      "text": "Misc",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Utility.Type.Offensive",
+      "text": "Tactical",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Utility.Type.Recon",
+      "text": "Recon",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Utility.Type.Vehicle",
+      "text": "Vehicle",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Vehicle",
+      "text": "Vehicle",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Vehicle.Air",
+      "text": "Air",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Vehicle.Ammo",
+      "text": "Vehicle Ammo",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Vehicle.AmmoType",
+      "text": "Ammo Type",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Vehicle.CounterMeasures",
+      "text": "Counter Measures",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Vehicle.CounterMeasures.Flares",
+      "text": "Flares",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Vehicle.CounterMeasures.Smoke",
+      "text": "Smokes",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Vehicle.Garage",
+      "text": "Garage",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Vehicle.Land",
+      "text": "Land",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Vehicle.Music",
+      "text": "Music Tapes",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Vehicle.Sea",
+      "text": "Sea",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Vehicle.SupplyCrate",
+      "text": "Supply Crate",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Weapon",
+      "text": "Weapon",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Weapon.Type.AssaultRifle",
+      "text": "Assault Rifle",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Weapon.Type.Bow",
+      "text": "Bows",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Weapon.Type.Drill",
+      "text": "Drill",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Weapon.Type.Launcher",
+      "text": "Launcher",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Weapon.Type.LMG",
+      "text": "LMG",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Weapon.Type.MarksmanRifle",
+      "text": "Marksman Rifle",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Weapon.Type.Pistol",
+      "text": "Pistol",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Weapon.Type.Shotgun",
+      "text": "Shotgun",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Weapon.Type.SMG",
+      "text": "SMG",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Weapon.Type.Sniper",
+      "text": "Sniper",
+      "source": "Categories"
+    },
+    {
+      "tag": "Vendor.Category.Weapon.Type.Tool",
+      "text": "Tool",
+      "source": "Categories"
+    }
+  ]
+}

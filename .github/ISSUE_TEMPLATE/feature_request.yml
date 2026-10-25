@@ -1,0 +1,21 @@
+name: Feature proposal
+description: Propose a focused improvement to the player experience.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What player problem would this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Smallest useful solution
+      description: Explain how it stays simple and where it belongs in the interface.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Alternatives and data requirements
+      description: Link relevant sources and explain assumptions or unknowns.

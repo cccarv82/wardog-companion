@@ -1,0 +1,1100 @@
+{
+  "schemaVersion": 1,
+  "gameBuild": "25937608",
+  "units": "meters",
+  "projectiles": [
+    {
+      "id": "Item.Caliber.120x570mm",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/120x570mm/DA_120x570mm_ProjectileData",
+      "damage": 150,
+      "damageType": "Meta.Damage.Explosive.Rocket.120mm",
+      "damageContext": [],
+      "massKg": 20,
+      "diameterMm": 120,
+      "lengthMm": 570,
+      "drag": {
+        "coefficient": 10,
+        "model": "GC (Cylinder)"
+      },
+      "typicalSpeed": 224,
+      "penetration": {
+        "penetrates": false,
+        "ricochetMinAngle": 91
+      },
+      "explosive": {
+        "radius": 7.5,
+        "effectiveRadius": 4.2,
+        "falloff": 0.3,
+        "minimumDamage": 30,
+        "bluntDamage": 150
+      },
+      "suppression": 0.9,
+      "propulsion": {
+        "thrustSpeed": 220
+      },
+      "items": [
+        "ID.Item.120x570mm"
+      ]
+    },
+    {
+      "id": "Item.Caliber.120x800mm.Standard",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/120x800mm/DA_120x800mm_Standard_ProjectileData",
+      "damage": 120,
+      "damageType": "Meta.Damage.Explosive.Rocket.120x800mm",
+      "damageContext": [],
+      "massKg": 15,
+      "diameterMm": 120,
+      "lengthMm": 80,
+      "drag": {
+        "coefficient": 11.5,
+        "model": "GC (Cylinder)"
+      },
+      "typicalSpeed": 150,
+      "penetration": {
+        "penetrates": false,
+        "ricochetMinAngle": 91
+      },
+      "explosive": {
+        "radius": 10,
+        "effectiveRadius": 5,
+        "falloff": 0.45,
+        "minimumDamage": 15,
+        "bluntDamage": 120
+      },
+      "suppression": 0.9,
+      "propulsion": {
+        "thrustSpeed": 220
+      },
+      "items": [
+        "Id.Item.120x800mm"
+      ]
+    },
+    {
+      "id": "Item.Caliber.122mm",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122mm_ProjectileData",
+      "damage": 100,
+      "damageType": "Meta.Damage.Explosive.Rocket.122mm",
+      "damageContext": [],
+      "massKg": 57,
+      "diameterMm": 122,
+      "lengthMm": 2540,
+      "drag": {
+        "model": "GC (Cylinder)"
+      },
+      "typicalSpeed": 1430,
+      "penetration": {
+        "penetrates": false,
+        "penetratesThinSurfaces": true,
+        "effectivenessMultiplier": 2,
+        "ricochetMinAngle": 91
+      },
+      "explosive": {
+        "radius": 6,
+        "effectiveRadius": 2,
+        "falloff": 1,
+        "minimumDamage": 10,
+        "bluntDamage": 50
+      },
+      "suppression": 0.9,
+      "propulsion": {
+        "thrustSpeed": 200
+      },
+      "items": [
+        "Id.Item.122mm"
+      ]
+    },
+    {
+      "id": "Item.Caliber.122mm.Havoc",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/122mm/DA_122_mm_HAVOC_ProjectileData",
+      "damage": 300,
+      "damageType": "Meta.Damage.Explosive.Rocket.122mm",
+      "damageContext": [],
+      "massKg": 57,
+      "diameterMm": 122,
+      "lengthMm": 2540,
+      "drag": {
+        "model": "GC (Cylinder)"
+      },
+      "typicalSpeed": 1430,
+      "penetration": {
+        "penetrates": false,
+        "penetratesThinSurfaces": true,
+        "effectivenessMultiplier": 2,
+        "ricochetMinAngle": 91
+      },
+      "explosive": {
+        "radius": 3,
+        "effectiveRadius": 6,
+        "falloff": 0.6
+      },
+      "suppression": 0.9,
+      "propulsion": {
+        "thrustSpeed": 200
+      },
+      "items": []
+    },
+    {
+      "id": "Item.Caliber.125x570mm",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/125x570mm/DA_125x570mm_ProjectileData",
+      "damage": 150,
+      "damageType": "Meta.Damage.Explosive.Rocket.125mm",
+      "damageContext": [],
+      "massKg": 23,
+      "diameterMm": 125,
+      "lengthMm": 650,
+      "drag": {
+        "coefficient": 10,
+        "model": "GC (Cylinder)"
+      },
+      "typicalSpeed": 224,
+      "penetration": {
+        "penetrates": false,
+        "ricochetMinAngle": 91
+      },
+      "explosive": {
+        "radius": 7.5,
+        "effectiveRadius": 4.2,
+        "falloff": 0.3,
+        "minimumDamage": 30,
+        "bluntDamage": 150
+      },
+      "suppression": 1,
+      "propulsion": {
+        "thrustSpeed": 220
+      },
+      "items": [
+        "ID.Item.125x570mm"
+      ]
+    },
+    {
+      "id": "Item.Caliber.12g.RifledSlug",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/7mm_Buckshot/DA_12g_RifledSlug_ProjectileData",
+      "damage": 105,
+      "damageType": "Meta.Damage.Bullet.12g.RifledSlug",
+      "damageContext": [
+        "Meta.Damage.Arms.Small"
+      ],
+      "massKg": 0.028,
+      "diameterMm": 18.5,
+      "lengthMm": 30,
+      "drag": {
+        "model": "GL (Blunt Nose)"
+      },
+      "typicalSpeed": 298,
+      "penetration": {
+        "exitSpeedMultiplier": 0.12
+      },
+      "suppression": 0.45,
+      "items": [
+        "Id.Item.12g.RifledSlug"
+      ]
+    },
+    {
+      "id": "Item.Caliber.155mm.Expensive",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/155mm/DA_155mm_Expensive_ProjectileData",
+      "damage": 450,
+      "damageType": "Meta.Damage.Explosive.Rocket.155mm",
+      "damageContext": [],
+      "massKg": 19,
+      "diameterMm": 105,
+      "lengthMm": 400,
+      "drag": {
+        "coefficient": 2.5,
+        "model": "GC (Cylinder)"
+      },
+      "typicalSpeed": 150,
+      "penetration": {
+        "penetrates": false,
+        "ricochetMinAngle": 91
+      },
+      "explosive": {
+        "radius": 20,
+        "effectiveRadius": 10,
+        "falloff": 0.93,
+        "bluntDamage": 100
+      },
+      "suppression": 0.8,
+      "propulsion": {
+        "thrustSpeed": 220
+      },
+      "items": [
+        "ID.Item.155mm.Expensive"
+      ]
+    },
+    {
+      "id": "Item.Caliber.155mm.Expensive.Sandbox",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/155mm/DA_155mm_Expensive_ProjectileData_SB",
+      "damage": 450,
+      "damageType": "Meta.Damage.Explosive.Rocket.155mm",
+      "damageContext": [],
+      "massKg": 70,
+      "diameterMm": 84,
+      "lengthMm": 254,
+      "drag": {
+        "coefficient": 80,
+        "model": "GC (Cylinder)"
+      },
+      "typicalSpeed": 150,
+      "penetration": {
+        "penetrates": false,
+        "ricochetMinAngle": 91
+      },
+      "explosive": {
+        "radius": 20,
+        "effectiveRadius": 7.5,
+        "falloff": 0.5
+      },
+      "suppression": 0.8,
+      "propulsion": {
+        "thrustSpeed": 220
+      },
+      "items": [
+        "ID.Item.155mm.Expensive.Sandbox"
+      ]
+    },
+    {
+      "id": "Item.Caliber.155mm.Standard",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/155mm/DA_155mm_Standard_ProjectileData",
+      "damage": 450,
+      "damageType": "Meta.Damage.Explosive.Rocket.155mm",
+      "damageContext": [],
+      "massKg": 70,
+      "diameterMm": 84,
+      "lengthMm": 254,
+      "drag": {
+        "coefficient": 80,
+        "model": "GC (Cylinder)"
+      },
+      "typicalSpeed": 150,
+      "penetration": {
+        "penetrates": false,
+        "ricochetMinAngle": 91
+      },
+      "explosive": {
+        "radius": 20,
+        "effectiveRadius": 7.5,
+        "falloff": 0.5
+      },
+      "suppression": 0.8,
+      "propulsion": {
+        "thrustSpeed": 220
+      },
+      "items": [
+        "ID.Item.155mm",
+        "ID.Item.155mm.Standard"
+      ]
+    },
+    {
+      "id": "Item.Caliber.155mm.Standard.Sandbox",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/155mm/DA_155mm_Standard_ProjectileData_SB",
+      "damage": 450,
+      "damageType": "Meta.Damage.Explosive.Rocket.155mm",
+      "damageContext": [],
+      "massKg": 70,
+      "diameterMm": 84,
+      "lengthMm": 254,
+      "drag": {
+        "coefficient": 80,
+        "model": "GC (Cylinder)"
+      },
+      "typicalSpeed": 150,
+      "penetration": {
+        "penetrates": false,
+        "ricochetMinAngle": 91
+      },
+      "explosive": {
+        "radius": 20,
+        "effectiveRadius": 7.5,
+        "falloff": 0.5
+      },
+      "suppression": 0.8,
+      "propulsion": {
+        "thrustSpeed": 220
+      },
+      "items": [
+        "ID.Item.155mm.Sandbox",
+        "ID.Item.155mm.Standard.Sandbox"
+      ]
+    },
+    {
+      "id": "Item.Caliber.20x102mm",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/20x102mm/DA_20x102mm",
+      "damage": 60,
+      "damageType": "Meta.Damage.Cannon.20x102mm",
+      "damageContext": [],
+      "massKg": 0.04,
+      "diameterMm": 10,
+      "lengthMm": 99,
+      "drag": {
+        "model": "G7 (Boat Tail)"
+      },
+      "typicalSpeed": 224,
+      "penetration": {
+        "effectivenessMultiplier": 1.8,
+        "ricochetMinAngle": 91
+      },
+      "explosive": {
+        "effectiveRadius": 3.75,
+        "falloff": 0.7
+      },
+      "suppression": 0.6,
+      "propulsion": {
+        "thrustSpeed": 220
+      },
+      "items": [
+        "Id.Item.20x102mm"
+      ]
+    },
+    {
+      "id": "Item.Caliber.308Win",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/308Winchester/DA_308Winchester_ProjectileData",
+      "damage": 45,
+      "damageType": "Meta.Damage.Bullet.308Win",
+      "damageContext": [
+        "Meta.Damage.Arms.High"
+      ],
+      "massKg": 0.012,
+      "diameterMm": 7.82,
+      "lengthMm": 32,
+      "drag": {
+        "coefficient": 0.9,
+        "model": "G7 (Boat Tail)"
+      },
+      "typicalSpeed": 385,
+      "penetration": {
+        "exitSpeedMultiplier": 0.13
+      },
+      "suppression": 0.65,
+      "items": [
+        "Id.Item.308Win",
+        "Id.Item.308Win.ArmorPiercing",
+        "Id.Item.308Win.ArmorPiercing.Tracer",
+        "Id.Item.308Win.HollowPoint",
+        "Id.Item.308Win.HollowPoint.Tracer",
+        "Id.Item.308Win.Tracer"
+      ]
+    },
+    {
+      "id": "Item.Caliber.30mm",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/30mm/DA_30mm_ProjectileData",
+      "damage": 100,
+      "damageType": "Meta.Damage.Cannon.30mm",
+      "damageContext": [
+        "Meta.Damage.Arms.High"
+      ],
+      "massKg": 0.22,
+      "diameterMm": 30,
+      "lengthMm": 290,
+      "drag": {
+        "coefficient": 2,
+        "model": "GC (Cylinder)"
+      },
+      "typicalSpeed": 800,
+      "penetration": {
+        "effectivenessMultiplier": 2,
+        "ricochetMinAngle": 85
+      },
+      "explosive": {
+        "radius": 3,
+        "effectiveRadius": 1,
+        "falloff": 1,
+        "minimumDamage": 20
+      },
+      "suppression": 0.75,
+      "propulsion": {
+        "thrustSpeed": 200
+      },
+      "items": [
+        "Id.Item.30mm"
+      ]
+    },
+    {
+      "id": "Item.Caliber.338Nor",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/338NormanMagnum/DA_338Norman_ProjectileData",
+      "damage": 105,
+      "damageType": "Meta.Damage.Bullet.338Nor",
+      "damageContext": [
+        "Meta.Damage.Arms.High"
+      ],
+      "massKg": 0.01944,
+      "diameterMm": 8.6106,
+      "lengthMm": 30.2006,
+      "drag": {
+        "coefficient": 0.72,
+        "model": "G7 (Boat Tail)"
+      },
+      "typicalSpeed": 500,
+      "items": [
+        "Id.Item.338Nor",
+        "Id.Item.338Nor.ArmourPiercing",
+        "Id.Item.338Nor.ArmourPiercing.Tracer",
+        "Id.Item.338Nor.HollowPoint",
+        "Id.Item.338Nor.HollowPoint.Tracer",
+        "Id.Item.338Nor.Tracer"
+      ]
+    },
+    {
+      "id": "Item.Caliber.35x228mm",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/35x228mm/DA_35x228mm_ProjectileData",
+      "damage": 60,
+      "damageType": "Meta.Damage.Cannon.35x228mm",
+      "damageContext": [],
+      "massKg": 0.375,
+      "diameterMm": 35,
+      "lengthMm": 140,
+      "drag": {
+        "coefficient": 0.5,
+        "model": "G7 (Boat Tail)"
+      },
+      "typicalSpeed": 792,
+      "penetration": {
+        "effectivenessMultiplier": 0.75,
+        "ricochetMinAngle": 91
+      },
+      "explosive": {
+        "effectiveRadius": 3.75,
+        "falloff": 0.7
+      },
+      "suppression": 0.8,
+      "propulsion": {
+        "thrustSpeed": 220
+      },
+      "items": [
+        "ID.Item.35x228mm"
+      ]
+    },
+    {
+      "id": "Item.Caliber.40mm",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/40mm/DA_40mm_ProjectileData",
+      "damage": 100,
+      "damageType": "Meta.Damage.Explosive.Grenade.40mm",
+      "damageContext": [],
+      "massKg": 0.23,
+      "diameterMm": 40,
+      "lengthMm": 98.806,
+      "drag": {
+        "coefficient": 0.8,
+        "model": "GC (Cylinder)"
+      },
+      "typicalSpeed": 75,
+      "penetration": {
+        "penetrates": false,
+        "penetratesThinSurfaces": true,
+        "ricochetMinAngle": 91
+      },
+      "explosive": {
+        "radius": 10,
+        "effectiveRadius": 2.5,
+        "falloff": 1,
+        "bluntDamage": 80
+      },
+      "propulsion": {
+        "thrustSpeed": 200
+      },
+      "items": [
+        "Id.Item.40mm"
+      ]
+    },
+    {
+      "id": "Item.Caliber.45ACP",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/45ACP/DA_45ACP_ProjectileData",
+      "damage": 30,
+      "damageType": "Meta.Damage.Bullet.45ACP",
+      "damageContext": [
+        "Meta.Damage.Arms.Small"
+      ],
+      "massKg": 0.015,
+      "diameterMm": 11.5,
+      "lengthMm": 9.5758,
+      "drag": {
+        "coefficient": 1.27,
+        "model": "G1 (Flat Bottom)"
+      },
+      "typicalSpeed": 322,
+      "penetration": {
+        "exitSpeedMultiplier": 0.32
+      },
+      "suppression": 0.15,
+      "items": [
+        "Id.Item.45ACP",
+        "Id.Item.45ACP.ArmorPiercing",
+        "Id.Item.45ACP.ArmorPiercing.Tracer",
+        "Id.Item.45ACP.HollowPoint",
+        "Id.Item.45ACP.HollowPoint.Tracer",
+        "Id.Item.45ACP.Tracer"
+      ]
+    },
+    {
+      "id": "Item.Caliber.45Colt",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/45Colt/DA_45Colt_ProjectileData",
+      "damage": 45,
+      "damageType": "Meta.Damage.Bullet.45Colt",
+      "damageContext": [
+        "Meta.Damage.Arms.Small"
+      ],
+      "massKg": 0.01,
+      "diameterMm": 11.4,
+      "lengthMm": 18.796,
+      "drag": {
+        "model": "G1 (Flat Bottom)"
+      },
+      "typicalSpeed": 292,
+      "penetration": {
+        "exitSpeedMultiplier": 0.3
+      },
+      "suppression": 0.22,
+      "items": [
+        "Id.Item.45Colt",
+        "Id.Item.45Colt.ArmorPiercing",
+        "Id.Item.45Colt.ArmorPiercing.Tracer",
+        "Id.Item.45Colt.HollowPoint",
+        "Id.Item.45Colt.HollowPoint.Tracer",
+        "Id.Item.45Colt.Tracer"
+      ]
+    },
+    {
+      "id": "Item.Caliber.50AE",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/50AE/DA_50AE_ProjectileData",
+      "damage": 63,
+      "damageType": "Meta.Damage.Bullet.50AE",
+      "damageContext": [
+        "Meta.Damage.Arms.High"
+      ],
+      "massKg": 0.019,
+      "diameterMm": 12.7,
+      "lengthMm": 32,
+      "drag": {
+        "model": "G7 (Boat Tail)"
+      },
+      "typicalSpeed": 416,
+      "penetration": {
+        "exitSpeedMultiplier": 0.08
+      },
+      "suppression": 0.32,
+      "items": [
+        "Id.Item.50AE",
+        "Id.Item.50AE.ArmorPiercing",
+        "Id.Item.50AE.ArmorPiercing.Tracer",
+        "Id.Item.50AE.HollowPoint",
+        "Id.Item.50AE.HollowPoint.Tracer",
+        "Id.Item.50AE.Tracer"
+      ]
+    },
+    {
+      "id": "Item.Caliber.50Cal",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/50Cal/DA_50Cal_ProjectileData",
+      "damage": 90,
+      "damageType": "Meta.Damage.Bullet.50Cal",
+      "damageContext": [
+        "Meta.Damage.Arms.Special"
+      ],
+      "massKg": 0.051,
+      "diameterMm": 12.954,
+      "lengthMm": 58.67,
+      "drag": {
+        "model": "G7 (Boat Tail)"
+      },
+      "typicalSpeed": 315,
+      "penetration": {
+        "exitSpeedMultiplier": 0.05,
+        "effectivenessMultiplier": 3.5
+      },
+      "suppression": 0.75,
+      "items": [
+        "Id.Item.50Cal",
+        "Id.Item.50Cal.ArmorPiercing",
+        "Id.Item.50Cal.ArmorPiercing.Tracer",
+        "Id.Item.50Cal.HollowPoint",
+        "Id.Item.50Cal.HollowPoint.Tracer",
+        "Id.Item.50Cal.Tracer"
+      ]
+    },
+    {
+      "id": "Item.Caliber.545mm",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/545mm/DA_545mm_ProjectileData",
+      "damage": 26,
+      "damageType": "Meta.Damage.Bullet.545mm",
+      "damageContext": [
+        "Meta.Damage.Arms.Medium"
+      ],
+      "massKg": 0.0034,
+      "diameterMm": 5.6,
+      "lengthMm": 17.1704,
+      "drag": {
+        "coefficient": 1.4,
+        "model": "G7 (Boat Tail)"
+      },
+      "typicalSpeed": 300,
+      "suppression": 0.3,
+      "items": [
+        "Id.Item.545mm",
+        "Id.Item.545mm.ArmorPiercing",
+        "Id.Item.545mm.ArmorPiercing.Tracer",
+        "Id.Item.545mm.HollowPoint",
+        "Id.Item.545mm.HollowPoint.Tracer",
+        "Id.Item.545mm.Tracer"
+      ]
+    },
+    {
+      "id": "Item.Caliber.556mm",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/556mm/DA_556mm_ProjectileData",
+      "damage": 28,
+      "damageType": "Meta.Damage.Bullet.556mm",
+      "damageContext": [
+        "Meta.Damage.Arms.Medium"
+      ],
+      "massKg": 0.0041,
+      "diameterMm": 5.7,
+      "lengthMm": 12.696,
+      "drag": {
+        "coefficient": 1.26,
+        "model": "G7 (Boat Tail)"
+      },
+      "typicalSpeed": 404,
+      "penetration": {
+        "exitSpeedMultiplier": 0.18
+      },
+      "suppression": 0.3,
+      "items": [
+        "Id.Item.556mm",
+        "Id.Item.556mm.ArmorPiercing",
+        "Id.Item.556mm.ArmorPiercing.Tracer",
+        "Id.Item.556mm.HollowPoint",
+        "Id.Item.556mm.HollowPoint.Tracer",
+        "Id.Item.556mm.Tracer"
+      ]
+    },
+    {
+      "id": "Item.Caliber.70mm",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/70mm/DA_70mm_ProjectileData",
+      "damage": 100,
+      "damageType": "Meta.Damage.Explosive.Rocket.60mm",
+      "damageContext": [],
+      "massKg": 10.1,
+      "diameterMm": 120,
+      "lengthMm": 1370,
+      "drag": {
+        "model": "GC (Cylinder)"
+      },
+      "typicalSpeed": 224,
+      "penetration": {
+        "penetrates": false,
+        "ricochetMinAngle": 100
+      },
+      "explosive": {
+        "radius": 10,
+        "effectiveRadius": 4,
+        "falloff": 0.5
+      },
+      "suppression": 0.7,
+      "propulsion": {
+        "thrustSpeed": 220,
+        "guided": true
+      },
+      "items": [
+        "ID.Item.70mm"
+      ]
+    },
+    {
+      "id": "Item.Caliber.72mm",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/72mm/DA_72mm_ProjectileData",
+      "damage": 200,
+      "damageType": "Meta.Damage.Explosive.Rocket.72mm",
+      "damageContext": [],
+      "massKg": 9.2,
+      "diameterMm": 72,
+      "lengthMm": 1420,
+      "drag": {
+        "model": "G7 (Boat Tail)"
+      },
+      "typicalSpeed": 450,
+      "penetration": {
+        "penetrates": false,
+        "penetratesThinSurfaces": true,
+        "ricochetMinAngle": 91
+      },
+      "explosive": {
+        "radius": 10.8,
+        "effectiveRadius": 2,
+        "falloff": 0.8,
+        "bluntDamage": 120
+      },
+      "suppression": 0.85,
+      "propulsion": {
+        "thrustSpeed": 175,
+        "fuel": 180,
+        "guided": true
+      },
+      "items": [
+        "Id.Item.72mm"
+      ]
+    },
+    {
+      "id": "Item.Caliber.762mm",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/762mm/DA_762mm_ProjectileData",
+      "damage": 34,
+      "damageType": "Meta.Damage.Bullet.762mm",
+      "damageContext": [
+        "Meta.Damage.Arms.High"
+      ],
+      "massKg": 0.008,
+      "diameterMm": 7.92,
+      "lengthMm": 14.986,
+      "drag": {
+        "coefficient": 1.2,
+        "model": "G7 (Boat Tail)"
+      },
+      "typicalSpeed": 386,
+      "penetration": {
+        "exitSpeedMultiplier": 0.15
+      },
+      "items": [
+        "Id.Item.762mm",
+        "Id.Item.762mm.ArmorPiercing",
+        "Id.Item.762mm.ArmorPiercing.Tracer",
+        "Id.Item.762mm.HollowPoint",
+        "Id.Item.762mm.HollowPoint.Tracer",
+        "Id.Item.762mm.Tracer"
+      ]
+    },
+    {
+      "id": "Item.Caliber.762x51mm",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/726x51mm/DA_762x51mm_ProjectileData",
+      "damage": 60,
+      "damageType": "Meta.Damage.Bullet.762x51mm",
+      "damageContext": [
+        "Meta.Damage.Arms.High"
+      ],
+      "massKg": 0.01,
+      "diameterMm": 7.82,
+      "lengthMm": 27.89936,
+      "drag": {
+        "coefficient": 0.89,
+        "model": "G7 (Boat Tail)"
+      },
+      "suppression": 0.6,
+      "items": [
+        "Id.Item.762x51mm",
+        "Id.Item.762x51mm.ArmorPiercing",
+        "Id.Item.762x51mm.ArmorPiercing.Tracer",
+        "Id.Item.762x51mm.HollowPoint",
+        "Id.Item.762x51mm.HollowPoint.Tracer",
+        "Id.Item.762x51mm.Tracer"
+      ]
+    },
+    {
+      "id": "Item.Caliber.762x54mm",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/762x54mm/DA_762x54mm_ProjectileData",
+      "damage": 44,
+      "damageType": "Meta.Damage.Bullet.762x54mm",
+      "damageContext": [
+        "Meta.Damage.Arms.High"
+      ],
+      "massKg": 0.011729,
+      "diameterMm": 7.9248,
+      "lengthMm": 30.48,
+      "drag": {
+        "coefficient": 0.9,
+        "model": "G7 (Boat Tail)"
+      },
+      "typicalSpeed": 430,
+      "penetration": {
+        "exitSpeedMultiplier": 0.14
+      },
+      "suppression": 0.65,
+      "items": [
+        "Id.Item.762x54mm",
+        "Id.Item.762x54mm.ArmorPiercing",
+        "Id.Item.762x54mm.ArmorPiercing.Tracer",
+        "Id.Item.762x54mm.HollowPoint",
+        "Id.Item.762x54mm.HollowPoint.Tracer",
+        "Id.Item.762x54mm.Tracer"
+      ]
+    },
+    {
+      "id": "Item.Caliber.7mmBuck",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/7mm_Buckshot/DA_7mmBuckshot_ProjectileData",
+      "damage": 25,
+      "damageType": "Meta.Damage.Bullet.12g.7mmBuckshot",
+      "damageContext": [
+        "Meta.Damage.Arms.Small"
+      ],
+      "massKg": 0.004,
+      "diameterMm": 8.3282,
+      "lengthMm": 7,
+      "drag": {
+        "coefficient": 1.3,
+        "model": "GA (Pellet)"
+      },
+      "typicalSpeed": 292,
+      "penetration": {
+        "exitSpeedMultiplier": 0.28
+      },
+      "suppression": 0.2,
+      "items": [
+        "Id.Item.12g",
+        "Id.Item.12g.7mmBuck"
+      ]
+    },
+    {
+      "id": "Item.Caliber.84mm",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/84mm/DA_84mm_ProjectileData",
+      "damage": 100,
+      "damageType": "Meta.Damage.Explosive.Rocket.84mm",
+      "damageContext": [],
+      "massKg": 2.3,
+      "diameterMm": 84,
+      "lengthMm": 254,
+      "drag": {
+        "model": "GC (Cylinder)"
+      },
+      "typicalSpeed": 224,
+      "penetration": {
+        "penetrates": false,
+        "penetratesThinSurfaces": true,
+        "ricochetMinAngle": 91
+      },
+      "explosive": {
+        "radius": 10,
+        "effectiveRadius": 4,
+        "falloff": 1,
+        "bluntDamage": 120
+      },
+      "suppression": 0.85,
+      "propulsion": {
+        "thrustSpeed": 220
+      },
+      "items": [
+        "Id.Item.84mm"
+      ]
+    },
+    {
+      "id": "Item.Caliber.84mm",
+      "asset": "Content/Items/Resources/Ammo/DebugHomingRocket/DA_DebugHomingRocketData",
+      "damage": 47,
+      "damageType": "Meta.Damage.Bullet.545mm",
+      "damageContext": [],
+      "massKg": 1,
+      "diameterMm": 40,
+      "lengthMm": 370,
+      "drag": {
+        "model": "GC (Cylinder)"
+      },
+      "typicalSpeed": 1000,
+      "penetration": {
+        "penetrates": false,
+        "ricochetMinAngle": 91
+      },
+      "propulsion": {
+        "thrustSpeed": 200,
+        "fuel": 100,
+        "guided": true
+      },
+      "items": [
+        "Id.Item.DebugHomingRocketAmmo"
+      ]
+    },
+    {
+      "id": "Item.Caliber.84mm.TVGuided",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/DA_TVGuidedMissile_Data",
+      "damage": 100,
+      "damageType": "Meta.Damage.Explosive.Rocket.60mm",
+      "damageContext": [],
+      "massKg": 2.3,
+      "diameterMm": 84,
+      "lengthMm": 254,
+      "drag": {
+        "model": "GC (Cylinder)"
+      },
+      "typicalSpeed": 224,
+      "penetration": {
+        "penetrates": false,
+        "ricochetMinAngle": 85
+      },
+      "explosive": {
+        "radius": 10,
+        "effectiveRadius": 4,
+        "falloff": 0.5
+      },
+      "propulsion": {
+        "thrustSpeed": 220
+      },
+      "items": []
+    },
+    {
+      "id": "Item.Caliber.93mm",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/93mm/DA_93mm_ProjectileData",
+      "damage": 110,
+      "damageType": "Meta.Damage.Explosive.Rocket.93mm",
+      "damageContext": [],
+      "massKg": 2,
+      "diameterMm": 93,
+      "lengthMm": 720,
+      "drag": {
+        "coefficient": 1.4,
+        "model": "GC (Cylinder)"
+      },
+      "typicalSpeed": 120,
+      "penetration": {
+        "penetrates": false,
+        "penetratesThinSurfaces": true,
+        "ricochetMinAngle": 91
+      },
+      "explosive": {
+        "radius": 12,
+        "effectiveRadius": 2.5,
+        "falloff": 0.9,
+        "bluntDamage": 120
+      },
+      "suppression": 0.9,
+      "propulsion": {
+        "thrustSpeed": 170,
+        "fuel": 100
+      },
+      "items": [
+        "Id.Item.93mm"
+      ]
+    },
+    {
+      "id": "Item.Caliber.9mm",
+      "asset": "Content/GameMechanics/Inventory/Equipment/Caliber/9mm/DA_9mm_ProjectileData",
+      "damage": 22,
+      "damageType": "Meta.Damage.Bullet.9mm",
+      "damageContext": [
+        "Meta.Damage.Arms.Small"
+      ],
+      "massKg": 0.007,
+      "diameterMm": 9.017,
+      "lengthMm": 10.541,
+      "drag": {
+        "coefficient": 1.27,
+        "model": "G1 (Flat Bottom)"
+      },
+      "typicalSpeed": 280,
+      "penetration": {
+        "exitSpeedMultiplier": 0.35
+      },
+      "suppression": 0.2,
+      "items": [
+        "Id.Item.9mm",
+        "Id.Item.9mm.ArmorPiercing",
+        "Id.Item.9mm.ArmorPiercing.Tracer",
+        "Id.Item.9mm.HollowPoint",
+        "Id.Item.9mm.HollowPoint.Tracer",
+        "Id.Item.9mm.Tracer"
+      ]
+    },
+    {
+      "id": "Item.Caliber.Arrow",
+      "asset": "Plugins/GameFeatures/Items/CombatBow/Content/Data/DataAssets/Arrow/DA_Arrow_Combat_ProjectileData",
+      "damage": 77,
+      "damageType": "Meta.Damage.Bullet.Arrow",
+      "damageContext": [
+        "Meta.Damage.Arms.High"
+      ],
+      "massKg": 0.029,
+      "diameterMm": 6.5,
+      "lengthMm": 750,
+      "drag": {
+        "coefficient": 2.5
+      },
+      "typicalSpeed": 152,
+      "penetration": {
+        "penetratesThinSurfaces": true,
+        "exitSpeedMultiplier": 0.55,
+        "effectivenessMultiplier": 0.5,
+        "ricochetMinAngle": 30
+      },
+      "suppression": 0.2,
+      "propulsion": {
+        "thrustSpeed": 0.01,
+        "fuel": 1
+      },
+      "items": [
+        "Id.Item.Arrow"
+      ]
+    },
+    {
+      "id": "Item.Caliber.Arrow.Explosive",
+      "asset": "Plugins/GameFeatures/Items/CombatBow/Content/Data/DataAssets/Arrow/DA_Arrow_Explosive_ProjectileData",
+      "damage": 150,
+      "damageType": "Meta.Damage.Bullet.Arrow.Explosive",
+      "damageContext": [
+        "Meta.Damage.Arms.High"
+      ],
+      "massKg": 0.045,
+      "diameterMm": 8.5,
+      "lengthMm": 750,
+      "drag": {
+        "coefficient": 10,
+        "model": "GC (Cylinder)"
+      },
+      "typicalSpeed": 180,
+      "penetration": {
+        "penetrates": false,
+        "penetratesThinSurfaces": true,
+        "ricochetMinAngle": 50
+      },
+      "explosive": {
+        "radius": 4,
+        "effectiveRadius": 2,
+        "falloff": 1
+      },
+      "suppression": 0.5,
+      "items": [
+        "Id.Item.Arrow.Explosive"
+      ]
+    },
+    {
+      "id": "Item.Caliber.BatteryCharge",
+      "asset": "Plugins/GameFeatures/Items/Battery/Content/Data/DA_BatteryCharge_ProjectileData",
+      "damage": 40,
+      "damageType": "Meta.Damage.Bullet.556mm",
+      "damageContext": [],
+      "massKg": 0.0041,
+      "diameterMm": 5.7,
+      "lengthMm": 12.696,
+      "drag": {
+        "coefficient": 1.26,
+        "model": "G7 (Boat Tail)"
+      },
+      "typicalSpeed": 437,
+      "suppression": 0.25,
+      "items": [
+        "Id.Item.BatteryCharge"
+      ]
+    },
+    {
+      "id": "Item.Caliber.DroneProjectile",
+      "asset": "Plugins/GameFeatures/Vehicles/STN_05/Content/Data/Projectile/DA_Drone_ProjectileData",
+      "damage": 120,
+      "damageType": "Meta.Damage.Explosive.Drone",
+      "damageContext": [],
+      "massKg": 10,
+      "diameterMm": 100,
+      "lengthMm": 1300,
+      "drag": {
+        "model": "GC (Cylinder)"
+      },
+      "typicalSpeed": 150,
+      "penetration": {
+        "penetrates": false,
+        "ricochetMinAngle": 91
+      },
+      "explosive": {
+        "radius": 10,
+        "effectiveRadius": 5,
+        "falloff": 0.45,
+        "minimumDamage": 15,
+        "bluntDamage": 100
+      },
+      "suppression": 0.8,
+      "propulsion": {
+        "thrustSpeed": 220
+      },
+      "items": [
+        "Id.Item.DroneProjectile"
+      ]
+    }
+  ]
+}

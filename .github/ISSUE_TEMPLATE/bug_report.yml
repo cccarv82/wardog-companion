@@ -1,0 +1,31 @@
+name: Bug report
+description: Report a reproducible problem with the companion.
+body:
+  - type: markdown
+    attributes:
+      value: "For vulnerabilities, use the Security tab. Do not attach personal profiles or unredacted captures."
+  - type: input
+    id: version
+    attributes:
+      label: App version and Windows version
+      placeholder: "1.0.0 · Windows 11 x64 · installed or portable"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Include weapon, goal and relevant constraints for recommendation issues.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Source build/revision, error text, or a screenshot with personal information removed.

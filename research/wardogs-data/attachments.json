@@ -1,0 +1,6354 @@
+{
+  "schemaVersion": 1,
+  "gameBuild": "25937608",
+  "attachments": [
+    {
+      "id": "Id.Item.10xScopeMoa",
+      "name": "6-10x Scope MOA",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Sight.Long"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiply",
+          "value": 1.15
+        },
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 6
+        },
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 1000
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.WeaponSway.StabilizationTimeMultiplier",
+          "op": "override",
+          "value": 1.6
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 1.8
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 1.4
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.3xScope",
+      "name": "Spitfire 3X",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Sight.Medium"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 3
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        },
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 300
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.1
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.WeaponSway.StabilizationTimeMultiplier",
+          "op": "multiply",
+          "value": 1.35
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.4xElcanSpectr",
+      "name": "4x Elcan Spectr",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Sight.Medium"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 400
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.WeaponSway.StabilizationTimeMultiplier",
+          "op": "multiply",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.6xScope",
+      "name": "3-6x Scope",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Sight.Long"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 3
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "add",
+          "value": 0.2
+        },
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 500
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.A91Barrel",
+      "name": "A91 Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.A91"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.A91Mag",
+      "name": "A91 Standard Mag",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Standard"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 30,
+        "calibers": [
+          "556mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.AK74MBarrel",
+      "name": "AK74 Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.AK74M"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.AK74MExtendedMagazine",
+      "name": "AK74 60 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Extended"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.19
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.19
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.21
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.21
+        }
+      ],
+      "magazine": {
+        "capacity": 60,
+        "calibers": [
+          "545mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.AK74MGrip",
+      "name": "AK74M Grip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Grip.AK74M"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.AK74MIMIEGGrip",
+      "name": "AK74 Grip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Grip.AK74M"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.AK74MMagazine",
+      "name": "AK74 30 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Standard"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 30,
+        "calibers": [
+          "545mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.AK74MMagazine75rnd",
+      "name": "AK74 75 RND Drum Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Drum"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.26
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.22
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.24
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.24
+        }
+      ],
+      "magazine": {
+        "capacity": 75,
+        "calibers": [
+          "545mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.AK74MStock",
+      "name": "AK74M Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock.AK74M"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.AR_01_BRL_02",
+      "name": "ID.Item.AR_01_BRL_02",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.AK74M"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.AR_02_BRL_01",
+      "name": "MMGL Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.M4"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.AR_02_GRP_05",
+      "name": "ID.Item.AR_02_GRP_05",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Grip.M4"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "override",
+          "value": 0
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "override",
+          "value": 0
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.AR_02_HGD_04",
+      "name": "LVOA Handguard",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Handguard.M4"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.AR_02_STK_04",
+      "name": "ID.Item.AR_02_STK_04",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock.M4"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.ARExtendedMagazine545mm",
+      "name": "AR Extended Mag",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine.AR"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 45,
+        "calibers": [
+          "545mm"
+        ]
+      }
+    },
+    {
+      "id": "ID.Item.BARL_003",
+      "name": "M1911 Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.WEPN_026"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.BARL_004",
+      "name": "Deagle Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.WEPN_027"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.BARL_005",
+      "name": "MP5 Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.WEPN_028"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.BARL_006",
+      "name": "Galil Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.WEPN_029"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.BARL_007",
+      "name": "Id.Item.BARL_007",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.BARL_011",
+      "name": "RPK74 Barrel + Gas Block",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.BARL_044",
+      "name": "Id.Item.BARL_044",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.WEPN_033"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.BARL_045",
+      "name": "Scout Rifle Standard Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.WEPN_035"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.BARL_046",
+      "name": "WEPN_036 Evoly Standard Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.WEPN_036"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.BARL_047",
+      "name": "WEPN_034 M14 Standard Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.WEPN_034"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.BARL_048",
+      "name": "Sig Spear (WEPN_037) Standard Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.WEPN_037"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.BARL_049",
+      "name": "WEPN_031 Bizon Standard Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.WEPN_031"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.BasicRedDot",
+      "name": "Compact T-2 Red Dot",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Sight.Short"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.9
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.Battery",
+      "name": "Battery",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine.Battery",
+        "Item.Resource.Magazine.Battery"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 100,
+        "calibers": [
+          "BatteryCharge"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.C4Explosive",
+      "name": "C4 Charge",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Resource.HiddenConsumable",
+        "Item.Archetype.Grenade",
+        "Item.Context.UtilityItem",
+        "Item.Context.Animation.Type.Unarmed",
+        "Item.Context.Animation.Archetype.EquipRightHand",
+        "Item.Ammo",
+        "Item.Caliber.C4Charge"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.CantedIrons",
+      "name": "CantedIrons",
+      "type": "Sight",
+      "contexts": [
+        "Item.Attachment.CantedSight"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.CombatBowMagazine",
+      "name": "Combat Bow Standard Mag",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 5,
+        "calibers": [
+          "Arrow"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.EotechHoloSight",
+      "name": "Holographic Sight",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Sight.Short"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        },
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 100
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.FGP_02",
+      "name": "TDG Vertical Foregrip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Underbarrel",
+        "Item.Context.Equippable",
+        "Item.Context.Animation.Archetype.Foregrip.Vertical"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.7
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.85
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.83
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.1
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Character.AimSwayHorizontalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        },
+        {
+          "attribute": "Character.AimSwayVerticalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.74
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.78
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.7
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.FGP_03",
+      "name": "AFG Angled Foregrip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Underbarrel",
+        "Item.Context.Equippable",
+        "Item.Context.Animation.Archetype.Foregrip.Angled"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.94
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.75
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.78
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.85
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.1
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Character.AimSwayHorizontalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Character.AimSwayVerticalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.88
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.8
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.FGP_04",
+      "name": "Grip Pod",
+      "type": "Bipod",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Context.Animation.Archetype.Foregrip.Vertical",
+        "Item.Attachment.Underbarrel.VertForegrip"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.88
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.94
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.1
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.98
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Character.AimSwayHorizontalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Character.AimSwayVerticalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.88
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.78
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.6
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.FGRP_006",
+      "name": "RVG Vertical Foregrip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Underbarrel",
+        "Item.Context.Equippable",
+        "Item.Context.Animation.Archetype.Foregrip.Vertical"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.75
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.87
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.81
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.07
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        },
+        {
+          "attribute": "Character.AimSwayHorizontalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Character.AimSwayVerticalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.78
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.85
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.75
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.FGRP_007",
+      "name": "Shift Foregrip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Underbarrel",
+        "Item.Context.Equippable",
+        "Item.Context.Animation.Archetype.Foregrip.Vertical"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.71
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.76
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.87
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.15
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.88
+        },
+        {
+          "attribute": "Character.AimSwayHorizontalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Character.AimSwayVerticalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.88
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.86
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.78
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.FGRP_008",
+      "name": "PKM Bipod",
+      "type": "Bipod",
+      "contexts": [
+        "Item.Attachment.Underbarrel",
+        "Item.Context.Equippable",
+        "Item.Attachment.Bipod.Attached"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.FGRP_009",
+      "name": "SV98 Bipod",
+      "type": "Bipod",
+      "contexts": [
+        "Item.Attachment.Underbarrel",
+        "Item.Context.Equippable",
+        "Item.Attachment.Bipod.Attached"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.FGRP_010",
+      "name": "SKS Bipod",
+      "type": "Bipod",
+      "contexts": [
+        "Item.Attachment.Underbarrel",
+        "Item.Context.Equippable",
+        "Item.Attachment.Bipod.Attached"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.FGRP_011",
+      "name": "SVD Bipod",
+      "type": "Bipod",
+      "contexts": [
+        "Item.Attachment.Underbarrel",
+        "Item.Context.Equippable",
+        "Item.Attachment.Bipod.Attached"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.FGRP_012",
+      "name": "M249 Bipod",
+      "type": "Bipod",
+      "contexts": [
+        "Item.Attachment.Underbarrel",
+        "Item.Context.Equippable",
+        "Item.Attachment.Bipod.Attached"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.FGRP_013",
+      "name": "Pro Tilt Bipod",
+      "type": "Bipod",
+      "contexts": [
+        "Item.Attachment.Underbarrel",
+        "Item.Context.Equippable",
+        "Item.Attachment.Bipod.Attached"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.FGRP_014",
+      "name": "CQR Tactical Front Rail Grip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Underbarrel",
+        "Item.Context.Equippable",
+        "Item.Context.Animation.Archetype.Foregrip.HERA"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.7
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.97
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.91
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.15
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.09
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Character.AimSwayHorizontalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.05
+        },
+        {
+          "attribute": "Character.AimSwayVerticalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.73
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.92
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.85
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.FGRP_015",
+      "name": "Rubberized Ergonomic Foregrip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Underbarrel",
+        "Item.Context.Equippable",
+        "Item.Context.Animation.Archetype.Foregrip.Vertical"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.82
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.84
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.02
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.98
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Character.AimSwayHorizontalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Character.AimSwayVerticalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.7
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.8
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.72
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.FGRP_016",
+      "name": "45° Angled Foregrip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Underbarrel",
+        "Item.Context.Equippable",
+        "Item.Context.Animation.Archetype.Foregrip.Angled"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.05
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.82
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.82
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.83
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.13
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Character.AimSwayVerticalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.96
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.92
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.84
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.FGRP_017",
+      "name": "Angled Tactical Foregrip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Underbarrel",
+        "Item.Context.Equippable",
+        "Item.Context.Animation.Archetype.Foregrip.BumpStop"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.02
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.84
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.84
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.88
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.09
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Character.AimSwayHorizontalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.98
+        },
+        {
+          "attribute": "Character.AimSwayVerticalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.9
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.82
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.FGRP_018",
+      "name": "Mini Angled Foregrip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Underbarrel",
+        "Item.Context.Equippable",
+        "Item.Context.Animation.Archetype.Foregrip.BumpStop"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.77
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.8
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.86
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.1
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Character.AimSwayHorizontalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.96
+        },
+        {
+          "attribute": "Character.AimSwayVerticalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.9
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.82
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.FGRP_019",
+      "name": "Evo-3 Ultra Bipod",
+      "type": "Bipod",
+      "contexts": [
+        "Item.Attachment.Underbarrel",
+        "Item.Context.Equippable",
+        "Item.Attachment.Bipod.Attached"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.FGRP_020",
+      "name": "M14 Bipod",
+      "type": "Bipod",
+      "contexts": [
+        "Item.Attachment.Underbarrel",
+        "Item.Context.Equippable",
+        "Item.Attachment.Bipod.Attached"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.Glock17Barrel",
+      "name": "Id.Item.Glock17Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.Glock"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.Glock17ExtendedMagazine",
+      "name": "Glock 17 Extended Mag",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 30,
+        "calibers": [
+          "9mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.Glock17Magazine",
+      "name": "GGX 17 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Standard"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 17,
+        "calibers": [
+          "9mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.HNDG_003",
+      "name": "MP5 Handguard",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Handguard.WEPN_028"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.HNDG_005",
+      "name": "AK74 Polymer Handguard",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Handguard"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.HNDG_006",
+      "name": "AK74 Wooden Dong Grip",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Handguard"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.HNDG_007",
+      "name": "AK74 Sharkfin Dong Grip",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Handguard"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.HNDG_008",
+      "name": "AK74u Wooden Handguard",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Handguard"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.HNDG_009",
+      "name": "AK74u Polymer Handguard",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Handguard"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.HNDG_010",
+      "name": "AK74 Archangel OPFOR Forend",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Handguard"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.HNDG_011",
+      "name": "RPK74 Wooden Handguard",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Handguard"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.HNDG_012",
+      "name": "RPK74 Polymer Handguard",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Handguard"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.HNDG_013",
+      "name": "AK74 M-LOK Dong Grip",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Handguard"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.HNDG_014",
+      "name": "AK74 MI Universal Handguard",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Handguard"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.HNDG_015",
+      "name": "AK74 TI Battlerail",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Handguard"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.HNDG_016",
+      "name": "AK74 ZenitCo B-13 Side Mount",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Handguard"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.HNDG_053",
+      "name": "Id.Item.HNDG_053",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock.WEPN_034"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.HNDG_054",
+      "name": "Id.Item.HNDG_054",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Handguard.WEPN_037"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.HNDG_055",
+      "name": "Id.Item.HNDG_055",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Handguard.WEPN_031"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.HybridScope4x",
+      "name": "4x Hybrid",
+      "type": "Sight",
+      "contexts": [
+        "Item.Attachment.Sight",
+        "Item.Context.Equippable"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 4
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "add",
+          "value": 0.35
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.IED.Explosive",
+      "name": "Improvised Explosive Device",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Resource.HiddenConsumable",
+        "Item.Context.UtilityItem",
+        "Item.Context.Animation.Type.Unarmed",
+        "Item.Context.Animation.Archetype.EquipRightHand",
+        "Item.Ammo",
+        "Item.Caliber.IEDCharge"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.JudgeBarrel",
+      "name": "Id.Item.JudgeBarrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.Judge"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.JudgeMagazine",
+      "name": "Judge Bullet Cylinder",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 6,
+        "calibers": [
+          "45Colt"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.JudgePistolgrip",
+      "name": "Id.Item.JudgePistolgrip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Grip.Judge"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.KH2002Barrel",
+      "name": "KH2002 Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.KH2002"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.KH2002ExtendedMagazine",
+      "name": "KH2002 Extended Mag",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Extended"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 45,
+        "calibers": [
+          "556mm"
+        ]
+      }
+    },
+    {
+      "id": "ID.Item.KH2002Mag",
+      "name": "KH2002 Standard Mag",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Standard"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 30,
+        "calibers": [
+          "556mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.LargeBattery",
+      "name": "High Capacity Battery",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine.Battery",
+        "Item.Resource.Magazine.Battery"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 250,
+        "calibers": [
+          "BatteryCharge"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.Launcher_04Magazine",
+      "name": "Launcher_04 Standard Mag",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 1,
+        "calibers": [
+          "72mm"
+        ]
+      }
+    },
+    {
+      "id": "ID.Item.LMG_01_BRL_06",
+      "name": "ID.Item.LMG_01_BRL_06",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.M249"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.LMG_02Barrel",
+      "name": "Id.Item.LMG_02Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.LMG_02Magazine",
+      "name": "PKM 100 RND Box",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Belt"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.1
+        }
+      ],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 100,
+        "calibers": [
+          "762x54mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.LMG_02PistolGrip",
+      "name": "Id.Item.LMG_02PistolGrip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Grip"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.LMG_02Stock",
+      "name": "Id.Item.LMG_02Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.M249Barrel",
+      "name": "Id.Item.M249Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.M249"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.M249Magazine",
+      "name": "M249 200 RND Box",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Belt"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.17
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.17
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.25
+        }
+      ],
+      "magazine": {
+        "capacity": 200,
+        "calibers": [
+          "556mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.M249Stock",
+      "name": "Id.Item.M249Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock.M249"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.M4Barrel",
+      "name": "M4 Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.M4"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.M4ExtendedMagazine",
+      "name": "M4 Extended Mag",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 45,
+        "calibers": [
+          "556mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.M4Handguard",
+      "name": "M4 Handguard",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Handguard.M4"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.M4Magazine",
+      "name": "M4 Standard Mag",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine.AR",
+        "Item.Resource.Magazine.Standard"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 30,
+        "calibers": [
+          "556mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.M4PistolGrip",
+      "name": "M4 Pistol Grip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Grip.M4"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.M4Stock",
+      "name": "M4 Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock.M4"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.M500Barrel",
+      "name": "Id.Item.M500Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.M500"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.M500Magazine",
+      "name": "M500 Internal Mag",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 6,
+        "calibers": [
+          "12g"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.M500Stock",
+      "name": "Id.Item.M500Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock.M500"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MAGZ_002",
+      "name": "M1911 7 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Standard"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 7,
+        "calibers": [
+          "45ACP"
+        ]
+      }
+    },
+    {
+      "id": "ID.Item.MAGZ_003",
+      "name": "Deagle 7 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Standard"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 7,
+        "calibers": [
+          "50AE"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_004",
+      "name": "MP5 30 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Extended"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 30,
+        "calibers": [
+          "9mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_005",
+      "name": "Galil 35 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Extended"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 35,
+        "calibers": [
+          "556mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_006",
+      "name": "FAL 20 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Extended"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 20,
+        "calibers": [
+          "308Win"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_011",
+      "name": "GGX 50 RND Drum Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Context.Equippable",
+        "Item.Resource.Magazine.Drum"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.1
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.04
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.07
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.25
+        }
+      ],
+      "magazine": {
+        "capacity": 50,
+        "calibers": [
+          "9mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_012",
+      "name": "GGX 33 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Context.Equippable",
+        "Item.Resource.Magazine.Extended"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.06
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.02
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.04
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.98
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.12
+        }
+      ],
+      "magazine": {
+        "capacity": 33,
+        "calibers": [
+          "9mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_024",
+      "name": "FAL 30 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Extended"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.26
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.22
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.24
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.24
+        }
+      ],
+      "magazine": {
+        "capacity": 30,
+        "calibers": [
+          "308Win"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_026",
+      "name": "AMR 50 10 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Small"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.06
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        }
+      ],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 10,
+        "calibers": [
+          "50Cal"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_034",
+      "name": "MK22 5 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Small"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 5,
+        "calibers": [
+          "308Win"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_046",
+      "name": "PP-19 50 RND Vityaz Drum Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Drum"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.18
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.25
+        }
+      ],
+      "magazine": {
+        "capacity": 50,
+        "calibers": [
+          "9mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_051",
+      "name": "PP-19 Bizon 53 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Resource.Magazine.Extended",
+        "Item.Attachment.Magazine"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 53,
+        "calibers": [
+          "9mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_052",
+      "name": "AMP-9 20 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Extended"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 20,
+        "calibers": [
+          "9mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_055",
+      "name": "Super-45 40 RND Drum Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Drum"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.18
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.25
+        }
+      ],
+      "magazine": {
+        "capacity": 40,
+        "calibers": [
+          "45ACP"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_056",
+      "name": "MP5 50 RND Drum Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Drum"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.18
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.25
+        }
+      ],
+      "magazine": {
+        "capacity": 50,
+        "calibers": [
+          "9mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_057",
+      "name": "Super-45 13 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Standard"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.83
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.83
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.83
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.21
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.77
+        }
+      ],
+      "magazine": {
+        "capacity": 13,
+        "calibers": [
+          "45ACP"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_059",
+      "name": "PP-19 Vityaz 10 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Standard"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.86
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.83
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.83
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.2
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.78
+        }
+      ],
+      "magazine": {
+        "capacity": 10,
+        "calibers": [
+          "9mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_060",
+      "name": "Galil 50 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Extended"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.19
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.19
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.21
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.21
+        }
+      ],
+      "magazine": {
+        "capacity": 50,
+        "calibers": [
+          "556mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_061",
+      "name": "AMP-9 15 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Standard"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.86
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.83
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.83
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.2
+        }
+      ],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 15,
+        "calibers": [
+          "9mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_062",
+      "name": "M249 100 RND Fabric Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Belt"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 100,
+        "calibers": [
+          "556mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_063",
+      "name": "M1911 10 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Standard"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.06
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.02
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.04
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.98
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.12
+        }
+      ],
+      "magazine": {
+        "capacity": 10,
+        "calibers": [
+          "45ACP"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_064",
+      "name": "MP5 20 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Standard"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.87
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.87
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.88
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.1
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.81
+        }
+      ],
+      "magazine": {
+        "capacity": 20,
+        "calibers": [
+          "9mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_065",
+      "name": "SVD 5 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Small"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 5,
+        "calibers": [
+          "762x54mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_066",
+      "name": "AMP-9 50 RND Drum Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.18
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.18
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        }
+      ],
+      "magazine": {
+        "capacity": 50,
+        "calibers": [
+          "9mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_067",
+      "name": "Evo-3 Ultra 50 RND Box",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine.WEPN_036",
+        "Item.Resource.Magazine.Belt"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 50,
+        "calibers": [
+          "308Win"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_068",
+      "name": "M14 10 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine.WEPN_034"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 10,
+        "calibers": [
+          "308Win"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_069",
+      "name": "SIG Spear (WEPN_037) Standard Mag",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Standard"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 28,
+        "calibers": [
+          "762mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_070",
+      "name": "M14 30 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine.WEPN_034"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.22
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.24
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.24
+        }
+      ],
+      "magazine": {
+        "capacity": 30,
+        "calibers": [
+          "308Win"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MAGZ_071",
+      "name": "M14 20 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine.WEPN_034"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.08
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.07
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.05
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.08
+        }
+      ],
+      "magazine": {
+        "capacity": 20,
+        "calibers": [
+          "308Win"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MK22Barrel",
+      "name": "Id.Item.MK22Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.MK22"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MK22Grip",
+      "name": "Id.Item.MK22Grip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Grip.MK22"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MK22Mag",
+      "name": "MK22 Standard Mag",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Small"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.06
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.12
+        }
+      ],
+      "magazine": {
+        "capacity": 10,
+        "calibers": [
+          "308Win"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MK22Stock",
+      "name": "Id.Item.MK22Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MMGLBarrel",
+      "name": "MMGL Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MMGLHandguard",
+      "name": "MMGL Handguard",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Handguard"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MMGLMagazine",
+      "name": "MMGL Internal Mag",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 6,
+        "calibers": [
+          "40mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MMGLPistolGrip",
+      "name": "MMGL Pistol Grip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Grip"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MMGLStock",
+      "name": "MMGL Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MosinBarrel",
+      "name": "Id.Item.MosinBarrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MosinMagazine",
+      "name": "Mosin Standard Mag",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Internal"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 5,
+        "calibers": [
+          "762x54mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MosinStock",
+      "name": "Id.Item.MosinStock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MP43Barrel",
+      "name": "Id.Item.MP43Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MP43Handguard",
+      "name": "Id.Item.MP43Handguard",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Handguard"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MP43Magazine",
+      "name": "MP43 Internal Mag",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 2,
+        "calibers": [
+          "12g"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MP43Stock",
+      "name": "Id.Item.MP43Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MP9Barrel",
+      "name": "Id.Item.MP9Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MP9ExtendedMagazine",
+      "name": "MP9 Extended Mag",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 30,
+        "calibers": [
+          "9mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MP9Magazine",
+      "name": "AMP-9 30 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Extended"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.11
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.12
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.14
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.23
+        }
+      ],
+      "magazine": {
+        "capacity": 30,
+        "calibers": [
+          "9mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.MP9Stock",
+      "name": "Id.Item.MP9Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_013",
+      "name": "3 Prong Flash Hider",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.M4",
+        "Item.Attachment.Muzzle.M249",
+        "Item.Attachment.Muzzle.556"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.99
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.98
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_014",
+      "name": "TopComp Brake",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.556"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.82
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.98
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.96
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiply",
+          "value": 1.05
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_019",
+      "name": "Dual Port Brake",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.9mm"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.82
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.96
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.05
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_020",
+      "name": "Ballista Brake",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.556",
+        "Item.Attachment.Muzzle.9mm",
+        "Item.Attachment.Muzzle.545"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.02
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.8
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.04
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_022",
+      "name": "Constrictor Brake",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.308",
+        "Item.Attachment.Muzzle.762x54mm",
+        "Item.Attachment.Muzzle.SKS"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.01
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.83
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.97
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.03
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_023",
+      "name": "Tread Brake",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.556"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.86
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.98
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.97
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.03
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_024",
+      "name": "Hexagon Brake",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.556"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.99
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.78
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.96
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.05
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_025",
+      "name": "Slicktap Brake",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.650",
+        "Item.Attachment.Muzzle.762x39mm"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.8
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.03
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.96
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.08
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_027",
+      "name": "3-Chamber Brake",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.556"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.8
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.98
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.96
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.06
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_028",
+      "name": "DTK-1 Brake",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.SKS"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.8
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.06
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_029",
+      "name": "Orpheus Max Brake",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.556",
+        "Item.Attachment.Muzzle.762x54mm",
+        "Item.Attachment.Muzzle.650"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.74
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.98
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.07
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_030",
+      "name": "Three Port Brake",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.308"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.78
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.96
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.96
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.06
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_031",
+      "name": "M500 Sabre Brake",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle",
+        "Item.Attachment.Muzzle.M500"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.8
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.02
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.07
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_032",
+      "name": "RC-556 Suppressor",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.556"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.88
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.88
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.12
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_037",
+      "name": "Eclipse Flash Hider",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.9mm"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.99
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.98
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_038",
+      "name": "Slotted Flash Hider",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.LMG_02"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.99
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.98
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_039",
+      "name": "Birdcage Flash Hider",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.545"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.99
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.98
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_040",
+      "name": "SVD 7.62x54R Brake",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.SVDM"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.82
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.98
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.97
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.03
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_041",
+      "name": "SRVV Brake",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.762x54mm"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.88
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.82
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.05
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_042",
+      "name": "Deadeye Flash Hider",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.308",
+        "Item.Attachment.Muzzle.762x54mm",
+        "Item.Attachment.Muzzle.762x39mm"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_044",
+      "name": "Improved Cylinder Choke",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.M500"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.02
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_045",
+      "name": "Full Choke",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.M500"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.02
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_046",
+      "name": "Super-45 Flash Hider",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.Vector"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.99
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.98
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_047",
+      "name": "Ghost LITE Muzzle Brake",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.Vector"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.78
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.88
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.98
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.04
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_048",
+      "name": "AMR 50 Cal Muzzle Brake",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.SR_04"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.8
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.99
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.05
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_049",
+      "name": ".50 Cal Heavy Suppressor",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.SR_04"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.94
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.12
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_050",
+      "name": ".45 ACP Pistol Compensator",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.WEPN_026"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.86
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.98
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.98
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.03
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_051",
+      "name": "AMP-9 9x19 Suppressor",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.MP9"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.94
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.08
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_052",
+      "name": "AMP-9 Tactical Flash Hider",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.MP9"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.99
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.98
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_053",
+      "name": "PP-19-01 Vityaz 9x19 Suppressor",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.SMG_03"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.97
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.97
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.1
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_054",
+      "name": "PP-19 Vityaz Flash Hider",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.SMG_03"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.99
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.98
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_055",
+      "name": "BMR-308 Flash Hider",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.RFB"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.99
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.98
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_056",
+      "name": "BMR-308 Suppressor",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.RFB"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.96
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.08
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_057",
+      "name": "Flow-Through .308 Suppressor",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.MK22"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.96
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.97
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.05
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_058",
+      "name": "QD-5 Suppressor",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.WEPN_028"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.94
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.08
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_059",
+      "name": "MP5 Flash Hider",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.WEPN_028"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.98
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_060",
+      "name": "Suppressor T8L1 Scout",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.WEPN_030"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.96
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.96
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.07
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_061",
+      "name": "FAL Flash Hider",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.WEPN_030"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.97
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.98
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_062",
+      "name": "STRELIX Suppressor",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.WEPN_035"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.96
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.96
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.04
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_064",
+      "name": "WEPN_033 (M14) standard muzzle",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.WEPN_034"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_065",
+      "name": "QD-5 Suppressor",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.WEPN_036"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.94
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.08
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_066",
+      "name": "Sig Default",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.WEPN_037"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.94
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.08
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_067",
+      "name": "Cross Rifle Muzzle Brake",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.WEPN_037"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.94
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.08
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_068",
+      "name": "Clutch Lok Muzzle Brake",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.WEPN_037"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.05
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.02
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_069",
+      "name": "SRD762TI-QD",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.WEPN_037"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.94
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.1
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_070",
+      "name": "SL7i-BL Suppressor",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.WEPN_036"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.94
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.1
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_071",
+      "name": ".30 Cal SS Phosphate Muzzle Brake",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.WEPN_034"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.85
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.05
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.88
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.05
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MUZL_072",
+      "name": ".30 Cal Steel Black Flash Hider",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.WEPN_034"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.97
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MZL_04",
+      "name": "GOL Multi-Caliber Suppressor",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.Suppressor"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.84
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.88
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.15
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MZL_05",
+      "name": "SG Multi-Caliber Suppressor",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.Suppressor"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.94
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.91
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.08
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MZL_06",
+      "name": "12 Gauge Suppressor",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.Suppressor"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.88
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.1
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MZL_07",
+      "name": "AR Multi-Caliber Suppressor",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.Suppressor"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.88
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.1
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MZL_08",
+      "name": "Hexagon 762 Suppressor",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.SKS",
+        "Item.Attachment.Muzzle.762x54mm",
+        "Item.Attachment.Muzzle.Suppressor"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.82
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.89
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.12
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MZL_09",
+      "name": "PBS-4 Suppressor",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.AK74M",
+        "Item.Attachment.Muzzle.Suppressor"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.86
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.88
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.12
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.MZL_10",
+      "name": "TGP-A Suppressor 5.45",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.AK74M",
+        "Item.Attachment.Muzzle.Suppressor"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.94
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.91
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.1
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.OPT_08",
+      "name": "2.5x Combat Optic",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Sight.Short"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.05
+        },
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 2.5
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        },
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 300
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.PGRP_003",
+      "name": "FAL Pistol Grip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Grip.WEPN_030"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.PGRP_006",
+      "name": "AK-12 Pistol Grip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Grip"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.PGRP_007",
+      "name": "AK74 Archangel OPFOR Pistol Grip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Grip"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.PGRP_008",
+      "name": "AK74 KGB MG47 Grip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Grip"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.PGRP_009",
+      "name": "AK74 AGS-74 PRO Sniper Pistol Grip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Grip"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.PGRP_010",
+      "name": "Galil Pistol Grip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Grip.WEPN_029"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.PGRP_041",
+      "name": "Id.Item.PGRP_041",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Grip.WEPN_035"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.PGRP_042",
+      "name": "WEPN_36 Evoly Grip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Grip.WEPN_036"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.PGRP_043",
+      "name": "Sig Spear (WEPN_037) Standard Pistol Grip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Grip.WEPN_037"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.PGRP_044",
+      "name": "Kungfu",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Grip.WEPN_037"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.Pistol_01_BRL_07",
+      "name": "ID.Item.Pistol_01_BRL_07",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.Glock"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.Pistol_01_GRP_01",
+      "name": "ID.Item.Pistol_01_GRP_01",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Pistolgrip.Glock"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.Pistol_01_HGD_02",
+      "name": "ID.Item.Pistol_01_HGD_02",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Handguard.Glock"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.Pistol_01_STK_01",
+      "name": "ID.Item.Pistol_01_STK_01",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock.Glock"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.PWSCQB74Muzzle",
+      "name": "CQB 74 Brake",
+      "type": "Muzzle",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Muzzle.AK74M"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.8
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.97
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.96
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.04
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.RFBBarrel",
+      "name": "Id.Item.RFBBarrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.RFBMagazine",
+      "name": "FAL 10 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Standard"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.85
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.84
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.85
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.24
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.78
+        }
+      ],
+      "magazine": {
+        "capacity": 10,
+        "calibers": [
+          "308Win"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.RK6ForeGrip",
+      "name": "RK6 Tactical Foregrip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Underbarrel",
+        "Item.Context.Equippable",
+        "Item.Context.Animation.Archetype.Foregrip.BumpStop"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.85
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Weapon.SpreadMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.85
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.1
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.92
+        },
+        {
+          "attribute": "Character.AimSwayVerticalMovementMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.88
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.88
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 0.78
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.SGHT_009",
+      "name": "Kobra Reflex",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Sight.Short"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.85
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SGHT_011",
+      "name": "1x-6x LPVO Short Dot",
+      "type": "Sight",
+      "contexts": [
+        "Item.Attachment.Sight",
+        "Item.Context.Equippable"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 3
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.12
+        },
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 600
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.WeaponSway.StabilizationTimeMultiplier",
+          "op": "override",
+          "value": 1.6
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.SGHT_016",
+      "name": "Four Reticle Reflex",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Sight.Short"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.85
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SGHT_023",
+      "name": "OKP 7 Reflex",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Sight.Short"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.85
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SGHT_025",
+      "name": "Mini Reflex Sight",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.02
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SGHT_026",
+      "name": "Tricon 1.5x Compact Prism Scope",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Sight.Short"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.97
+        },
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 1.5
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        },
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 200
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SGHT_027",
+      "name": "Vektor Frenix-X Micro Reflex Sight",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Sight.Short"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.87
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SGHT_028",
+      "name": "CQ-2x Prism Combat Scope",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Sight.Short"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.05
+        },
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 2
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        },
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 300
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SGHT_029",
+      "name": "3x Tactical Prism Scope",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Sight.Medium"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 3
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        },
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 300
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.1
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SGHT_030",
+      "name": "4x Combat Prism Scope with Reflex",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Sight.Medium"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 400
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.WeaponSway.StabilizationTimeMultiplier",
+          "op": "multiply",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.SGHT_031",
+      "name": "6x Precision Rifle Scope",
+      "type": "Sight",
+      "contexts": [
+        "Item.Attachment.Sight",
+        "Item.Context.Equippable"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 6
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.15
+        },
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 600
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.WeaponSway.StabilizationTimeMultiplier",
+          "op": "override",
+          "value": 1.6
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 1.8
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 1.4
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.SGHT_032",
+      "name": "Frontier 2.5x-10x Precision Scope",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Sight.Long"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiply",
+          "value": 1.2
+        },
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 2.5
+        },
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 1000
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.WeaponSway.StabilizationTimeMultiplier",
+          "op": "override",
+          "value": 1.6
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 1.8
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 1.4
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.SGHT_033",
+      "name": "CGM4 Scope",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Sight.Short"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 1.2
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SGHT_034",
+      "name": "PGO-7",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 2.8
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.15
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 10
+        },
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 10
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SGHT_036",
+      "name": "6x Marksman Scope + Reflex",
+      "type": "Sight",
+      "contexts": [
+        "Item.Attachment.Sight",
+        "Item.Context.Equippable"
+      ],
+      "modifiers": [],
+      "characterModifiers": [
+        {
+          "attribute": "Character.WeaponSway.StabilizationTimeMultiplier",
+          "op": "override",
+          "value": 1.6
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.SGHT_037",
+      "name": "MMGL Sight",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Sight.Short"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 1.2
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SGHT_038",
+      "name": "Compact P-1 Red Dot",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Sight.Short"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 1.2
+        }
+      ],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SGHT_039",
+      "name": "Leatherwood ART II",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 3
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.15
+        },
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 800
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.WeaponSway.StabilizationTimeMultiplier",
+          "op": "override",
+          "value": 1.6
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 1.8
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 1.4
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.SGHT_040",
+      "name": "PU 91/30 Scope",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 3.5
+        },
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.15
+        },
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 800
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.WeaponSway.StabilizationTimeMultiplier",
+          "op": "override",
+          "value": 1.6
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 1.8
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 1.4
+        }
+      ]
+    },
+    {
+      "id": "ID.Item.SKSBarrel",
+      "name": "ID.Item.SKSBarrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SKSExtendedMag",
+      "name": "SKS Extended Mag",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Extended"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 20,
+        "calibers": [
+          "762mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.SKSHandguard",
+      "name": "Id.Item.SKSHandguard",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Handguard"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SKSMagazine",
+      "name": "SKS Internal Mag",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Internal"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 10,
+        "calibers": [
+          "762mm"
+        ]
+      }
+    },
+    {
+      "id": "ID.Item.SMG_01_BRL_03",
+      "name": "ID.Item.SMG_01_BRL_03",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.Vector"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.SMG_01_HGD_01",
+      "name": "ID.Item.SMG_01_HGD_01",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Handguard.Vector"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.SMG_01_STK_05",
+      "name": "RS2 Slim",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock.Vector"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SMG_03Barrel",
+      "name": "Id.Item.SMG_03Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SMG_03Magazine",
+      "name": "PP-19 Vityaz 30 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Extended"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 30,
+        "calibers": [
+          "9mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.SMG_03PistolGrip",
+      "name": "Id.Item.SMG_03PistolGrip",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Grip"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SMG_03Stock",
+      "name": "Id.Item.SMG_03Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SniperScope10x",
+      "name": "6-10x Scope MRAD",
+      "type": "Sight",
+      "contexts": [
+        "Item.Context.Equippable",
+        "Item.Attachment.Sight.Long"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiply",
+          "value": 1.15
+        },
+        {
+          "attribute": "Weapon.AdsZoomMultiplier",
+          "op": "override",
+          "value": 6
+        },
+        {
+          "attribute": "Weapon.MaxZeroingRange",
+          "op": "override",
+          "value": 1000
+        },
+        {
+          "attribute": "Weapon.MinZeroingRange",
+          "op": "override",
+          "value": 100
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.WeaponSway.StabilizationTimeMultiplier",
+          "op": "override",
+          "value": 1.6
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 1.8
+        },
+        {
+          "attribute": "Character.WeaponSway.TranslationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 1.4
+        }
+      ]
+    },
+    {
+      "id": "ID.Item.SR_02_BRL_04",
+      "name": "ID.Item.SR_02_BRL_04",
+      "type": "Barrel",
+      "contexts": [],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.SR_02_GRP_02",
+      "name": "ID.Item.SR_02_GRP_02",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Grip.Mosin"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.SR_02_STK_01",
+      "name": "ID.Item.SR_02_STK_01",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock.Mosin"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.SR_04_BRL_05",
+      "name": "ID.Item.SR_04_BRL_05",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.AX50"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.SR_04_GRP_03",
+      "name": "ID.Item.SR_04_GRP_03",
+      "type": "Grip",
+      "contexts": [
+        "Item.Attachment.Grip.AX50"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SR_04Barrel",
+      "name": "Id.Item.SR_04Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SR_04Handguard",
+      "name": "Id.Item.SR_04Handguard",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Handguard"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SR_04Magazine",
+      "name": "AMR 50 5 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Small"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 5,
+        "calibers": [
+          "50Cal"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.SR_04Stock",
+      "name": "Id.Item.SR_04Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.STANAGExtendedMagazine",
+      "name": "STANAG 60 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine.AR",
+        "Item.Resource.Magazine.Extended"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.19
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.19
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.21
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.93
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.21
+        }
+      ],
+      "magazine": {
+        "capacity": 60,
+        "calibers": [
+          "556mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.STANAGMagazine",
+      "name": "STANAG 30 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine.AR",
+        "Item.Resource.Magazine.Standard"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.98
+        }
+      ],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 30,
+        "calibers": [
+          "556mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.STANAGMagazine20rd",
+      "name": "STANAG 20 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine.AR",
+        "Item.Resource.Magazine.Standard"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 0.85
+        },
+        {
+          "attribute": "Weapon.VerticalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.84
+        },
+        {
+          "attribute": "Weapon.HorizontalRecoilMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.85
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.16
+        }
+      ],
+      "characterModifiers": [
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.78
+        }
+      ],
+      "magazine": {
+        "capacity": 20,
+        "calibers": [
+          "556mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.STOK_003",
+      "name": "MP5 Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock.WEPN_028"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.STOK_005",
+      "name": "FAL Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock.WEPN_030"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.STOK_006",
+      "name": "AK74 Polymer Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.STOK_007",
+      "name": "AK74u Steel Folding Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.STOK_008",
+      "name": "RPK74 Wooden Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.STOK_009",
+      "name": "AK74 Alpha Folding Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.STOK_010",
+      "name": "AK74 Buffertube Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.STOK_011",
+      "name": "AK74 Archangel OPFOR Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.STOK_012",
+      "name": "AK-47 HERA CQR Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.STOK_013",
+      "name": "Galil Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock.WEPN_029"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.STOK_057",
+      "name": "Scout Rifle Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock.WEPN_035"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.STOK_058",
+      "name": "Evoly stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock.WEPN_036"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.STOK_059",
+      "name": "M14 Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock.WEPN_034"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.STOK_060",
+      "name": "Sig Spear Standard Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock.WEPN_037"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SV98Barrel",
+      "name": "Id.Item.SV98Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SV98ExtendedMagazine",
+      "name": "SV98 Extended Mag",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 20,
+        "calibers": [
+          "762x54mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.SV98Magazine",
+      "name": "SV98 10 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Small"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 10,
+        "calibers": [
+          "762x54mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.SV98Stock",
+      "name": "SV98 Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SVDMBarrel",
+      "name": "SVDM Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SVDMHandguard",
+      "name": "SVDM Handguard",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Handguard"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.SVDMMagazine",
+      "name": "SVDM Standard Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Small"
+      ],
+      "modifiers": [
+        {
+          "attribute": "Weapon.AimTime",
+          "op": "multiplyCompound",
+          "value": 1.06
+        },
+        {
+          "attribute": "Weapon.EquipSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        }
+      ],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 10,
+        "calibers": [
+          "762x54mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.SVDMStock",
+      "name": "SVDM Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.TAR21Barrel",
+      "name": "ID.Item.TAR21Barrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel.TAR21"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.TAR21Mag",
+      "name": "TAR21 Standard Mag",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Standard"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 30,
+        "calibers": [
+          "556mm"
+        ]
+      }
+    },
+    {
+      "id": "Id.Item.TRGR_002",
+      "name": "AK74 Timney Drop-in Trigger",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Trigger"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.TRGR_003",
+      "name": "AK74 CMC Flat Trigger",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Trigger"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.VectorBarrel",
+      "name": "ID.Item.VectorBarrel",
+      "type": "Barrel",
+      "contexts": [
+        "Item.Attachment.Barrel"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "ID.Item.VectorMagazine",
+      "name": "Super-45 30 RND Magazine",
+      "type": "Magazine",
+      "contexts": [
+        "Item.Attachment.Magazine",
+        "Item.Resource.Magazine.Extended"
+      ],
+      "modifiers": [],
+      "characterModifiers": [],
+      "magazine": {
+        "capacity": 30,
+        "calibers": [
+          "45ACP"
+        ]
+      }
+    },
+    {
+      "id": "ID.Item.VectorStock",
+      "name": "ID.Item.VectorStock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.ZenitHandguard",
+      "name": "Zenit Handguard",
+      "type": "Handguard",
+      "contexts": [
+        "Item.Attachment.Handguard.AK74M"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    },
+    {
+      "id": "Id.Item.ZenitStock",
+      "name": "Zenit Stock",
+      "type": "Stock",
+      "contexts": [
+        "Item.Attachment.Stock.AK74M"
+      ],
+      "modifiers": [],
+      "characterModifiers": []
+    }
+  ]
+}

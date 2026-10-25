@@ -1,0 +1,723 @@
+{
+  "schemaVersion": 1,
+  "gameBuild": "25937608",
+  "armor": [
+    {
+      "id": "Id.Item.GhillieArmor",
+      "name": "Ghillie Suit",
+      "slot": "Armor",
+      "damageContext": "Armor.Ghillie",
+      "coveredLocations": [],
+      "stages": [],
+      "modifiers": [
+        {
+          "attribute": "Character.AdsTimeMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.8
+        },
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.15
+        },
+        {
+          "attribute": "Movement.LeanTimeMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.15
+        },
+        {
+          "attribute": "Movement.UnleanTimeMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.15
+        },
+        {
+          "attribute": "Movement.MaxSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Movement.JumpVelocityMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.GhillieArmor.Dead",
+      "name": "Ghillie Suit (Dead)",
+      "slot": "Armor",
+      "damageContext": "Armor.Ghillie",
+      "coveredLocations": [],
+      "stages": [],
+      "modifiers": [
+        {
+          "attribute": "Character.AdsTimeMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.8
+        },
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.15
+        },
+        {
+          "attribute": "Movement.LeanTimeMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.15
+        },
+        {
+          "attribute": "Movement.UnleanTimeMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.15
+        },
+        {
+          "attribute": "Movement.MaxSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Movement.JumpVelocityMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.GhillieHelmet",
+      "name": "Ghillie Headwear",
+      "slot": "Helmet",
+      "damageContext": "Helmet.Ghillie",
+      "coveredLocations": [],
+      "stages": [],
+      "modifiers": [
+        {
+          "attribute": "Character.AdsTimeMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.8
+        },
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.15
+        },
+        {
+          "attribute": "Movement.LeanTimeMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.15
+        },
+        {
+          "attribute": "Movement.UnleanTimeMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.15
+        },
+        {
+          "attribute": "Movement.MaxSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Movement.JumpVelocityMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.GhillieHelmet.Dead",
+      "name": "Ghillie Headwear (Dead)",
+      "slot": "Helmet",
+      "damageContext": "Helmet.Ghillie",
+      "coveredLocations": [],
+      "stages": [],
+      "modifiers": [
+        {
+          "attribute": "Character.AdsTimeMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.8
+        },
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.15
+        },
+        {
+          "attribute": "Movement.LeanTimeMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.15
+        },
+        {
+          "attribute": "Movement.UnleanTimeMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.15
+        },
+        {
+          "attribute": "Movement.MaxSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Movement.JumpVelocityMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.HeavyArmor",
+      "name": "Level 3 Armor",
+      "slot": "Armor",
+      "damageContext": "Armor.Heavy",
+      "coveredLocations": [
+        "Torso.Lower",
+        "Torso.Middle",
+        "Torso.Upper"
+      ],
+      "durability": 250,
+      "stages": [
+        {
+          "damageReduction": 50,
+          "thickness": 1,
+          "density": 100
+        },
+        {
+          "damageReduction": 50,
+          "thickness": 1,
+          "density": 90
+        },
+        {
+          "damageReduction": 50,
+          "thickness": 1,
+          "density": 80
+        },
+        {
+          "damageReduction": 50,
+          "thickness": 1,
+          "density": 60
+        }
+      ],
+      "modifiers": []
+    },
+    {
+      "id": "Id.Item.HeavyHelmet",
+      "name": "Level 3 Helmet",
+      "slot": "Helmet",
+      "damageContext": "Helmet.Heavy",
+      "coveredLocations": [
+        "Head",
+        "Neck"
+      ],
+      "durability": 180,
+      "stages": [
+        {
+          "damageReduction": 50,
+          "thickness": 1,
+          "density": 100
+        },
+        {
+          "damageReduction": 50,
+          "thickness": 1,
+          "density": 90
+        },
+        {
+          "damageReduction": 50,
+          "thickness": 1,
+          "density": 80
+        },
+        {
+          "damageReduction": 50,
+          "thickness": 1,
+          "density": 60
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Character.SuppressionReductionMultiplier",
+          "op": "multiply",
+          "value": 0.32
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.LightArmor",
+      "name": "Level 1 Armor",
+      "slot": "Armor",
+      "damageContext": "Armor.Light",
+      "coveredLocations": [
+        "Torso.Lower",
+        "Torso.Middle",
+        "Torso.Upper"
+      ],
+      "durability": 200,
+      "stages": [
+        {
+          "damageReduction": 30,
+          "thickness": 0.5,
+          "density": 50
+        },
+        {
+          "damageReduction": 30,
+          "thickness": 0.5,
+          "density": 40
+        },
+        {
+          "damageReduction": 30,
+          "thickness": 0.5,
+          "density": 30
+        },
+        {
+          "damageReduction": 30,
+          "thickness": 0.5,
+          "density": 20
+        }
+      ],
+      "modifiers": []
+    },
+    {
+      "id": "Id.Item.LightHelmet",
+      "name": "Level 1 Helmet",
+      "slot": "Helmet",
+      "damageContext": "Helmet.Light",
+      "coveredLocations": [
+        "Head"
+      ],
+      "durability": 80,
+      "stages": [
+        {
+          "damageReduction": 30,
+          "thickness": 0.5,
+          "density": 50
+        },
+        {
+          "damageReduction": 30,
+          "thickness": 0.5,
+          "density": 40
+        },
+        {
+          "damageReduction": 30,
+          "thickness": 0.5,
+          "density": 30
+        },
+        {
+          "damageReduction": 30,
+          "thickness": 0.5,
+          "density": 20
+        }
+      ],
+      "modifiers": []
+    },
+    {
+      "id": "Id.Item.MediumArmor",
+      "name": "Level 2 Armor",
+      "slot": "Armor",
+      "damageContext": "Armor.Medium",
+      "coveredLocations": [
+        "Torso.Lower",
+        "Torso.Middle",
+        "Torso.Upper"
+      ],
+      "durability": 220,
+      "stages": [
+        {
+          "damageReduction": 40,
+          "thickness": 0.7,
+          "density": 60
+        },
+        {
+          "damageReduction": 40,
+          "thickness": 0.7,
+          "density": 50
+        },
+        {
+          "damageReduction": 40,
+          "thickness": 0.7,
+          "density": 40
+        },
+        {
+          "damageReduction": 40,
+          "thickness": 0.7,
+          "density": 30
+        }
+      ],
+      "modifiers": []
+    },
+    {
+      "id": "Id.Item.MediumHelmet",
+      "name": "Level 2 Helmet",
+      "slot": "Helmet",
+      "damageContext": "Helmet.Medium",
+      "coveredLocations": [
+        "Head"
+      ],
+      "durability": 100,
+      "stages": [
+        {
+          "damageReduction": 40,
+          "thickness": 0.7,
+          "density": 60
+        },
+        {
+          "damageReduction": 40,
+          "thickness": 0.7,
+          "density": 50
+        },
+        {
+          "damageReduction": 40,
+          "thickness": 0.7,
+          "density": 40
+        },
+        {
+          "damageReduction": 40,
+          "thickness": 0.7,
+          "density": 30
+        }
+      ],
+      "modifiers": []
+    },
+    {
+      "id": "Id.Item.PilotHelmet",
+      "name": "Pilot Helmet",
+      "slot": "Helmet",
+      "damageContext": "Helmet.Pilot",
+      "coveredLocations": [
+        "Head"
+      ],
+      "durability": 180,
+      "stages": [
+        {
+          "damageReduction": 30,
+          "thickness": 0.5,
+          "density": 50
+        },
+        {
+          "damageReduction": 30,
+          "thickness": 0.5,
+          "density": 40
+        },
+        {
+          "damageReduction": 30,
+          "thickness": 0.5,
+          "density": 30
+        },
+        {
+          "damageReduction": 30,
+          "thickness": 0.5,
+          "density": 20
+        }
+      ],
+      "modifiers": []
+    },
+    {
+      "id": "Id.Item.SuperHeavyArmor",
+      "name": "Level 4 Armor",
+      "slot": "Armor",
+      "damageContext": "Armor.SuperHeavy",
+      "coveredLocations": [
+        "Torso.Lower",
+        "Torso.Middle",
+        "Torso.Upper",
+        "Pelvis",
+        "Arm.Upper"
+      ],
+      "durability": 300,
+      "stages": [
+        {
+          "damageReduction": 60,
+          "thickness": 1.5,
+          "density": 130
+        },
+        {
+          "damageReduction": 60,
+          "thickness": 1.5,
+          "density": 120
+        },
+        {
+          "damageReduction": 60,
+          "thickness": 1.5,
+          "density": 110
+        },
+        {
+          "damageReduction": 60,
+          "thickness": 1.5,
+          "density": 100
+        }
+      ],
+      "modifiers": []
+    },
+    {
+      "id": "Id.Item.SuperHeavyHelmet",
+      "name": "Level 4 Helmet",
+      "slot": "Helmet",
+      "damageContext": "Helmet.SuperHeavy",
+      "coveredLocations": [
+        "Head",
+        "Neck"
+      ],
+      "durability": 200,
+      "stages": [
+        {
+          "damageReduction": 60,
+          "thickness": 1.5,
+          "density": 130
+        },
+        {
+          "damageReduction": 60,
+          "thickness": 1.5,
+          "density": 120
+        },
+        {
+          "damageReduction": 60,
+          "thickness": 1.5,
+          "density": 110
+        },
+        {
+          "damageReduction": 60,
+          "thickness": 1.5,
+          "density": 100
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Character.SuppressionReductionMultiplier",
+          "op": "multiply",
+          "value": 0.2
+        }
+      ]
+    },
+    {
+      "id": "Id.Item.TankHelmet",
+      "name": "Tank Helmet",
+      "slot": "Helmet",
+      "damageContext": "Helmet.Tank",
+      "coveredLocations": [
+        "Head",
+        "Neck"
+      ],
+      "durability": 180,
+      "stages": [
+        {
+          "damageReduction": 55,
+          "thickness": 1,
+          "density": 100
+        },
+        {
+          "damageReduction": 55,
+          "thickness": 1,
+          "density": 90
+        },
+        {
+          "damageReduction": 55,
+          "thickness": 1,
+          "density": 80
+        },
+        {
+          "damageReduction": 55,
+          "thickness": 1,
+          "density": 60
+        }
+      ],
+      "modifiers": [
+        {
+          "attribute": "Character.SuppressionReductionMultiplier",
+          "op": "override",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "weightClasses": [
+    {
+      "name": "Lightest",
+      "minWeightKg": 0,
+      "modifiers": []
+    },
+    {
+      "name": "Light",
+      "minWeightKg": 10,
+      "modifiers": [
+        {
+          "attribute": "Movement.MaxSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Movement.JumpVelocityMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.95
+        },
+        {
+          "attribute": "Character.Weight",
+          "op": "add",
+          "value": 1
+        },
+        {
+          "attribute": "Movement.StaminaRegenPerSecondMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.85
+        },
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiply",
+          "value": 1.02
+        },
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiply",
+          "value": 1.05
+        },
+        {
+          "attribute": "Character.AdsTimeMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.05
+        }
+      ]
+    },
+    {
+      "name": "Medium",
+      "minWeightKg": 17,
+      "modifiers": [
+        {
+          "attribute": "Movement.MaxSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.875
+        },
+        {
+          "attribute": "Movement.JumpVelocityMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.9
+        },
+        {
+          "attribute": "Character.Weight",
+          "op": "add",
+          "value": 2
+        },
+        {
+          "attribute": "Movement.StaminaRegenPerSecondMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.65
+        },
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiply",
+          "value": 1.085
+        },
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiply",
+          "value": 1.1
+        },
+        {
+          "attribute": "Character.AdsTimeMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.06
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 1.3
+        }
+      ]
+    },
+    {
+      "name": "Heavy",
+      "minWeightKg": 27,
+      "modifiers": [
+        {
+          "attribute": "Movement.MaxSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.8
+        },
+        {
+          "attribute": "Movement.LeanTimeMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.5
+        },
+        {
+          "attribute": "Movement.UnleanTimeMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.5
+        },
+        {
+          "attribute": "Movement.JumpVelocityMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.85
+        },
+        {
+          "attribute": "Character.Weight",
+          "op": "add",
+          "value": 3
+        },
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiply",
+          "value": 1.175
+        },
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiply",
+          "value": 1.2
+        },
+        {
+          "attribute": "Character.AdsTimeMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.15
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "name": "SuperHeavy",
+      "minWeightKg": 40,
+      "modifiers": [
+        {
+          "attribute": "Movement.MaxSpeedMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.8
+        },
+        {
+          "attribute": "Movement.LeanTimeMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.5
+        },
+        {
+          "attribute": "Movement.UnleanTimeMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.5
+        },
+        {
+          "attribute": "Movement.JumpVelocityMultiplier",
+          "op": "multiplyCompound",
+          "value": 0.65
+        },
+        {
+          "attribute": "Character.Weight",
+          "op": "add",
+          "value": 4
+        },
+        {
+          "attribute": "Character.AimSwayScaleMultiplier",
+          "op": "multiply",
+          "value": 1.2
+        },
+        {
+          "attribute": "Character.AimSwaySpeedMultiplier",
+          "op": "multiply",
+          "value": 1.25
+        },
+        {
+          "attribute": "Character.AdsTimeMultiplier",
+          "op": "multiplyCompound",
+          "value": 1.17
+        },
+        {
+          "attribute": "Character.WeaponSway.RotationStabilizationMultiplier",
+          "op": "multiply",
+          "value": 1.7
+        }
+      ]
+    }
+  ]
+}
