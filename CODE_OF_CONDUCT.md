@@ -1,6 +1,6 @@
 # Code of Conduct
 
-We want WARDOG Companion to be a welcoming place to collaborate, regardless of experience, background or identity.
+We want WARDOGS Companion to be a welcoming place to collaborate, regardless of experience, background or identity.
 
 - Be respectful, specific and constructive. Critique ideas and code without attacking people.
 - Make space for newcomers and different perspectives. Assume good intent while taking feedback seriously.

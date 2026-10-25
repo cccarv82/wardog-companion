@@ -1,7 +1,7 @@
-WARDOG COMPANION 1.0
+WARDOGS COMPANION 1.0.1
 
 INSTALLER
-Open WARDOG-Companion-1.0.0-Setup.exe from the official GitHub release.
+Open WARDOG-Companion-1.0.1-Setup.exe from the official GitHub release.
 Install for your Windows user and launch from the Start menu shortcut.
 
 PORTABLE

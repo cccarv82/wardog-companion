@@ -14,7 +14,7 @@ fn main() {
     fs::write(
         &script,
         format!(
-            "1 ICON \"{}\"\n1 VERSIONINFO\nFILEVERSION {numeric}\nPRODUCTVERSION {numeric}\nFILEOS 0x40004\nFILETYPE 1\nBEGIN\n BLOCK \"StringFileInfo\"\n BEGIN\n BLOCK \"040904B0\"\n BEGIN\n VALUE \"CompanyName\", \"Carlos Carvalho and contributors\\0\"\n VALUE \"FileDescription\", \"WARDOG Companion\\0\"\n VALUE \"FileVersion\", \"{version}\\0\"\n VALUE \"ProductName\", \"WARDOG Companion\\0\"\n VALUE \"ProductVersion\", \"{version}\\0\"\n VALUE \"OriginalFilename\", \"wardog-companion.exe\\0\"\n END\n END\n BLOCK \"VarFileInfo\"\n BEGIN\n VALUE \"Translation\", 0x409, 1200\n END\nEND\n",
+            "1 ICON \"{}\"\n1 VERSIONINFO\nFILEVERSION {numeric}\nPRODUCTVERSION {numeric}\nFILEOS 0x40004\nFILETYPE 1\nBEGIN\n BLOCK \"StringFileInfo\"\n BEGIN\n BLOCK \"040904B0\"\n BEGIN\n VALUE \"CompanyName\", \"Carlos Carvalho and contributors\\0\"\n VALUE \"FileDescription\", \"WARDOGS Companion\\0\"\n VALUE \"FileVersion\", \"{version}\\0\"\n VALUE \"ProductName\", \"WARDOGS Companion\\0\"\n VALUE \"ProductVersion\", \"{version}\\0\"\n VALUE \"OriginalFilename\", \"wardog-companion.exe\\0\"\n END\n END\n BLOCK \"VarFileInfo\"\n BEGIN\n VALUE \"Translation\", 0x409, 1200\n END\nEND\n",
             icon.display().to_string().replace('\\', "/"),
         ),
     )

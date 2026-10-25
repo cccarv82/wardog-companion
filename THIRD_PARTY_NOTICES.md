@@ -1,6 +1,6 @@
 # Third-party notices
 
-WARDOG Companion source code and original artwork are MIT licensed; see LICENSE.
+WARDOGS Companion source code and original artwork are MIT licensed; see LICENSE.
 
 The derived catalogue and minimal pinned test fixtures originate from warpuppies/wardogs-data, revision e4ca3e9f1c48d980ba531202642884c358208304. Their Unlicense is retained in data/WARDOGS-DATA-LICENSE.txt and research/wardogs-data/LICENSE. See SOURCES.md for provenance, supplemental compatibility research and modeling boundaries.
 

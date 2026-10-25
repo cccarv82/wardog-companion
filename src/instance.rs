@@ -27,7 +27,7 @@ fn acquire_named(name: &str) -> Result<Instance, String> {
         unsafe {
             CloseHandle(handle);
         }
-        return Err("WARDOG Companion is already running.\n\nPress Ctrl + Shift + Space to bring it back, or close the existing copy before opening another.".into());
+        return Err("WARDOGS Companion is already running.\n\nPress Ctrl + Shift + Space to bring it back, or close the existing copy before opening another.".into());
     }
     Ok(Instance { handle })
 }
@@ -45,7 +45,7 @@ pub fn notify(message: &str) {
     #[cfg(windows)]
     {
         let text: Vec<_> = message.encode_utf16().chain(Some(0)).collect();
-        let title: Vec<_> = "WARDOG Companion".encode_utf16().chain(Some(0)).collect();
+        let title: Vec<_> = "WARDOGS Companion".encode_utf16().chain(Some(0)).collect();
         unsafe {
             windows_sys::Win32::UI::WindowsAndMessaging::MessageBoxW(
                 std::ptr::null_mut(),

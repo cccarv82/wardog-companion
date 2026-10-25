@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="assets/wardog.svg" width="112" alt="WARDOG Companion shield" />
-  <h1>WARDOG Companion</h1>
+  <img src="assets/wardog.svg" width="112" alt="WARDOGS Companion shield" />
+  <h1>WARDOGS Companion</h1>
   <p><strong>Your next setup. Less guesswork.</strong></p>
   <p>A focused Windows companion for WARDOGS, built with Rust.<br />Find eligible weapon setups, compare your options and spend smarter.</p>
   <p>
@@ -18,12 +18,12 @@
 
 Your levels decide what is eligible. Your budget decides what is practical. Your goal decides what to prioritize.
 
-WARDOG Companion brings those decisions into a compact panel you can keep above the game or hide with a shortcut. Set your progression once, choose a weapon, and get a supported setup for **Control**, **Balanced** or **Agility**. Open the details when you want the reasoning; keep them out of the way when you play.
+WARDOGS Companion brings those decisions into a compact panel you can keep above the game or hide with a shortcut. Set your progression once, choose a weapon, and get a supported setup for **Control**, **Balanced** or **Agility**. Open the details when you want the reasoning; keep them out of the way when you play.
 
 **Native Rust + Iced. Offline recommendations. No account. English interface.**
 
 <p align="center">
-  <img src="docs/images/companion.png" width="330" alt="The compact WARDOG Companion panel showing an AK-74 setup" />
+  <img src="docs/images/companion.png" width="330" alt="The compact WARDOGS Companion panel showing an AK-74 setup" />
   <img src="docs/images/spending.png" width="330" alt="Spend smarter screen showing Economy and Sweet spot attachment setups with prices and handling trade-offs" />
   <br /><sub>A real app screenshot. Spending gain is a model score, not measured combat performance.</sub>
 </p>
@@ -51,7 +51,7 @@ With the WARDOGS arsenal in the foreground, **Ctrl + Shift + R** can read a visi
 
 ## Get started
 
-1. Download **`WARDOG-Companion-1.0.0-Setup.exe`** from [Releases](https://github.com/cccarv82/wardog-companion/releases/latest). Install for your Windows user; administrator rights are not required. A portable ZIP is also available.
+1. Download **`WARDOG-Companion-1.0.1-Setup.exe`** from [Releases](https://github.com/cccarv82/wardog-companion/releases/latest). Install for your Windows user; administrator rights are not required. A portable ZIP is also available.
 2. Set your **Overall, Assault, Medic, Recon and Support** levels and your attachment budget. Choose **Done**.
 3. Pick a weapon and a goal. Use **Find my weapon** for a class/range recommendation or **Customize** to keep particular parts.
 4. Choose **Hide & play**. Bring the panel back when you need it.

@@ -1,4 +1,4 @@
-# Contributing to WARDOG Companion
+# Contributing to WARDOGS Companion
 
 Thank you for helping make loadout decisions easier. We welcome focused fixes, better explanations, validated data corrections and thoughtful improvements to the Windows experience.
 

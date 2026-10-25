@@ -66,7 +66,7 @@ fn main() -> iced::Result {
         }
     };
     iced::application(App::boot, App::update, App::view)
-        .title(concat!("WARDOG Companion · ", env!("CARGO_PKG_VERSION")))
+        .title(concat!("WARDOGS Companion · ", env!("CARGO_PKG_VERSION")))
         .theme(|_: &App| {
             Theme::custom(
                 "Wardog",
@@ -942,7 +942,7 @@ impl App {
                 .padding([4, 8])
                 .style(panel),
             column![
-                text("WARDOG").size(18).font(Font::MONOSPACE),
+                text("WARDOGS").size(18).font(Font::MONOSPACE),
                 text(concat!("COMPANION · ", env!("CARGO_PKG_VERSION")))
                     .size(9)
                     .color(MUTED)
@@ -1831,7 +1831,7 @@ impl App {
             text("Keep your companion ready.").size(28),
             card(
                 column![
-                    text(concat!("WARDOG Companion ", env!("CARGO_PKG_VERSION"))).size(20),
+                    text(concat!("WARDOGS Companion ", env!("CARGO_PKG_VERSION"))).size(20),
                     text("Windows · Open source · Made with Rust")
                         .size(12)
                         .color(MUTED),

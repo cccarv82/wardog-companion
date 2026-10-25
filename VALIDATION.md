@@ -39,3 +39,11 @@ The installer uses original high-resolution artwork and a dark wizard. Native vi
 The final lifecycle fix passed formatting, Clippy, **51 Rust release tests** and a release build. The app now holds a session-local single-instance mutex; its dedicated test confirms duplicate rejection and lock release. Setup/Uninstall checks that mutex. A silent uninstall attempted while the isolated companion was running exited with code 1 and left it intact. After closing the companion normally, uninstall exited successfully, removed its executable and Start menu shortcuts, retained external data, and left the real player profile unchanged.
 
 The first public GitHub Windows CI run passed from the committed source, including all then-current tests, importer checks, release build, portable packaging and artifact upload. The minimal source fixtures also passed importer tests from a clean Git archive. No fake newer public release was created to test upgrades; stable-version and download branches use local fixtures. The final public release assets and production current-version response are checked after publication.
+
+## Branding patch — 1.0.1
+
+2026-10-25: corrected visible branding to WARDOGS Companion. Formatting, Clippy with warnings denied, all 51 Rust release tests, four Python importer tests and the release build passed. Native screenshots were refreshed for the corrected app title/header, spending screen and installer artwork.
+
+A real 1.0.0 installer was installed into an isolated QA directory, then upgraded with the 1.0.1 installer. Windows product metadata reported WARDOGS Companion 1.0.1, the original generated Start menu shortcut was removed, and its corrected replacement existed. The existing external catalogue retained its checksum; the real player's profile checksum was unchanged. The QA installation was uninstalled successfully afterward.
+
+The executable/crate name, profile directory, installation directory, AppId, mutex, GitHub repository URL and WARDOG-Companion download-asset prefix remain stable intentionally. This lets the unmodified 1.0.0 updater locate the newer installer. No recommendation-model or game-data changes were made.

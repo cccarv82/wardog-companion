@@ -1,6 +1,6 @@
 [package]
 name = "wardog-companion"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2024"
 description = "A focused, offline weapon-build companion in Rust"
 license = "MIT"
