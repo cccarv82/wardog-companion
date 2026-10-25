@@ -13,6 +13,8 @@ The first public open-source release: a focused Windows companion for source-bac
 - Original W/shield icon and embedded Windows version information.
 - MIT-licensed application source, contribution guide, issue/PR templates and Windows CI.
 
+- Single-instance protection avoids competing copies and shortcuts; Setup/Uninstall require the companion to be closed.
+
 ## Choose your download
 
 - **WARDOG-Companion-1.0.0-Setup.exe** — recommended installation for your Windows user; no administrator rights required.
@@ -26,4 +28,3 @@ Close previous companion copies before installing or opening this release. Exist
 Version 1.0 is not digitally code-signed. Windows may display an unknown-publisher/SmartScreen notice; never disable security features to run it. SHA-256 verification is an integrity check, not publisher signing.
 
 OCR is experimental and requires confirmation. Recommendations use pinned community game-file data; ideal TTK and handling scores are estimates, not measured in-game performance. Unknown or unsupported combinations remain excluded. See README.md, MODELING_LIMITS.md and VALIDATION.md.
-- Single-instance protection avoids competing copies and shortcuts; uninstall requires the app to be closed.

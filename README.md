@@ -76,6 +76,13 @@ Only one interactive companion can run per Windows session. If it is already ope
 
 Uninstalling leaves your local profile and retained external dataset in place. A portable copy is independent of an installed copy; close it before using the installed app.
 
+<details>
+<summary>Preview the Windows installer</summary>
+
+![Branded dark Windows Setup wizard](docs/images/installer.png)
+
+</details>
+
 ## Understand the recommendations
 
 The companion is a decision aid built from a **pinned community snapshot of game-file data**, not live player or server data. Missing values stay unknown. Compatibility is explicit; it is never inferred from caliber alone.
