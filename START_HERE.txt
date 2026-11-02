@@ -1,7 +1,7 @@
-WARDOGS COMPANION 1.0.1
+WARDOGS COMPANION 1.1.0
 
 INSTALLER
-Open WARDOG-Companion-1.0.1-Setup.exe from the official GitHub release.
+Open WARDOG-Companion-1.1.0-Setup.exe from the official GitHub release.
 Install for your Windows user and launch from the Start menu shortcut.
 
 PORTABLE
@@ -11,7 +11,7 @@ Keep Data/ and About/ beside the executable.
 FIRST SETUP
 Close earlier companion copies, including hidden windows.
 Set your levels and attachment budget; choose Done.
-Choose your weapon and Control / Balanced / Agility.
+Choose your weapon and Control / Balanced / Agility. Range defaults to Auto.
 
 CTRL + SHIFT + SPACE    Hide/show the panel
 CTRL + SHIFT + R        Read the arsenal (experimental; confirm the match)
@@ -23,3 +23,7 @@ Your profile stays in LocalAppData > WardogCompanion.
 Version 1.0 is not code-signed. Never disable Windows security to run it.
 Recommendations are community-data estimates. Read README.md and VALIDATION.md.
 https://github.com/cccarv82/wardog-companion
+
+UPDATING FROM 1.0
+Your saved parts stay unchanged. Choose Update setup to apply the new model.
+Keep and explicit preferences are respected. The original profile is backed up.

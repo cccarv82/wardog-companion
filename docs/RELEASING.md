@@ -53,3 +53,5 @@ Game-data rollback is available in the app. App binary rollback is a separate ma
 The interactive app holds a session-local named mutex. Uninstall checks the same mutex and refuses to proceed while the companion is running. Diagnostic CLI modes do not acquire it. Close the app before uninstalling; a hidden panel still counts as running.
 
 Branding uses WARDOGS Companion from 1.0.1 onward. The crate/executable name, existing installation/profile directories, AppId, mutex, repository URL and WARDOG-Companion release asset prefix remain stable so 1.0.0 can discover and install the update. Setup migrates the original generated shortcuts to the corrected display name.
+
+Application version 1.1.0 adds profile context fields. The existing profile is backed up to profile.json.v1.0.bak before first saving these fields. Existing parts remain saved until the user chooses Update setup or another recommendation action. The packaged audit includes ranking scenarios and a separate setup matrix; neither constitutes live-game validation.

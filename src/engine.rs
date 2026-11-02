@@ -86,9 +86,9 @@ impl Goal {
     }
     pub fn description(self) -> &'static str {
         match self {
-            Self::Control => "Prioritizes recoil control.",
-            Self::Agility => "Prioritizes shorter aim time.",
-            Self::Balanced => "Balances recoil control and aim time.",
+            Self::Control => "Prioritizes steadiness for this weapon and range.",
+            Self::Agility => "Prioritizes aim and equip handling for this weapon and range.",
+            Self::Balanced => "Balances steadiness and handling for this weapon and range.",
         }
     }
     pub fn weights(self) -> [f32; 3] {
@@ -117,6 +117,36 @@ pub struct Profile {
     pub weapon_id: String,
     pub class_checks: BTreeMap<String, ClassChecks>,
     pub unlocked: BTreeSet<String>,
+    pub engagement: Engagement,
+    pub recommendation_model: u8,
+}
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Default, Serialize, Deserialize)]
+pub enum Engagement {
+    #[default]
+    Automatic,
+    Close,
+    Medium,
+    Long,
+}
+impl Engagement {
+    pub const ALL: [Self; 4] = [Self::Automatic, Self::Close, Self::Medium, Self::Long];
+    pub fn for_distance(metres: u32) -> Self {
+        match metres {
+            0..=50 => Self::Close,
+            51..=150 => Self::Medium,
+            _ => Self::Long,
+        }
+    }
+}
+impl std::fmt::Display for Engagement {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.write_str(match self {
+            Self::Automatic => "Auto · weapon role",
+            Self::Close => "Close · 25 m",
+            Self::Medium => "Medium · 100 m",
+            Self::Long => "Long · 300 m",
+        })
+    }
 }
 #[derive(Debug, Clone, Default, Serialize, Deserialize)]
 #[serde(default)]
@@ -142,6 +172,8 @@ impl Default for Profile {
             weapon_id: "Id.Item.AK74M".into(),
             class_checks: BTreeMap::new(),
             unlocked: BTreeSet::new(),
+            engagement: Engagement::Automatic,
+            recommendation_model: 0,
         }
     }
 }

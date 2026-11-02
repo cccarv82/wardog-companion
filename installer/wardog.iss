@@ -1,5 +1,5 @@
 #ifndef AppVersion
-  #define AppVersion "1.0.1"
+  #define AppVersion "1.1.0"
 #endif
 #ifndef PayloadDir
   #define PayloadDir "..\..\output\wardog-companion-v1.0"

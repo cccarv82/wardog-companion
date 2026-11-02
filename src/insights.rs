@@ -72,6 +72,7 @@ pub struct Upgrade {
     pub unlock_fee: u32,
     pub cost: f64,
     pub changes: Vec<Change>,
+    pub reason: String,
 }
 pub fn next_upgrade(data: &Reference, p: &Profile) -> Option<Upgrade> {
     // Compare with the best currently eligible setup, not an intentionally weaker manual build.
@@ -79,8 +80,15 @@ pub fn next_upgrade(data: &Reference, p: &Profile) -> Option<Upgrade> {
     if p.owned_only {
         return None;
     }
-    let baseline = lab::evaluate(data, p, &lab::suggest(data, p).ok()?).ok()?;
-    let mut best: Option<(u8, f64, Upgrade)> = None;
+    let current_parts = lab::suggest(data, p).ok()?;
+    let baseline = lab::evaluate(data, p, &current_parts).ok()?;
+    let has_suitable_sight = |parts: &BTreeMap<Slot, String>| {
+        parts
+            .get(&Slot::Optic)
+            .and_then(|id| lab::item(data, id))
+            .is_some_and(|part| crate::purpose::suitable_sight(data, p, part))
+    };
+    let mut best: Option<(u8, bool, f64, Upgrade)> = None;
     let mut thresholds = std::collections::BTreeSet::new();
     for part in &data.items {
         let Some(track) = part.unlock_track() else {
@@ -94,7 +102,7 @@ pub fn next_upgrade(data: &Reference, p: &Profile) -> Option<Upgrade> {
     for (track_index, level) in thresholds {
         let track = Track::ALL[track_index];
         let distance = level - p.levels[track_index];
-        if best.as_ref().is_some_and(|(d, _, _)| distance > *d) {
+        if best.as_ref().is_some_and(|(d, _, _, _)| distance > *d) {
             continue;
         }
         let mut future = p.clone();
@@ -106,18 +114,20 @@ pub fn next_upgrade(data: &Reference, p: &Profile) -> Option<Upgrade> {
             continue;
         };
         let gain = estimate.score(p) - baseline.score(p);
+        let capability = !has_suitable_sight(&current_parts) && has_suitable_sight(&parts);
         // At least half a heuristic preference point: avoid advertising negligible upgrades.
-        if gain < 0.5 {
+        if gain < 0.5 && !capability {
             continue;
         }
         let Some(part) = parts
             .values()
             .filter_map(|id| lab::item(data, id))
-            .find(|part| {
+            .filter(|part| {
                 part.eligible_by_level(p) == Some(false)
                     && part.unlock_track() == Some(track)
                     && part.unlock.as_ref().is_some_and(|u| u.level == level)
             })
+            .min_by_key(|part| !(capability && lab::fits(part, Slot::Optic)))
         else {
             continue;
         };
@@ -128,21 +138,85 @@ pub fn next_upgrade(data: &Reference, p: &Profile) -> Option<Upgrade> {
             unlock_fee: part.unlock.as_ref()?.cost,
             cost: estimate.cost,
             changes: changes(&baseline, &estimate),
+            reason: if capability {
+                format!(
+                    "Adds a suitable sight for {}. Aim time can increase; the new capability is separate from handling-score gain.",
+                    crate::purpose::engagement(data, p)
+                )
+            } else {
+                "Improves the role-aware handling score under your constraints.".into()
+            },
         };
-        if best
-            .as_ref()
-            .is_none_or(|(d, g, _)| distance < *d || (distance == *d && gain > *g))
-        {
-            best = Some((distance, gain, upgrade));
+        if best.as_ref().is_none_or(|(d, c, g, _)| {
+            distance < *d
+                || (distance == *d && ((capability && !*c) || (capability == *c && gain > *g)))
+        }) {
+            best = Some((distance, capability, gain, upgrade));
         }
     }
-    best.map(|(_, _, upgrade)| upgrade)
+    best.map(|(_, _, _, upgrade)| upgrade)
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
     use crate::engine::Goal;
+    #[test]
+    fn a_future_precision_sight_can_be_useful_even_when_it_slows_aim_time() {
+        let mut d = Reference::load();
+        d.weapon.class_name = "Snipers".into();
+        d.slots = lab::SLOTS.to_vec();
+        d.items
+            .retain(|part| part.slot != "Sight" || part.name == "Kobra Reflex");
+        for part in &mut d.items {
+            part.unlock_free = true;
+            part.unlock = None;
+        }
+        let scope = d
+            .items
+            .iter_mut()
+            .find(|i| i.name == "Kobra Reflex")
+            .unwrap();
+        let id = scope.id.clone();
+        scope.name = "Precision scope fixture".into();
+        scope.unlock_free = false;
+        scope.unlock = Some(crate::reference::Unlock {
+            role: "Wardog".into(),
+            level: 10,
+            cost: 100,
+        });
+        scope.modifiers = vec![
+            crate::reference::Modifier {
+                attribute: "Weapon.AdsZoomMultiplier".into(),
+                op: "override".into(),
+                value: 6.,
+            },
+            crate::reference::Modifier {
+                attribute: "Weapon.AimTime".into(),
+                op: "multiplyCompound".into(),
+                value: 1.15,
+            },
+        ];
+        let p = Profile {
+            levels: [9, 99, 99, 99, 99],
+            budget: 100_000,
+            goal: Goal::Control,
+            ..Profile::default()
+        };
+        let current = lab::suggest(&d, &p).unwrap();
+        assert!(!current.contains_key(&Slot::Optic));
+        let mut future = p.clone();
+        future.levels[0] = 10;
+        let next = lab::suggest(&d, &future).unwrap();
+        assert_eq!(next[&Slot::Optic], id);
+        assert!(
+            lab::evaluate(&d, &future, &next).unwrap().score(&p)
+                < lab::evaluate(&d, &p, &current).unwrap().score(&p)
+        );
+        let upgrade = next_upgrade(&d, &p).unwrap();
+        assert_eq!(upgrade.name, "Precision scope fixture");
+        assert!(upgrade.reason.contains("separate"));
+    }
     #[test]
     fn swap_compares_whole_compounded_setup_without_mutating_profile() {
         let data = Reference::load();

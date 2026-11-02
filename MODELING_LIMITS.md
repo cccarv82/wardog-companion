@@ -1,8 +1,8 @@
-# Modeling limits — 1.0
+# Modeling limits — 1.1
 
 - Source: a pinned community snapshot of game-file values, not live server/account data. Unknown values remain unknown.
 - 40 weapon records include two test/vehicle records excluded from rankings. All 298 source attachment records are searchable; that does not establish fit or modeled support for every combination.
-- Automatic suggestions use explicit compatibility and supported compound handling effects. Conditional bipod deployment and unsupported operations are excluded.
+- Automatic suggestions use explicit compatibility and supported handling effects with conservative stacking. Conditional bipod deployment and unsupported operations are excluded.
 - Weight tiers, worn equipment, ammunition load, player skills and other character attributes are outside the full-loadout estimate.
 - Raw TTK uses hypothetical target HP, ideal hits and published RPM. It excludes armor/body multipliers, misses, reloads, trigger/burst gaps and flight time. It is not measured game kill time.
 - Cubic falloff interiors lack source tangents and are excluded. Recoil index is a pattern statistic, not validated overall controllability.
@@ -15,3 +15,6 @@
 - OCR is experimental, local and confirmation-based. A supported Windows OCR language is required; fullscreen/resolution/occlusion can affect capture. Manual selection remains available.
 - Global shortcuts can be owned by another copy or application. Close earlier instances and restart; Minimize is the fallback.
 - Prior in-game behavior was player reported. New release desktop tests are not a new in-game numerical validation campaign.
+
+- Role/range sight bands, capacity floors and six-factor handling priorities are deterministic policies, not measured combat performance. Source zoom settings are not assumed to describe full variable optical zoom. See docs/RECOMMENDATIONS.md.
+- Existing saved parts are preserved across the model update. Explicit choices can override contextual defaults; mismatches are explained. Unchanged slots remain unconfirmed.

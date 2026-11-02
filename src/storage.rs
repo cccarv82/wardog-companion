@@ -43,7 +43,9 @@ fn save_to(path: &std::path::Path, profile: &Profile) -> Result<(), String> {
             || value.get("minimum_capacity").is_none()
             || value.get("weapon_id").is_none()
             || value.get("class_checks").is_none()
-            || value.get("unlocked").is_none())
+            || value.get("unlocked").is_none()
+            || value.get("engagement").is_none()
+            || value.get("recommendation_model").is_none())
     {
         match fs::OpenOptions::new()
             .write(true)
@@ -62,8 +64,10 @@ fn save_to(path: &std::path::Path, profile: &Profile) -> Result<(), String> {
                 "json.v0.7.bak"
             } else if value.get("class_checks").is_none() {
                 "json.v0.8.bak"
-            } else {
+            } else if value.get("unlocked").is_none() {
                 "json.v0.9.bak"
+            } else {
+                "json.v1.0.bak"
             })) {
             Ok(mut file) => file.write_all(&previous).map_err(|e| e.to_string())?,
             Err(e) if e.kind() == std::io::ErrorKind::AlreadyExists => {}
@@ -78,6 +82,43 @@ fn save_to(path: &std::path::Path, profile: &Profile) -> Result<(), String> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn version_one_profile_preserves_parts_and_gets_a_backup_before_new_context_is_saved() {
+        let dir =
+            std::env::temp_dir().join(format!("wardog-context-profile-{}", std::process::id()));
+        fs::create_dir_all(&dir).unwrap();
+        let path = dir.join("profile.json");
+        let mut p = Profile::default();
+        p.lab_parts
+            .insert(crate::engine::Slot::Optic, "Id.Item.SGHT_009".into());
+        p.levels = [49, 11, 12, 5, 14];
+        let mut value = serde_json::to_value(&p).unwrap();
+        value.as_object_mut().unwrap().remove("engagement");
+        value
+            .as_object_mut()
+            .unwrap()
+            .remove("recommendation_model");
+        let original = value.to_string();
+        fs::write(&path, &original).unwrap();
+        let mut loaded: Profile = serde_json::from_str(&original).unwrap();
+        assert_eq!(loaded.engagement, crate::engine::Engagement::Automatic);
+        assert_eq!(loaded.recommendation_model, 0);
+        assert_eq!(loaded.lab_parts, p.lab_parts);
+        loaded.engagement = crate::engine::Engagement::Long;
+        loaded.recommendation_model = crate::purpose::MODEL;
+        save_to(&path, &loaded).unwrap();
+        assert_eq!(
+            fs::read_to_string(path.with_extension("json.v1.0.bak")).unwrap(),
+            original
+        );
+        let roundtrip: Profile = serde_json::from_slice(&fs::read(&path).unwrap()).unwrap();
+        assert_eq!(roundtrip.engagement, loaded.engagement);
+        assert_eq!(roundtrip.lab_parts, p.lab_parts);
+        assert_eq!(roundtrip.levels, p.levels);
+        fs::remove_file(path.with_extension("json.v1.0.bak")).unwrap();
+        fs::remove_file(path).unwrap();
+        fs::remove_dir(dir).unwrap();
+    }
     #[test]
     fn version_nine_backup_and_paid_unlocks_survive_roundtrip() {
         let dir = std::env::temp_dir().join(format!("wardog-v09-paid-{}", std::process::id()));

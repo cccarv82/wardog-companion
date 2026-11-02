@@ -1,6 +1,7 @@
 use crate::{
     catalog::Catalog,
-    engine::Profile,
+    engine::{Engagement, Goal, Profile},
+    lab, purpose,
     ranking::{self, Mode, Scenario},
 };
 pub fn export(data: &Catalog, output: &std::path::Path) -> Result<(), String> {
@@ -48,8 +49,47 @@ pub fn export(data: &Catalog, output: &std::path::Path) -> Result<(), String> {
             }
         }
     }
-    let report = serde_json::json!({"game_build":data.game_build,"revision":data.source_commit,"checked_on":"2026-10-25",
-        "kind":"Automated model audit, not an in-game validation","cases":cases.len(),"results":cases});
+    let mut setups = vec![];
+    for levels in [[49, 11, 12, 5, 14], [100; 5]] {
+        for reference in data.weapons.iter().filter(|r| !r.weapon.test_record) {
+            for engagement in Engagement::ALL {
+                for goal in Goal::ALL {
+                    for budget in [0, 2000] {
+                        let p = Profile {
+                            levels,
+                            engagement,
+                            goal,
+                            budget,
+                            ..Profile::default()
+                        };
+                        let parts = lab::suggest(reference, &p)?;
+                        let estimate = lab::evaluate(reference, &p, &parts)?;
+                        if estimate.cost > budget as f64
+                            || !estimate.unknown_prices.is_empty()
+                            || parts
+                                .get(&crate::engine::Slot::Optic)
+                                .and_then(|id| lab::item(reference, id))
+                                .is_some_and(|part| !purpose::suitable_sight(reference, &p, part))
+                            || parts
+                                .get(&crate::engine::Slot::Magazine)
+                                .and_then(|id| lab::item(reference, id))
+                                .is_some_and(|part| {
+                                    !purpose::automatic_magazine(reference, &p, part)
+                                })
+                        {
+                            return Err(format!(
+                                "Context invariant failed for {}",
+                                reference.weapon.name
+                            ));
+                        }
+                        setups.push(serde_json::json!({"weapon":reference.weapon.name,"class":reference.weapon.class_name,"levels":levels,"budget":budget,"requested_range":engagement,"effective_range":purpose::engagement(reference,&p),"goal":goal,"parts":parts.iter().map(|(slot,id)|serde_json::json!({"slot":slot,"id":id,"name":lab::item(reference,id).unwrap().name})).collect::<Vec<_>>(),"cost":estimate.cost,"policy":purpose::summary(reference,&p),"notes":purpose::notes(reference,&p,&parts)}));
+                    }
+                }
+            }
+        }
+    }
+    let report = serde_json::json!({"game_build":data.game_build,"revision":data.source_commit,"app_version":env!("CARGO_PKG_VERSION"),"recommendation_model":purpose::MODEL,
+        "kind":"Automated model audit, not an in-game validation","cases":cases.len(),"results":cases,"setup_cases":setups.len(),"setup_results":setups});
     let bytes = serde_json::to_vec_pretty(&report).map_err(|e| e.to_string())?;
     std::fs::write(output, bytes).map_err(|e| e.to_string())
 }

@@ -9,6 +9,7 @@ mod insights;
 mod instance;
 mod lab;
 mod patch;
+mod purpose;
 mod range;
 mod ranking;
 mod recognition;
@@ -17,7 +18,7 @@ mod spending;
 mod storage;
 mod updates;
 
-use engine::{Goal, Profile, Slot, Track};
+use engine::{Engagement, Goal, Profile, Slot, Track};
 use iced::{
     Border, Color, Element, Fill, Font, Subscription, Task, Theme,
     widget::{
@@ -121,6 +122,8 @@ enum Page {
 #[derive(Debug, Clone)]
 enum Message {
     Goal(Goal),
+    Engagement(Engagement),
+    RefreshRecommendation,
     Open(Page),
     Done,
     Level(Track, u8),
@@ -184,7 +187,7 @@ struct Capacity(u32);
 impl std::fmt::Display for Capacity {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         if self.0 == 0 {
-            f.write_str("No minimum")
+            f.write_str("Automatic · protect capacity")
         } else {
             write!(f, "{}+ rounds", self.0)
         }
@@ -292,6 +295,7 @@ impl App {
             && let Ok(parts) = lab::suggest(&reference, &profile)
         {
             profile.lab_parts = parts;
+            profile.recommendation_model = purpose::MODEL;
         }
         let estimate = lab::evaluate(&reference, &profile, &profile.lab_parts);
         let spending = spending::analyze(&reference, &profile);
@@ -444,6 +448,7 @@ impl App {
         match lab::suggest(&self.reference, &self.profile) {
             Ok(parts) => {
                 self.profile.lab_parts = parts;
+                self.profile.recommendation_model = purpose::MODEL;
                 self.refresh();
                 self.save();
             }
@@ -461,6 +466,7 @@ impl App {
                     Ok(report) => {
                         if let Some(option) = report.options.get(index) {
                             self.profile.lab_parts = option.build.parts.clone();
+                            self.profile.recommendation_model = purpose::MODEL;
                             self.refresh();
                             self.save();
                             self.page = Page::Home;
@@ -487,6 +493,7 @@ impl App {
             }
             Message::UseRange(id) => {
                 self.profile.goal = self.reach.goal();
+                self.profile.engagement = Engagement::for_distance(self.reach.distance());
                 return self.update(Message::SelectWeapon(id));
             }
             Message::Unlocked(id, value) => {
@@ -765,6 +772,11 @@ impl App {
                 self.profile.goal = goal;
                 self.recommend();
             }
+            Message::Engagement(engagement) => {
+                self.profile.engagement = engagement;
+                self.recommend();
+            }
+            Message::RefreshRecommendation => self.recommend(),
             Message::Open(page) => {
                 self.page = page;
                 self.details = false;
@@ -1082,6 +1094,30 @@ impl App {
         } else {
             column![weapon, goals].spacing(10).width(Fill)
         };
+        if !self.compact {
+            content = content.push(
+                row![
+                    text("Range").size(12).color(MUTED),
+                    pick_list(
+                        Engagement::ALL,
+                        Some(self.profile.engagement),
+                        Message::Engagement
+                    )
+                    .width(Fill)
+                ]
+                .spacing(10)
+                .align_y(iced::Center),
+            );
+            if self.profile.recommendation_model < purpose::MODEL {
+                content=content.push(card(column![text("Smarter recommendations are ready.").size(14),text("Your saved parts are unchanged. Apply the new role, sight and capacity rules when you're ready.").size(11).color(MUTED).width(Fill),button("Update setup").on_press(Message::RefreshRecommendation)].spacing(8)));
+            }
+            for note in purpose::notes(&self.reference, &self.profile, &self.profile.lab_parts)
+                .into_iter()
+                .filter(|_| self.profile.recommendation_model >= purpose::MODEL)
+            {
+                content = content.push(text(note).size(11).color(ACCENT).width(Fill));
+            }
+        }
         if ranking::eligible(&self.reference.weapon, &self.profile) == Some(false) {
             content = content.push(
                 text(format!(
@@ -1145,11 +1181,7 @@ impl App {
         }
         if let Ok(estimate) = &self.estimate {
             if !estimate.selected.is_empty() {
-                let indices = match self.profile.goal {
-                    Goal::Control => [0, 1],
-                    Goal::Agility => [2, 4],
-                    Goal::Balanced => [1, 2],
-                };
+                let indices = purpose::display_metrics(&self.reference, &self.profile);
                 let metric = |index: usize| {
                     let factor = estimate.factors[index];
                     let delta = (factor - 1.) * 100.;
@@ -2065,7 +2097,7 @@ impl App {
             text("Preferred sight").size(12).color(MUTED),
             pick_list(sights, Some(current_sight), Message::PreferredSight).width(Fill),
             text("Minimum magazine capacity").size(12).color(MUTED),
-            pick_list([Capacity(0), Capacity(30), Capacity(60), Capacity(75)],
+            pick_list([Capacity(0), Capacity(5), Capacity(10), Capacity(20), Capacity(30), Capacity(60), Capacity(75), Capacity(100)],
                 Some(Capacity(self.profile.minimum_capacity)), Message::MinimumCapacity).width(Fill),
             text("Suggestions update and save automatically. Requirements and budget still apply.").size(10).color(MUTED).width(Fill)
         ].spacing(8)));
@@ -2092,6 +2124,7 @@ impl App {
             ]
             .spacing(6);
             if self.upgrade_details {
+                next = next.push(text(&upgrade.reason).size(11).color(MUTED).width(Fill));
                 next = next.push(
                     text(format!(
                         "Suggested parts: {} · unlock fee: {} (separate)",
@@ -2322,7 +2355,7 @@ impl App {
         body.push(text("Estimated changes relative to your saved selection. Unchanged slots are not detected; unmodeled effects may affect your choice. Nothing changes until you apply.").size(11).color(MUTED).width(Fill)).into()
     }
     fn explanation(&self) -> Element<'_, Message> {
-        let mut details=column![text(self.profile.goal.description()).size(14),text("Based on this weapon's explicitly linked attachment records. Multiple recorded compound modifiers are multiplied, not added.").size(12).color(MUTED).width(Fill),
+        let mut details=column![text(self.profile.goal.description()).size(14),text(purpose::summary(&self.reference,&self.profile)).size(12).color(MUTED).width(Fill),text("Handling priorities adapt to weapon role, range and published recoil-axis balance. Compound effects multiply; one ordinary multiplier per attribute is supported. Additive aim time requires a known base and no other aim-time modifiers.").size(11).color(MUTED).width(Fill),
             button("Data version & coverage").on_press(Message::Open(Page::Data)).style(button::text)].spacing(10);
         if let Ok(estimate) = &self.estimate {
             for (index, (_, label)) in lab::ATTRIBUTES.iter().enumerate() {
@@ -2338,7 +2371,7 @@ impl App {
                     .color(MUTED)
                     .width(Fill),
             );
-            details=details.push(text(format!("{} other effects are outside these metrics. Weight tiers, ammo, zoom, suppression and magazine capacity are not optimized.",estimate.ignored_effects)).size(11).color(MUTED).width(Fill));
+            details=details.push(text(format!("{} other effects are outside these handling metrics. Source zoom and magazine capacity constrain automatic choices; weight tiers, ammo, suppression, optical quality and variable zoom ranges remain unmodeled.",estimate.ignored_effects)).size(11).color(MUTED).width(Fill));
         }
         details=details.push(text("Unchanged slots are not detected or modeled. Missing requirements/prices are excluded from suggestions. Keep a slot to stop the recommender changing it. Equal preference scores favor lower cost.").size(11).color(MUTED).width(Fill))
             .push(text(format!("{} · {} · imported {}",self.reference.weapon.name,self.reference.weapon.id,self.reference.imported_on)).size(10).color(MUTED).width(Fill))

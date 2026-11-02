@@ -1,18 +1,16 @@
-# WARDOGS Companion 1.0.1
+# WARDOGS Companion 1.1.0 — builds with a purpose
 
-Corrects the application name to **WARDOGS Companion**, matching the game's name, **WARDOGS**.
+Recommendations now consider what the weapon is for, not just which parts improve three stats.
 
-- Corrected the window title, app header, update screen and instance notice.
-- Corrected Windows product metadata, installer text, original installer artwork and shortcut names.
-- Updated the README, contribution documentation and screenshots.
-- Setup replaces the original generated shortcuts with the corrected names during upgrade.
+- **Role-aware sights:** Auto uses the weapon role; optional Close / Medium / Long settings use explicit sight bands. Long-range snipers no longer automatically receive a reflex for its ADS bonus.
+- **Protected magazine capacity:** the automatic model uses a published default capacity when available, otherwise documented class floors. Smaller magazines no longer win solely through recoil/aim-time bonuses.
+- **Contextual handling:** recoil, aim time, spread, equip speed and aim sway contribute with priorities adjusted for precision weapons, range and published recoil-axis balance.
+- **Conservative scope support:** one ordinary multiplier is supported; isolated additive aim time requires a known base. Ambiguous stacking still fails closed.
+- **Consistent recommendations:** class/range builds, spending alternatives and useful unlocks follow the same context. Precision weapons display relevant handling metrics.
+- **Your choices stay yours:** saved parts are preserved on upgrade. Choose **Update setup**, or change the goal/range, to apply the new rules. Keep, ownership, explicit sight/capacity preferences and budget remain enforced.
 
-Existing profiles, ownership, levels, setups and external game data are preserved. The repository URL, executable name, installer AppId and release asset naming remain compatible with 1.0.0, allowing its existing updater to find this patch. There are no recommendation-model or game-data changes.
+The interface adds one compact range selector, defaulting to Auto. Method and policy details stay behind Why this setup? and in the documentation. Identical parts can still be correct for several weapons; recommendations are never randomized for variety.
 
-## Downloads
+Download **WARDOG-Companion-1.1.0-Setup.exe**, the portable ZIP, and SHA256SUMS.txt from this release. Existing updater identifiers and profile paths remain compatible. The original profile is backed up before saving the new context fields.
 
-- **WARDOG-Companion-1.0.1-Setup.exe** — Windows x64 per-user installer.
-- **WARDOG-Companion-1.0.1-windows-x64.zip** — portable folder.
-- **SHA256SUMS.txt** — checksums for both downloads.
-
-Version 1.0.1 remains unsigned. OCR remains experimental. See README.md and MODELING_LIMITS.md for the existing calculation and coverage limits.
+These are source-backed models and explicit product policies, not measured in-game effectiveness. Scope optical quality, full variable zoom ranges, armor, skills, carried weight and sustained fire/reload performance remain outside the model. OCR is experimental. This release remains unsigned. See docs/RECOMMENDATIONS.md and VALIDATION.md.

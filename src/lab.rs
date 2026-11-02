@@ -1,5 +1,5 @@
 //! Conservative preview of source-reported attachment multipliers.
-//! Only multiplyCompound is implemented for the six modeled attributes.
+//! Unsupported or ambiguous stacking fails closed.
 use crate::{
     engine::{Profile, Slot},
     reference::{Reference, ReferenceItem},
@@ -47,6 +47,7 @@ pub struct Estimate {
     pub unknown_prices: Vec<String>,
     pub ignored_effects: usize,
     pub selected: Vec<String>,
+    context: crate::purpose::Context,
 }
 impl Estimate {
     pub fn budget_status(&self, budget: u32) -> String {
@@ -69,10 +70,13 @@ impl Estimate {
     }
     pub fn score(&self, profile: &Profile) -> f64 {
         // Heuristic preference, deliberately separate from the physical multiplier composition.
-        [self.factors[0], self.factors[1], self.factors[2]]
+        self.factors
             .into_iter()
-            .zip(profile.goal.weights())
-            .map(|(factor, weight)| (1. - factor) * 100. * weight as f64)
+            .zip(self.context.weights(profile))
+            .enumerate()
+            .map(|(index, (factor, weight))| {
+                (if index == 4 { factor - 1. } else { 1. - factor }) * 100. * weight
+            })
             .sum()
     }
 }
@@ -133,7 +137,11 @@ pub fn evaluate(
         unknown_prices: vec![],
         ignored_effects: 0,
         selected: vec![],
+        context: crate::purpose::Context::new(data),
     };
+    let mut ordinary = [false; 6];
+    let mut counts = [0; 6];
+    let mut aim_add = None;
     for (slot, id) in parts {
         let part = item(data, id).ok_or_else(|| {
             format!("Saved item {id} is no longer available. Clear or replace it.")
@@ -181,7 +189,20 @@ pub fn evaluate(
                 result.ignored_effects += 1;
                 continue;
             };
-            if modifier.op != "multiplyCompound" {
+            counts[index] += 1;
+            if modifier.op == "add" && index == 2 {
+                if !modifier.value.is_finite() {
+                    return Err("Invalid aim-time offset.".into());
+                }
+                aim_add = Some(modifier.value);
+                continue;
+            }
+            if modifier.op == "multiply" {
+                if ordinary[index] {
+                    return Err("Multiple ordinary multiply modifiers have unsupported stacking; no estimate produced.".into());
+                }
+                ordinary[index] = true;
+            } else if modifier.op != "multiplyCompound" {
                 return Err(format!(
                     "{} uses unsupported {} stacking for {}. This preview will not guess the result.",
                     part.name,
@@ -197,6 +218,20 @@ pub fn evaluate(
             if !result.factors[index].is_finite() {
                 return Err("Multiplier overflow; no estimate produced.".into());
             }
+        }
+    }
+    if let Some(add) = aim_add {
+        let base = data
+            .weapon
+            .ads_time
+            .filter(|n| n.is_finite() && *n > 0.)
+            .ok_or("An additive aim-time effect needs a known source base time.")?;
+        if counts[2] != 1 {
+            return Err("Additive aim time combined with other aim-time modifiers has unsupported stacking; no estimate produced.".into());
+        }
+        result.factors[2] = (base + add) / base;
+        if !result.factors[2].is_finite() || result.factors[2] <= 0. {
+            return Err("Invalid additive aim-time result.".into());
         }
     }
     Ok(result)
@@ -276,6 +311,62 @@ pub fn frontier(data: &Reference, p: &Profile) -> Result<Vec<Build>, String> {
     }
     let mut options = Vec::new();
     let active_slots = slots(data);
+    let pinned: BTreeMap<_, _> = p
+        .lab_parts
+        .iter()
+        .filter(|(slot, _)| p.lab_pins.contains(slot))
+        .map(|(s, id)| (*s, id.clone()))
+        .collect();
+    let pinned_estimate = evaluate(data, p, &pinned)?;
+    if !pinned_estimate.unknown_prices.is_empty() {
+        return Err("A pinned item has no exact purchase price. Unpin it before requesting a budgeted suggestion.".into());
+    }
+    let sight_options: Vec<_> = candidates(data, p, Slot::Optic)
+        .into_iter()
+        .filter_map(|choice| {
+            let id = choice.id?;
+            let part = item(data, &id)?;
+            if !crate::purpose::suitable_sight(data, p, part) {
+                return None;
+            }
+            let estimate = evaluate(data, p, &BTreeMap::from([(Slot::Optic, id.clone())])).ok()?;
+            (estimate.unknown_prices.is_empty()
+                && estimate.cost + pinned_estimate.cost <= p.budget as f64)
+                .then_some(Some(id))
+        })
+        .collect();
+    let sight_reserve = if !active_slots.contains(&Slot::Optic) || p.lab_pins.contains(&Slot::Optic)
+    {
+        0.
+    } else if let Some(id) = &p.preferred_sight {
+        evaluate(data, p, &BTreeMap::from([(Slot::Optic, id.clone())]))?.cost
+    } else {
+        sight_options
+            .iter()
+            .flatten()
+            .filter_map(|id| {
+                evaluate(data, p, &BTreeMap::from([(Slot::Optic, id.clone())]))
+                    .ok()
+                    .map(|e| e.cost)
+            })
+            .min_by(f64::total_cmp)
+            .unwrap_or(0.)
+    };
+    let magazine_options: Vec<_> = candidates(data, p, Slot::Magazine)
+        .into_iter()
+        .filter_map(|choice| {
+            let id = choice.id?;
+            let part = item(data, &id)?;
+            if !crate::purpose::automatic_magazine(data, p, part) {
+                return None;
+            }
+            let estimate =
+                evaluate(data, p, &BTreeMap::from([(Slot::Magazine, id.clone())])).ok()?;
+            (estimate.unknown_prices.is_empty()
+                && estimate.cost + pinned_estimate.cost + sight_reserve <= p.budget as f64)
+                .then_some(Some(id))
+        })
+        .collect();
     for slot in &active_slots {
         let slot = *slot;
         if slot == Slot::Optic
@@ -284,11 +375,33 @@ pub fn frontier(data: &Reference, p: &Profile) -> Result<Vec<Build>, String> {
             options.push(vec![Some(id.clone())]);
         } else if p.lab_pins.contains(&slot) {
             options.push(vec![p.lab_parts.get(&slot).cloned()]);
+        } else if slot == Slot::Optic {
+            options.push(if sight_options.is_empty() {
+                vec![None]
+            } else {
+                sight_options.clone()
+            });
+        } else if slot == Slot::Magazine
+            && p.minimum_capacity == 0
+            && crate::purpose::magazine_floor(data, p).is_some()
+        {
+            options.push(if magazine_options.is_empty() {
+                vec![None]
+            } else {
+                magazine_options.clone()
+            });
         } else {
             options.push(
                 candidates(data, p, slot)
                     .into_iter()
                     .filter(|choice| {
+                        if slot == Slot::Magazine
+                            && p.minimum_capacity == 0
+                            && let Some(part) = choice.id.as_ref().and_then(|id| item(data, id))
+                            && !crate::purpose::automatic_magazine(data, p, part)
+                        {
+                            return false;
+                        }
                         if slot == Slot::Magazine
                             && p.minimum_capacity > 0
                             && choice
@@ -314,16 +427,6 @@ pub fn frontier(data: &Reference, p: &Profile) -> Result<Vec<Build>, String> {
         }
     }
     // Reject incompatible, unavailable or unknown-price pinned selections before searching.
-    let pinned = p
-        .lab_parts
-        .iter()
-        .filter(|(slot, _)| p.lab_pins.contains(slot))
-        .map(|(s, id)| (*s, id.clone()))
-        .collect();
-    let pinned_estimate = evaluate(data, p, &pinned)?;
-    if !pinned_estimate.unknown_prices.is_empty() {
-        return Err("A pinned item has no exact purchase price. Unpin it before requesting a budgeted suggestion.".into());
-    }
     struct Search<'a> {
         data: &'a Reference,
         profile: &'a Profile,
@@ -437,6 +540,217 @@ mod tests {
             levels: [99; 5],
             ..Profile::default()
         }
+    }
+    #[test]
+    fn contextual_sights_and_capacity_cover_every_weapon_goal_and_range() {
+        use crate::{
+            catalog::Catalog,
+            engine::{Engagement, Goal},
+            purpose,
+        };
+        let catalog = Catalog::bundled();
+        for data in catalog.weapons.iter().filter(|d| !d.weapon.test_record) {
+            for engagement in Engagement::ALL {
+                for goal in Goal::ALL {
+                    let p = Profile {
+                        levels: [100; 5],
+                        budget: 2000,
+                        engagement,
+                        goal,
+                        ..Profile::default()
+                    };
+                    let parts = suggest(data, &p).unwrap_or_else(|e| {
+                        panic!("{} {engagement} {goal:?}: {e}", data.weapon.name)
+                    });
+                    let estimate = evaluate(data, &p, &parts).unwrap();
+                    assert!(estimate.cost <= p.budget as f64);
+                    if let Some(sight) = parts.get(&Slot::Optic).and_then(|id| item(data, id)) {
+                        assert!(
+                            purpose::suitable_sight(data, &p, sight),
+                            "{}: {}",
+                            data.weapon.name,
+                            sight.name
+                        );
+                    }
+                    if let Some(mag) = parts.get(&Slot::Magazine).and_then(|id| item(data, id)) {
+                        assert!(
+                            purpose::automatic_magazine(data, &p, mag),
+                            "{}: {}",
+                            data.weapon.name,
+                            mag.name
+                        );
+                    }
+                }
+            }
+        }
+    }
+    #[test]
+    fn reported_sniper_and_small_magazine_failures_do_not_recur() {
+        use crate::{catalog::Catalog, engine::Goal, purpose};
+        let c = Catalog::bundled();
+        let p = Profile {
+            levels: [100; 5],
+            budget: 2000,
+            goal: Goal::Control,
+            ..Profile::default()
+        };
+        for name in ["Galil", "AK-74", "M4", "AMP-9", "PP-19 Vityaz", "AMR 50"] {
+            let data = c.weapons.iter().find(|d| d.weapon.name == name).unwrap();
+            let parts = suggest(data, &p).unwrap();
+            if let Some(id) = parts.get(&Slot::Optic) {
+                let optic = item(data, id).unwrap();
+                if name == "AMR 50" {
+                    assert!(purpose::zoom(optic).unwrap() >= 6.);
+                }
+                if ["Galil", "AK-74", "M4"].contains(&name) {
+                    assert_ne!(optic.name, "Kobra Reflex");
+                }
+            } else if name == "AMR 50" {
+                panic!("An eligible supported precision scope exists within budget");
+            }
+            if let Some(mag) = parts.get(&Slot::Magazine).and_then(|id| item(data, id)) {
+                assert!(
+                    mag.magazine_capacity.unwrap() >= purpose::magazine_floor(data, &p).unwrap()
+                );
+            }
+            eprintln!(
+                "{name}: {:?}",
+                parts
+                    .iter()
+                    .map(|(slot, id)| (slot, item(data, id).unwrap().name.as_str()))
+                    .collect::<Vec<_>>()
+            );
+        }
+    }
+    #[test]
+    fn explicit_choices_are_preserved_and_context_conflicts_are_explained() {
+        use crate::{catalog::Catalog, engine::Engagement, purpose};
+        let c = Catalog::bundled();
+        let d = c
+            .weapons
+            .iter()
+            .find(|d| d.weapon.name == "AMR 50")
+            .unwrap();
+        let kobra = d.items.iter().find(|i| i.name == "Kobra Reflex").unwrap();
+        let mut p = Profile {
+            levels: [100; 5],
+            preferred_sight: Some(kobra.id.clone()),
+            ..Profile::default()
+        };
+        let parts = suggest(d, &p).unwrap();
+        assert_eq!(parts[&Slot::Optic], kobra.id);
+        assert!(!purpose::notes(d, &p, &parts).is_empty());
+        p.preferred_sight = None;
+        p.lab_pins.insert(Slot::Optic);
+        p.lab_parts.insert(Slot::Optic, kobra.id.clone());
+        assert_eq!(suggest(d, &p).unwrap()[&Slot::Optic], kobra.id);
+        p.lab_pins.clear();
+        p.engagement = Engagement::Close;
+        let parts = suggest(d, &p).unwrap();
+        assert!(purpose::zoom(item(d, &parts[&Slot::Optic]).unwrap()).unwrap() <= 1.5);
+        p.engagement = Engagement::Long;
+        p.budget = 0;
+        let parts = suggest(d, &p).unwrap();
+        assert!(!parts.contains_key(&Slot::Optic));
+        assert!(!purpose::notes(d, &p, &parts).is_empty());
+    }
+    #[test]
+    fn contextual_fallbacks_do_not_spend_past_pins_or_ignore_explicit_magazine_choices() {
+        let c = crate::catalog::Catalog::bundled();
+        let d = c.weapons.iter().find(|d| d.weapon.name == "M4").unwrap();
+        let kobra = d.items.iter().find(|i| i.name == "Kobra Reflex").unwrap();
+        let small = d
+            .items
+            .iter()
+            .find(|i| i.name == "STANAG 20 RND Magazine")
+            .unwrap();
+        let mut p = Profile {
+            levels: [100; 5],
+            budget: 520,
+            ..Profile::default()
+        };
+        p.lab_pins.insert(Slot::Optic);
+        p.lab_parts.insert(Slot::Optic, kobra.id.clone());
+        let parts = suggest(d, &p).unwrap();
+        assert_eq!(parts[&Slot::Optic], kobra.id);
+        assert!(!parts.contains_key(&Slot::Magazine));
+        p.budget = 2000;
+        p.lab_pins.insert(Slot::Magazine);
+        p.lab_parts.insert(Slot::Magazine, small.id.clone());
+        assert_eq!(suggest(d, &p).unwrap()[&Slot::Magazine], small.id);
+        assert!(!crate::purpose::notes(d, &p, &p.lab_parts).is_empty());
+        p.lab_pins.clear();
+        p.minimum_capacity = 20;
+        let parts = suggest(d, &p).unwrap();
+        assert!(
+            item(d, &parts[&Slot::Magazine])
+                .unwrap()
+                .magazine_capacity
+                .unwrap()
+                >= 20
+        );
+        p.owned_only = true;
+        p.owned.clear();
+        p.preferred_sight = None;
+        p.minimum_capacity = 0;
+        let parts = suggest(d, &p).unwrap();
+        assert!(!parts.contains_key(&Slot::Optic));
+        assert!(parts.values().all(|id| owned(item(d, id).unwrap(), &p)));
+    }
+    #[test]
+    fn known_precision_multiplier_and_isolated_addition_are_supported_without_guessing_stacks() {
+        let c = crate::catalog::Catalog::bundled();
+        let mut d = c
+            .weapons
+            .iter()
+            .find(|d| d.weapon.name == "AMR 50")
+            .unwrap()
+            .clone();
+        let p = profile();
+        let scope = d
+            .items
+            .iter()
+            .find(|i| i.name == "6-10x Scope MRAD")
+            .unwrap();
+        let parts = BTreeMap::from([(Slot::Optic, scope.id.clone())]);
+        assert!((evaluate(&d, &p, &parts).unwrap().factors[2] - 1.15).abs() < 1e-9);
+        let scope = d
+            .items
+            .iter_mut()
+            .find(|i| i.name == "6-10x Scope MRAD")
+            .unwrap();
+        scope.modifiers.push(crate::reference::Modifier {
+            attribute: "Weapon.AimTime".into(),
+            op: "multiply".into(),
+            value: 1.1,
+        });
+        assert!(
+            evaluate(&d, &p, &parts)
+                .unwrap_err()
+                .contains("unsupported")
+        );
+        let hybrid = d.items.iter().find(|i| i.name == "4x Hybrid").unwrap();
+        let hybrid_id = hybrid.id.clone();
+        let parts = BTreeMap::from([(Slot::Optic, hybrid_id.clone())]);
+        assert!(
+            evaluate(&d, &p, &parts)
+                .unwrap_err()
+                .contains("known source base")
+        );
+        d.weapon.ads_time = Some(0.8); // Known-base fixture; the actual AMR base is unpublished.
+        let base = d.weapon.ads_time.unwrap();
+        assert!((evaluate(&d, &p, &parts).unwrap().factors[2] - (base + 0.35) / base).abs() < 1e-9);
+        let part = d.items.iter_mut().find(|i| i.id == hybrid_id).unwrap();
+        part.modifiers.push(crate::reference::Modifier {
+            attribute: "Weapon.AimTime".into(),
+            op: "multiplyCompound".into(),
+            value: 0.9,
+        });
+        assert!(
+            evaluate(&d, &p, &parts)
+                .unwrap_err()
+                .contains("unsupported")
+        );
     }
     #[test]
     fn source_multipliers_compound_instead_of_adding_percentages() {

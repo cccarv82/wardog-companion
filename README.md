@@ -23,7 +23,7 @@ WARDOGS Companion brings those decisions into a compact panel you can keep above
 **Native Rust + Iced. Offline recommendations. No account. English interface.**
 
 <p align="center">
-  <img src="docs/images/companion.png" width="330" alt="The compact WARDOGS Companion panel showing an AK-74 setup" />
+  <img src="docs/images/companion.png" width="330" alt="The WARDOGS Companion panel showing a role-aware AMR 50 setup" />
   <img src="docs/images/spending.png" width="330" alt="Spend smarter screen showing Economy and Sweet spot attachment setups with prices and handling trade-offs" />
   <br /><sub>A real app screenshot. Spending gain is a model score, not measured combat performance.</sub>
 </p>
@@ -33,7 +33,7 @@ WARDOGS Companion brings those decisions into a compact panel you can keep above
 | Question | What the companion does |
 | --- | --- |
 | **What can I use right now?** | Filters suggestions by your overall and infantry-role levels, explicit compatibility, budget and supported effects. |
-| **What fits my playstyle?** | Builds around Control, Balanced or Agility, with optional kept parts, sight preference and magazine minimum. |
+| **What fits my playstyle?** | Adapts Control, Balanced or Agility to the weapon role and range, with appropriate sight bands and protected magazine capacity. |
 | **Which weapon should I pick?** | Compares supported weapons within a class for ideal kill time and stability; offers Close, Medium and Long range suggestions. |
 | **Is spending more worth it?** | Shows distinct Economy, Sweet spot and Maximum alternatives, actual part lists and modeled handling trade-offs. Duplicate tiers collapse. |
 | **What do I still need to buy?** | Separates remaining purchases from assumed unpaid unlock fees. Track owned parts and already-paid unlocks. |
@@ -45,15 +45,21 @@ WARDOGS Companion brings those decisions into a compact panel you can keep above
 
 The pinned 1.0 catalogue contains **40 weapon records and 298 attachment records**. Two test/vehicle weapons are excluded from rankings. Complete catalogue coverage does **not** mean every attachment combination has a supported recommendation model.
 
+### New in 1.1: context before stats
+
+A sniper setup should not choose a reflex just because it improves aim time. Automatic recommendations now constrain sights by role/range, protect magazine capacity, and balance six handling dimensions using weapon role and source recoil-axis information. Explicit kept parts and sight preferences remain yours.
+
+After updating from 1.0, choose **Update setup** or change the goal/range to apply the improved model. Saved parts are preserved until you do. See [the recommendation policy](docs/RECOMMENDATIONS.md) for the precise bands, capacity fallbacks and limitations.
+
 ### Experimental: read the arsenal
 
 With the WARDOGS arsenal in the foreground, **Ctrl + Shift + R** can read a visible weapon name using local Windows OCR. You confirm the match before switching weapons. A supported Windows OCR language is required; resolution, overlapping windows and fullscreen capture can affect recognition. Manual selection is always available.
 
 ## Get started
 
-1. Download **`WARDOG-Companion-1.0.1-Setup.exe`** from [Releases](https://github.com/cccarv82/wardog-companion/releases/latest). Install for your Windows user; administrator rights are not required. A portable ZIP is also available.
+1. Download **`WARDOG-Companion-1.1.0-Setup.exe`** from [Releases](https://github.com/cccarv82/wardog-companion/releases/latest). Install for your Windows user; administrator rights are not required. A portable ZIP is also available.
 2. Set your **Overall, Assault, Medic, Recon and Support** levels and your attachment budget. Choose **Done**.
-3. Pick a weapon and a goal. Use **Find my weapon** for a class/range recommendation or **Customize** to keep particular parts.
+3. Pick a weapon and a goal. Leave Range on Auto for role-aware recommendations, or choose Close / Medium / Long. Use **Find my weapon** for a class/range recommendation or **Customize** to keep particular parts.
 4. Choose **Hide & play**. Bring the panel back when you need it.
 
 | Shortcut | Action |

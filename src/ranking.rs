@@ -189,6 +189,9 @@ pub fn compare(
             profile.lab_pins.clear();
             profile.preferred_sight = None;
             profile.minimum_capacity = 0;
+            if scenario.distance > 0 {
+                profile.engagement = crate::engine::Engagement::for_distance(scenario.distance);
+            }
             match lab::suggest(reference, &profile).and_then(|parts| {
                 lab::evaluate(reference, &profile, &parts).map(|estimate| (parts, estimate))
             }) {
