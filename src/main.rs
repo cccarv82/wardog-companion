@@ -1204,7 +1204,7 @@ impl App {
                 content = content.push(row![metric(indices[0]), metric(indices[1])].spacing(10));
             } else {
                 content = content.push(
-                    text("No priced upgrades found at your levels and budget.")
+                    text("No supported upgrades found under your constraints.")
                         .size(12)
                         .color(MUTED),
                 );
@@ -1466,7 +1466,14 @@ impl App {
             }
             if let Some(parts) = &entry.parts {
                 entry_card = entry_card.push(row![
-                    text(format!("Parts: {}", money(entry.build_cost.unwrap_or(0.)))).size(12),
+                    text(format!(
+                        "Parts: {}",
+                        entry
+                            .build_cost
+                            .map(money)
+                            .unwrap_or_else(|| "Cost incomplete".into())
+                    ))
+                    .size(12),
                     space::horizontal(),
                     button("Parts")
                         .on_press(Message::RankParts(w.id.clone()))
@@ -1486,11 +1493,8 @@ impl App {
                         }
                     }
                     if parts.is_empty() {
-                        entry_card = entry_card.push(
-                            text("No priced modeled upgrade selected.")
-                                .size(11)
-                                .color(MUTED),
-                        );
+                        entry_card = entry_card
+                            .push(text("No modeled upgrade selected.").size(11).color(MUTED));
                     }
                 }
             }
@@ -1561,7 +1565,7 @@ impl App {
                     body = body.push(card(detail));
                     previous = Some(&option.build);
                 }
-                body=body.push(text("Economy is the cheapest setup reaching 70% of available handling-score gain; Sweet spot reaches 95%; Maximum is the best score within your budget. Gain is measured from the cheapest feasible setup, under the same constraints. Identical tiers collapse. These thresholds are app preferences, not measured accuracy or kill-time improvements. Prices exclude unlock fees and the weapon; owned prices still count toward the selected-parts budget.").size(11).color(MUTED).width(Fill));
+                body=body.push(text("Spending tiers compare fully priced setups only; recommendations also consider items with unknown prices. Economy is the cheapest setup reaching 70% of available handling-score gain; Sweet spot reaches 95%; Maximum is the best score within your budget. Gain is measured from the cheapest feasible setup, under the same constraints. Identical tiers collapse. These thresholds are app preferences, not measured accuracy or kill-time improvements. Prices exclude unlock fees and the weapon; owned prices still count toward the selected-parts budget.").size(11).color(MUTED).width(Fill));
             }
         }
         body.push(
@@ -1856,7 +1860,7 @@ impl App {
         {
             body = body.push(text(note.note.as_str()).size(11).color(ACCENT).width(Fill));
         }
-        body.push(text("All source attachments are searchable, including hidden, test and conditional components. Only explicitly compatible, level-eligible, priced and supported effects can enter automatic suggestions. Missing nested mounts are not inferred from caliber.").size(11).color(MUTED).width(Fill)).into()
+        body.push(text("All source attachments are searchable, including hidden, test and conditional components. Only explicitly compatible, level-eligible and supported effects can enter automatic suggestions. Missing nested mounts are not inferred from caliber.").size(11).color(MUTED).width(Fill)).into()
     }
     fn app_updates_view(&self) -> Element<'_, Message> {
         let mut body = column![
@@ -2128,7 +2132,10 @@ impl App {
                 next = next.push(
                     text(format!(
                         "Suggested parts: {} · unlock fee: {} (separate)",
-                        money(upgrade.cost),
+                        upgrade
+                            .cost
+                            .map(money)
+                            .unwrap_or_else(|| "Cost incomplete".into()),
                         money(upgrade.unlock_fee as f64)
                     ))
                     .size(11)

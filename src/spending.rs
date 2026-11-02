@@ -14,7 +14,7 @@ pub struct Report {
     pub remaining_gain: f64,
 }
 pub fn analyze(data: &Reference, p: &Profile) -> Result<Report, String> {
-    let choices = lab::frontier(data, p)?;
+    let choices = lab::priced_frontier(data, p)?;
     let low = choices.first().unwrap().estimate.score(p);
     let high = choices.last().unwrap().estimate.score(p);
     let span = high - low;
@@ -73,7 +73,7 @@ mod tests {
             goal: Goal::Control,
             ..Profile::default()
         };
-        let f = lab::frontier(&d, &p).unwrap();
+        let f = lab::priced_frontier(&d, &p).unwrap();
         assert!(f.len() > 1);
         for pair in f.windows(2) {
             assert!(pair[0].estimate.cost < pair[1].estimate.cost);
@@ -82,7 +82,7 @@ mod tests {
         let r = analyze(&d, &p).unwrap();
         assert_eq!(
             r.options.last().unwrap().build.parts,
-            lab::suggest(&d, &p).unwrap()
+            lab::priced_frontier(&d, &p).unwrap().last().unwrap().parts
         );
         for o in &r.options {
             assert!(o.build.estimate.cost <= p.budget as f64);

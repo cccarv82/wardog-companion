@@ -65,7 +65,6 @@ pub fn export(data: &Catalog, output: &std::path::Path) -> Result<(), String> {
                         let parts = lab::suggest(reference, &p)?;
                         let estimate = lab::evaluate(reference, &p, &parts)?;
                         if estimate.cost > budget as f64
-                            || !estimate.unknown_prices.is_empty()
                             || parts
                                 .get(&crate::engine::Slot::Optic)
                                 .and_then(|id| lab::item(reference, id))
@@ -82,7 +81,7 @@ pub fn export(data: &Catalog, output: &std::path::Path) -> Result<(), String> {
                                 reference.weapon.name
                             ));
                         }
-                        setups.push(serde_json::json!({"weapon":reference.weapon.name,"class":reference.weapon.class_name,"levels":levels,"budget":budget,"requested_range":engagement,"effective_range":purpose::engagement(reference,&p),"goal":goal,"parts":parts.iter().map(|(slot,id)|serde_json::json!({"slot":slot,"id":id,"name":lab::item(reference,id).unwrap().name})).collect::<Vec<_>>(),"cost":estimate.cost,"policy":purpose::summary(reference,&p),"notes":purpose::notes(reference,&p,&parts)}));
+                        setups.push(serde_json::json!({"weapon":reference.weapon.name,"class":reference.weapon.class_name,"levels":levels,"budget":budget,"requested_range":engagement,"effective_range":purpose::engagement(reference,&p),"goal":goal,"parts":parts.iter().map(|(slot,id)|serde_json::json!({"slot":slot,"id":id,"name":lab::item(reference,id).unwrap().name})).collect::<Vec<_>>(),"known_cost":estimate.cost,"unknown_prices":estimate.unknown_prices,"policy":purpose::summary(reference,&p),"notes":purpose::notes(reference,&p,&parts)}));
                     }
                 }
             }

@@ -18,3 +18,5 @@
 
 - Role/range sight bands, capacity floors and six-factor handling priorities are deterministic policies, not measured combat performance. Source zoom settings are not assumed to describe full variable optical zoom. See docs/RECOMMENDATIONS.md.
 - Existing saved parts are preserved across the model update. Explicit choices can override contextual defaults; mismatches are explained. Unchanged slots remain unconfirmed.
+
+- Missing prices do not exclude recommended attachments. Known subtotals remain budget-constrained; incomplete totals and budget fit are marked unknown. Spending tiers compare fully priced setups only.

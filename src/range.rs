@@ -67,7 +67,7 @@ mod tests {
             for e in r.entries {
                 assert_eq!(ranking::eligible(&e.weapon, &p), Some(true));
                 assert!(e.parts.is_some());
-                assert!(e.build_cost.unwrap() <= p.budget as f64);
+                assert!(e.build_cost.is_none_or(|cost| cost <= p.budget as f64));
             }
         }
         assert_eq!(p.goal, Goal::Balanced);

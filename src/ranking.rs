@@ -195,7 +195,11 @@ pub fn compare(
             match lab::suggest(reference, &profile).and_then(|parts| {
                 lab::evaluate(reference, &profile, &parts).map(|estimate| (parts, estimate))
             }) {
-                Ok((parts, estimate)) => (Some(parts), Some(estimate.cost), Some(estimate.factors)),
+                Ok((parts, estimate)) => (
+                    Some(parts),
+                    estimate.unknown_prices.is_empty().then_some(estimate.cost),
+                    Some(estimate.factors),
+                ),
                 Err(error) => {
                     reject(format!("No supported build within constraints: {error}"));
                     continue;
@@ -430,7 +434,7 @@ mod tests {
         for entry in &report.entries {
             let reference = data.weapon(&entry.weapon.id).unwrap();
             let estimate = lab::evaluate(reference, &p, entry.parts.as_ref().unwrap()).unwrap();
-            assert!(entry.build_cost.unwrap() <= p.budget as f64);
+            assert!(entry.build_cost.is_none_or(|cost| cost <= p.budget as f64));
             let expected = reference
                 .weapon
                 .recoil_pattern

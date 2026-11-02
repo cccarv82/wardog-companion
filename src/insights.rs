@@ -70,7 +70,7 @@ pub struct Upgrade {
     pub track: Track,
     pub level: u8,
     pub unlock_fee: u32,
-    pub cost: f64,
+    pub cost: Option<f64>,
     pub changes: Vec<Change>,
     pub reason: String,
 }
@@ -136,7 +136,7 @@ pub fn next_upgrade(data: &Reference, p: &Profile) -> Option<Upgrade> {
             track,
             level,
             unlock_fee: part.unlock.as_ref()?.cost,
-            cost: estimate.cost,
+            cost: estimate.unknown_prices.is_empty().then_some(estimate.cost),
             changes: changes(&baseline, &estimate),
             reason: if capability {
                 format!(
@@ -267,7 +267,7 @@ mod tests {
         assert_eq!(next.track, Track::Assault);
         assert_eq!(next.level, 16);
         assert_eq!(next.name, "CQB 74 Brake");
-        assert!(next.cost <= p.budget as f64);
+        assert!(next.cost.is_none_or(|cost| cost <= p.budget as f64));
         p.budget = 0;
         assert!(next_upgrade(&data, &p).is_none());
         p.budget = 2000;

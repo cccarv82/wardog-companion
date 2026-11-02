@@ -238,7 +238,19 @@ pub fn evaluate(
 }
 pub fn suggest(data: &Reference, p: &Profile) -> Result<BTreeMap<Slot, String>, String> {
     frontier(data, p)?
-        .pop()
+        .into_iter()
+        .max_by(|a, b| {
+            a.estimate
+                .score(p)
+                .total_cmp(&b.estimate.score(p))
+                .then_with(|| {
+                    b.estimate
+                        .unknown_prices
+                        .len()
+                        .cmp(&a.estimate.unknown_prices.len())
+                })
+                .then_with(|| b.estimate.cost.total_cmp(&a.estimate.cost))
+        })
         .map(|b| b.parts)
         .ok_or("No eligible setup.".into())
 }
@@ -248,18 +260,18 @@ pub struct Build {
     pub estimate: Estimate,
 }
 pub fn frontier(data: &Reference, p: &Profile) -> Result<Vec<Build>, String> {
+    search(data, p, false)
+}
+// Spending tiers need complete prices to compare actual costs. General suggestions do not.
+pub fn priced_frontier(data: &Reference, p: &Profile) -> Result<Vec<Build>, String> {
+    search(data, p, true)
+}
+fn search(data: &Reference, p: &Profile, priced_only: bool) -> Result<Vec<Build>, String> {
     if let Some(id) = &p.preferred_sight {
         let sight = item(data, id)
             .filter(|part| fits(part, Slot::Optic))
             .ok_or("Your preferred sight is unavailable. Clear it in Customize.")?;
         evaluate(data, p, &BTreeMap::from([(Slot::Optic, sight.id.clone())]))?;
-        if !sight.vendor.iter().any(|price| {
-            price.tag.eq_ignore_ascii_case(&sight.id)
-                && price.price.is_finite()
-                && price.price >= 0.
-        }) {
-            return Err("Your preferred sight has no published exact purchase price. Choose another sight or Automatic in Customize.".into());
-        }
         if p.lab_pins.contains(&Slot::Optic)
             && p.lab_parts
                 .get(&Slot::Optic)
@@ -318,9 +330,6 @@ pub fn frontier(data: &Reference, p: &Profile) -> Result<Vec<Build>, String> {
         .map(|(s, id)| (*s, id.clone()))
         .collect();
     let pinned_estimate = evaluate(data, p, &pinned)?;
-    if !pinned_estimate.unknown_prices.is_empty() {
-        return Err("A pinned item has no exact purchase price. Unpin it before requesting a budgeted suggestion.".into());
-    }
     let sight_options: Vec<_> = candidates(data, p, Slot::Optic)
         .into_iter()
         .filter_map(|choice| {
@@ -330,7 +339,7 @@ pub fn frontier(data: &Reference, p: &Profile) -> Result<Vec<Build>, String> {
                 return None;
             }
             let estimate = evaluate(data, p, &BTreeMap::from([(Slot::Optic, id.clone())])).ok()?;
-            (estimate.unknown_prices.is_empty()
+            ((!priced_only || estimate.unknown_prices.is_empty())
                 && estimate.cost + pinned_estimate.cost <= p.budget as f64)
                 .then_some(Some(id))
         })
@@ -362,7 +371,7 @@ pub fn frontier(data: &Reference, p: &Profile) -> Result<Vec<Build>, String> {
             }
             let estimate =
                 evaluate(data, p, &BTreeMap::from([(Slot::Magazine, id.clone())])).ok()?;
-            (estimate.unknown_prices.is_empty()
+            ((!priced_only || estimate.unknown_prices.is_empty())
                 && estimate.cost + pinned_estimate.cost + sight_reserve <= p.budget as f64)
                 .then_some(Some(id))
         })
@@ -413,20 +422,18 @@ pub fn frontier(data: &Reference, p: &Profile) -> Result<Vec<Build>, String> {
                         {
                             return false;
                         }
-                        choice.id.as_ref().is_none_or(|id| {
-                            item(data, id).is_some_and(|part| {
-                                part.vendor
-                                    .iter()
-                                    .any(|price| price.tag.eq_ignore_ascii_case(&part.id))
+                        !priced_only
+                            || choice.id.as_ref().is_none_or(|id| {
+                                evaluate(data, p, &BTreeMap::from([(slot, id.clone())]))
+                                    .is_ok_and(|e| e.unknown_prices.is_empty())
                             })
-                        })
                     })
                     .map(|choice| choice.id)
                     .collect(),
             );
         }
     }
-    // Reject incompatible, unavailable or unknown-price pinned selections before searching.
+    // Keep unknown costs explicit; only the known subtotal can be constrained.
     struct Search<'a> {
         data: &'a Reference,
         profile: &'a Profile,
@@ -434,6 +441,7 @@ pub fn frontier(data: &Reference, p: &Profile) -> Result<Vec<Build>, String> {
         options: &'a [Vec<Option<String>>],
         frontier: Vec<Build>,
         visited: usize,
+        priced_only: bool,
     }
     impl Search<'_> {
         fn visit(
@@ -451,7 +459,9 @@ pub fn frontier(data: &Reference, p: &Profile) -> Result<Vec<Build>, String> {
             let Ok(estimate) = evaluate(self.data, self.profile, parts) else {
                 return Ok(());
             };
-            if !estimate.unknown_prices.is_empty() || estimate.cost > self.profile.budget as f64 {
+            if (self.priced_only && !estimate.unknown_prices.is_empty())
+                || estimate.cost > self.profile.budget as f64
+            {
                 return Ok(());
             }
             if index == self.slots.len() {
@@ -460,12 +470,16 @@ pub fn frontier(data: &Reference, p: &Profile) -> Result<Vec<Build>, String> {
                 }
                 let score = estimate.score(self.profile);
                 if self.frontier.iter().any(|b| {
-                    b.estimate.cost <= estimate.cost && b.estimate.score(self.profile) >= score
+                    b.estimate.unknown_prices == estimate.unknown_prices
+                        && b.estimate.cost <= estimate.cost
+                        && b.estimate.score(self.profile) >= score
                 }) {
                     return Ok(());
                 }
                 self.frontier.retain(|b| {
-                    !(estimate.cost <= b.estimate.cost && score >= b.estimate.score(self.profile))
+                    !(estimate.unknown_prices == b.estimate.unknown_prices
+                        && estimate.cost <= b.estimate.cost
+                        && score >= b.estimate.score(self.profile))
                 });
                 self.frontier.push(Build {
                     parts: parts.clone(),
@@ -494,6 +508,7 @@ pub fn frontier(data: &Reference, p: &Profile) -> Result<Vec<Build>, String> {
         options: &options,
         frontier: vec![],
         visited: 0,
+        priced_only,
     };
     search.visit(0, &mut BTreeMap::new())?;
     if search.frontier.is_empty() {
@@ -651,8 +666,13 @@ mod tests {
         p.engagement = Engagement::Long;
         p.budget = 0;
         let parts = suggest(d, &p).unwrap();
-        assert!(!parts.contains_key(&Slot::Optic));
-        assert!(!purpose::notes(d, &p, &parts).is_empty());
+        let estimate = evaluate(d, &p, &parts).unwrap();
+        assert_eq!(estimate.cost, 0.);
+        if parts.contains_key(&Slot::Optic) {
+            assert!(!estimate.unknown_prices.is_empty());
+        } else {
+            assert!(!purpose::notes(d, &p, &parts).is_empty());
+        }
     }
     #[test]
     fn contextual_fallbacks_do_not_spend_past_pins_or_ignore_explicit_magazine_choices() {
@@ -673,7 +693,11 @@ mod tests {
         p.lab_parts.insert(Slot::Optic, kobra.id.clone());
         let parts = suggest(d, &p).unwrap();
         assert_eq!(parts[&Slot::Optic], kobra.id);
-        assert!(!parts.contains_key(&Slot::Magazine));
+        let estimate = evaluate(d, &p, &parts).unwrap();
+        assert!(estimate.cost <= 520.);
+        if parts.contains_key(&Slot::Magazine) {
+            assert!(!estimate.unknown_prices.is_empty());
+        }
         p.budget = 2000;
         p.lab_pins.insert(Slot::Magazine);
         p.lab_parts.insert(Slot::Magazine, small.id.clone());
@@ -776,7 +800,7 @@ mod tests {
         assert!((estimate.factors[1] - 0.75).abs() < 0.00001);
     }
     #[test]
-    fn unknown_price_is_not_free_and_is_not_budgeted() {
+    fn unknown_price_is_not_free_and_remains_eligible() {
         let data = Reference::load();
         let mut p = profile();
         p.lab_parts
@@ -789,7 +813,55 @@ mod tests {
                 .budget_status(p.budget)
                 .contains("cannot be verified")
         );
-        assert!(suggest(&data, &p).is_err());
+        assert!(suggest(&data, &p).is_ok());
+        assert!(priced_frontier(&data, &p).is_err());
+    }
+    #[test]
+    fn missing_prices_never_exclude_any_supported_slot() {
+        let mut data = Reference::load();
+        let mut p = profile();
+        p.budget = 0;
+        for part in &mut data.items {
+            part.vendor.clear();
+        }
+        let parts = suggest(&data, &p).unwrap();
+        let estimate = evaluate(&data, &p, &parts).unwrap();
+        assert!(!estimate.unknown_prices.is_empty());
+        assert_eq!(estimate.unknown_prices.len(), parts.len());
+        assert!(estimate.budget_status(0).contains("total unknown"));
+        assert!(parts.contains_key(&Slot::Optic));
+        assert!(parts.contains_key(&Slot::Magazine));
+        assert!(estimate.score(&p) > 0.);
+        // The same selections remain valid when explicitly kept.
+        p.lab_parts = parts.clone();
+        p.lab_pins = parts.keys().copied().collect();
+        assert_eq!(suggest(&data, &p).unwrap(), parts);
+        assert!(priced_frontier(&data, &p).is_err());
+    }
+    #[test]
+    fn vityaz_medium_considers_unpriced_prism_at_players_levels() {
+        let catalog = crate::catalog::Catalog::bundled();
+        let data = catalog
+            .weapons
+            .iter()
+            .find(|r| r.weapon.name == "PP-19 Vityaz")
+            .unwrap();
+        let p = Profile {
+            levels: [86, 14, 19, 10, 22],
+            budget: 2000,
+            engagement: crate::engine::Engagement::Medium,
+            ..Profile::default()
+        };
+        let parts = suggest(data, &p).unwrap();
+        let sight = item(data, parts.get(&Slot::Optic).unwrap()).unwrap();
+        assert_eq!(sight.name, "Tricon 1.5x Compact Prism Scope");
+        let estimate = evaluate(data, &p, &parts).unwrap();
+        assert!(estimate.unknown_prices.contains(&sight.name));
+        assert!(
+            estimate
+                .budget_status(p.budget)
+                .contains("cannot be verified")
+        );
     }
     #[test]
     fn unsupported_stacking_and_wrong_slots_fail_closed() {
@@ -916,11 +988,11 @@ mod tests {
         assert!(suggest(&data, &p).is_err());
     }
     #[test]
-    fn sight_preference_rejects_conflicts_and_missing_prices() {
+    fn sight_preference_accepts_unknown_prices_but_rejects_conflicts() {
         let data = Reference::load();
         let mut p = profile();
         p.preferred_sight = Some("Id.Item.BasicRedDot".into());
-        assert!(suggest(&data, &p).unwrap_err().contains("purchase price"));
+        assert!(suggest(&data, &p).is_ok());
         p.preferred_sight = Some("Id.Item.SGHT_009".into());
         p.lab_pins.insert(Slot::Optic);
         assert!(suggest(&data, &p).unwrap_err().contains("kept sight"));
@@ -939,7 +1011,6 @@ mod tests {
             let parts = suggest(reference, &p)
                 .unwrap_or_else(|error| panic!("{}: {error}", reference.weapon.name));
             let estimate = evaluate(reference, &p, &parts).unwrap();
-            assert!(estimate.unknown_prices.is_empty());
             assert!(estimate.cost <= p.budget as f64);
             assert!(parts.keys().all(|s| reference.slots.contains(s)));
         }
