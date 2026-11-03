@@ -5,29 +5,60 @@ use std::sync::{
 };
 
 pub struct Assist {
+    activity: Arc<Mutex<Activity>>,
     enabled: Arc<AtomicBool>,
     interval: Arc<AtomicU32>,
     status: Arc<Mutex<String>>,
     shutdown: Arc<AtomicBool>,
     worker: Option<std::thread::JoinHandle<()>>,
 }
+#[derive(Debug, Default, Clone, Copy)]
+pub struct Activity {
+    pub active: bool,
+    pub clicks: u64,
+}
+impl Activity {
+    fn begin(&mut self) {
+        self.active = true;
+        self.clicks = 0;
+    }
+    fn released(&mut self) {
+        self.clicks = self.clicks.saturating_add(1);
+    }
+    pub fn label(self, enabled: bool) -> String {
+        let state = if !enabled {
+            "Off"
+        } else if self.active {
+            "Clicking"
+        } else {
+            "Ready"
+        };
+        if self.clicks > 0 || self.active {
+            format!("Auto click: {state} · {} clicks sent", self.clicks)
+        } else {
+            format!("Auto click: {state}")
+        }
+    }
+}
 impl Assist {
     pub fn new() -> Self {
+        let activity = Arc::new(Mutex::new(Activity::default()));
         let enabled = Arc::new(AtomicBool::new(false));
         let interval = Arc::new(AtomicU32::new(2));
         let status = Arc::new(Mutex::new("Off · enable for this session".into()));
         let shutdown = Arc::new(AtomicBool::new(false));
         #[cfg(windows)]
         let worker = {
-            let (e, i, s, q) = (
+            let (e, i, s, q, a) = (
                 enabled.clone(),
                 interval.clone(),
                 status.clone(),
                 shutdown.clone(),
+                activity.clone(),
             );
             std::thread::Builder::new()
                 .name("click-assist".into())
-                .spawn(move || windows::run(e, i, s, q))
+                .spawn(move || windows::run(e, i, s, q, a))
                 .ok()
         };
         #[cfg(not(windows))]
@@ -36,6 +67,7 @@ impl Assist {
             *status.lock().unwrap() = "Unavailable on this system".into();
         }
         Self {
+            activity,
             enabled,
             interval,
             status,
@@ -46,6 +78,12 @@ impl Assist {
     pub fn enable(&self, enabled: bool) {
         self.enabled
             .store(enabled && self.worker.is_some(), Ordering::SeqCst);
+        if !self.enabled() {
+            self.activity
+                .lock()
+                .unwrap_or_else(|e| e.into_inner())
+                .active = false;
+        }
         *self.status.lock().unwrap_or_else(|e| e.into_inner()) = if self.enabled() {
             "Ready · point at the team button and press F8"
         } else {
@@ -55,6 +93,9 @@ impl Assist {
     }
     pub fn enabled(&self) -> bool {
         self.enabled.load(Ordering::SeqCst)
+    }
+    pub fn activity(&self) -> Activity {
+        *self.activity.lock().unwrap_or_else(|e| e.into_inner())
     }
     pub fn interval(&self) -> u32 {
         self.interval.load(Ordering::Relaxed)
@@ -247,6 +288,7 @@ mod windows {
         interval: Arc<AtomicU32>,
         status: Arc<Mutex<String>>,
         shutdown: Arc<AtomicBool>,
+        activity: Arc<Mutex<Activity>>,
     ) {
         let timer = Timer(unsafe {
             CreateWaitableTimerExW(
@@ -294,6 +336,7 @@ mod windows {
                 epoch.elapsed().as_millis() as u64,
             );
             if active && !was_active {
+                activity.lock().unwrap_or_else(|e| e.into_inner()).begin();
                 origin = cursor;
                 window = foreground;
                 cycle.last_press = None;
@@ -309,12 +352,27 @@ mod windows {
                     set_status("Focus changed · stopped");
                 } else if !button(press) {
                     // A partial/failed press is also followed by a release attempt.
-                    let _ = button(false);
+                    let released = button(false);
+                    if !press && released {
+                        activity
+                            .lock()
+                            .unwrap_or_else(|e| e.into_inner())
+                            .released();
+                    }
                     cycle.down = false;
                     enabled.store(false, Ordering::SeqCst);
                     input_error = true;
                     set_status("Input was rejected · stopped");
+                } else if !press {
+                    // Count completed, successfully sent down/up pairs, never timer ticks.
+                    activity
+                        .lock()
+                        .unwrap_or_else(|e| e.into_inner())
+                        .released();
                 }
+            }
+            if !active || input_error {
+                activity.lock().unwrap_or_else(|e| e.into_inner()).active = false;
             }
             if !active && was_active && !input_error {
                 set_status(if is_enabled {
@@ -340,6 +398,28 @@ mod windows {
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn displayed_count_tracks_completed_pairs_and_retains_last_attempt_until_restart() {
+        use std::time::Duration;
+        let mut cycle = Cycle::default();
+        let mut activity = Activity::default();
+        assert_eq!(activity.label(false), "Auto click: Off");
+        activity.begin();
+        // Five timer observations produce only two completed clicks.
+        for us in [0, 500, 1000, 2000, 3000] {
+            if cycle.step(true, Duration::from_micros(us), 2) == Some(false) {
+                activity.released();
+            }
+        }
+        assert_eq!(activity.clicks, 2);
+        assert_eq!(activity.label(true), "Auto click: Clicking · 2 clicks sent");
+        activity.active = false;
+        assert_eq!(activity.label(true), "Auto click: Ready · 2 clicks sent");
+        assert_eq!(activity.label(false), "Auto click: Off · 2 clicks sent");
+        activity.begin();
+        assert_eq!(activity.clicks, 0);
+        assert!(activity.active);
+    }
     #[test]
     fn cycle_has_a_real_release_gap_and_stopping_releases_pending_press() {
         use std::time::Duration;

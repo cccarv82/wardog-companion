@@ -67,3 +67,7 @@ The player's installed 1.0.1 app was temporarily closed for the single-instance 
 ## 1.2.0 Click assist
 
 64 Rust release tests cover click-cycle press/release spacing, immediate release on stop, fresh-key activation, toggle edges, disarming, focus/target rejection, Esc and attempt timeouts, alongside all existing recommendation regressions. Formatting and Clippy with warnings denied pass. No automatic clicks were sent during development tests. Actual WARDOGS menu acceptance, input timing and anti-cheat compatibility are not validated by these tests; use the requested interval control to test on the game's menu. The regular offline model audit remains separate from native input behavior.
+
+## 1.2.1 click status and count
+
+65 Rust release tests and four importer tests pass. Formatting and Clippy pass. The new regression simulates timer observations and completed button pairs, verifies that ticks are not counted as clicks, and checks attempt reset/last-count retention. No synthetic clicks were sent during validation; game acceptance and native input timing remain unverified.

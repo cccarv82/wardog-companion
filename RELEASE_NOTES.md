@@ -1,3 +1,10 @@
+# WARDOGS Companion 1.2.1 — Click assist status at a glance
+
+- The main panel and compact Play view show Auto click: Off, Ready or Clicking, outside the scrolling build content.
+- While clicking, a live counter shows completed mouse down/up pairs successfully sent through Windows input. This is not a count of clicks accepted by the game.
+- The counter resets when a new attempt starts and retains the last attempt's total after stopping. It is not saved to your profile.
+- Status refreshes four times per second independently of the click worker; all existing stop controls remain unchanged.
+
 # WARDOGS Companion 1.2.0 — optional Click assist
 
 - Enable Click assist in Settings for the current session; position the cursor over the team button and press F8 to start or stop.

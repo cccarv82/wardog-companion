@@ -407,7 +407,7 @@ impl App {
     fn subscription(&self) -> Subscription<Message> {
         Subscription::batch([
             hotkey::subscription().map(Message::Hotkey),
-            if self.page == Page::Settings {
+            if self.page == Page::Settings || self.page == Page::Home || self.compact {
                 iced::Subscription::run(|| {
                     let (sender, receiver) = iced::futures::channel::mpsc::unbounded();
                     std::thread::spawn(move || {
@@ -1032,7 +1032,11 @@ impl App {
             right: 14.0,
             ..Default::default()
         });
-        let mut root = column![header, scrollable(body).id("content").height(Fill)].spacing(20);
+        let mut root = column![header].spacing(20);
+        if self.page == Page::Home {
+            root = root.push(self.click_indicator());
+        }
+        root = root.push(scrollable(body).id("content").height(Fill));
         if let Some(notice) = &self.notice {
             root = root.push(text(notice.as_str()).size(12).width(Fill).color(ACCENT));
         }
@@ -1079,6 +1083,19 @@ impl App {
         };
         root = root.push(footer);
         container(root).padding(22).width(Fill).height(Fill).into()
+    }
+    fn click_indicator(&self) -> Element<'_, Message> {
+        let activity = self.click_assist.activity();
+        text(activity.label(self.click_assist.enabled()))
+            .size(12)
+            .color(if activity.active {
+                GREEN
+            } else if self.click_assist.enabled() {
+                ACCENT
+            } else {
+                MUTED
+            })
+            .into()
     }
     fn home(&self) -> Element<'_, Message> {
         let weapon = row![
@@ -1352,7 +1369,12 @@ impl App {
             right: 14.,
             ..Default::default()
         });
-        let mut content = column![header, scrollable(body).id("content").height(Fill)].spacing(12);
+        let mut content = column![
+            header,
+            self.click_indicator(),
+            scrollable(body).id("content").height(Fill)
+        ]
+        .spacing(12);
         if let Some(notice) = &self.notice {
             content = content.push(text(notice.as_str()).size(11).color(ACCENT).width(Fill));
         }
