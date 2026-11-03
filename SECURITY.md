@@ -21,3 +21,5 @@ Include the affected version, reproduction steps, impact and a minimal proof of 
 - OCR is local and experimental. Captures and profiles should not be attached to reports without reviewing their contents.
 
 Do not disable Windows security features to install the companion. If a download cannot be verified, stop and report the failure.
+
+Click assist is opt-in per session and sends standard Windows left-button input only while the foreground process basename matches `WardogsClient-Win64-Shipping.exe`. Foreground process metadata is checked using limited query access; no game memory is read. The basename check is a scope restriction, not cryptographic executable identity. Focus can change between a foreground check and input dispatch, so this is not an atomic isolation guarantee. F8 toggles, Esc stops, cursor movement and focus changes stop, and each attempt is capped at ten seconds. Normal shutdown attempts to release any pending synthetic press. The app does not bypass input rejection or request administrator rights.

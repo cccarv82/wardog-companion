@@ -2,6 +2,7 @@
 mod app_updates;
 mod audit;
 mod catalog;
+mod click_assist;
 mod costs;
 mod engine;
 mod hotkey;
@@ -181,6 +182,9 @@ enum Message {
     DownloadAppUpdate,
     AppUpdateDownloaded(Result<std::path::PathBuf, String>),
     InstallAppUpdate,
+    ClickEnable(bool),
+    ClickInterval(u32),
+    ClickTick,
 }
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 struct Capacity(u32);
@@ -194,6 +198,7 @@ impl std::fmt::Display for Capacity {
     }
 }
 struct App {
+    click_assist: click_assist::Assist,
     catalog: catalog::Catalog,
     data_status: String,
     weapon_search: String,
@@ -341,6 +346,7 @@ impl App {
             range::Reach::Medium,
         );
         Self {
+            click_assist: click_assist::Assist::new(),
             rank_class: reference.weapon.class_name.clone(),
             catalog,
             data_status,
@@ -399,7 +405,25 @@ impl App {
         }
     }
     fn subscription(&self) -> Subscription<Message> {
-        hotkey::subscription().map(Message::Hotkey)
+        Subscription::batch([
+            hotkey::subscription().map(Message::Hotkey),
+            if self.page == Page::Settings {
+                iced::Subscription::run(|| {
+                    let (sender, receiver) = iced::futures::channel::mpsc::unbounded();
+                    std::thread::spawn(move || {
+                        while !sender.is_closed() {
+                            std::thread::sleep(std::time::Duration::from_millis(250));
+                            if sender.unbounded_send(Message::ClickTick).is_err() {
+                                break;
+                            }
+                        }
+                    });
+                    receiver
+                })
+            } else {
+                Subscription::none()
+            },
+        ])
     }
     fn refresh(&mut self) {
         self.spending = spending::analyze(&self.reference, &self.profile);
@@ -926,6 +950,9 @@ impl App {
                     },
                 );
             }
+            Message::ClickEnable(value) => self.click_assist.enable(value),
+            Message::ClickInterval(value) => self.click_assist.set_interval(value),
+            Message::ClickTick => {}
             Message::Hotkey(hotkey::Event::Ready) => self.shortcut_ready = true,
             Message::Hotkey(hotkey::Event::CaptureReady) => self.ocr_shortcut = true,
             Message::Hotkey(hotkey::Event::CaptureFailed(e)) => {
@@ -2063,6 +2090,17 @@ impl App {
                 .on_press(Message::Open(Page::AppUpdates))
                 .style(button::secondary),
         );
+        body = body.push(rule::horizontal(1)).push(
+            card(column![
+                text("Click assist").size(19),
+                checkbox(self.click_assist.enabled()).label("Enable for this session").on_toggle(Message::ClickEnable),
+                text("Point at the team button, then press F8 to start. F8 again or Esc stops. Moving the cursor or switching windows also stops. Each attempt is limited to 10 seconds.").size(11).color(MUTED).width(Fill),
+                row![text("Click interval").size(12), space::horizontal(), text(format!("{} ms", self.click_assist.interval())).size(13)],
+                slider(2..=100, self.click_assist.interval(), Message::ClickInterval),
+                text(self.click_assist.status()).size(11).color(ACCENT).width(Fill),
+                text("WARDOGS foreground only. Timing is a request, not a guarantee; 2 ms includes a 1 ms press. The game may ignore fast clicks. Menu only: stop when accepted; team entry is not detected. Disabled at every launch.").size(10).color(MUTED).width(Fill)
+            ].spacing(10))
+        );
         body.into()
     }
     fn customize(&self) -> Element<'_, Message> {
@@ -2380,7 +2418,7 @@ impl App {
             );
             details=details.push(text(format!("{} other effects are outside these handling metrics. Source zoom and magazine capacity constrain automatic choices; weight tiers, ammo, suppression, optical quality and variable zoom ranges remain unmodeled.",estimate.ignored_effects)).size(11).color(MUTED).width(Fill));
         }
-        details=details.push(text("Unchanged slots are not detected or modeled. Missing requirements/prices are excluded from suggestions. Keep a slot to stop the recommender changing it. Equal preference scores favor lower cost.").size(11).color(MUTED).width(Fill))
+        details=details.push(text("Unchanged slots are not detected or modeled. Missing requirements are excluded from suggestions. Missing prices remain eligible; total cost and budget fit are then unknown. Keep a slot to stop the recommender changing it. Equal preference scores favor lower cost.").size(11).color(MUTED).width(Fill))
             .push(text(format!("{} · {} · imported {}",self.reference.weapon.name,self.reference.weapon.id,self.reference.imported_on)).size(10).color(MUTED).width(Fill))
             .push(text(format!("Source build {} / local build checked {}. Live server overrides and in-game overlay compatibility are not verified.",self.reference.game_build,self.reference.local_build_at_import)).size(10).color(MUTED).width(Fill))
             .push(text(format!("{}\nRevision {}",self.reference.source_url,self.reference.source_commit)).size(10).color(MUTED).width(Fill));

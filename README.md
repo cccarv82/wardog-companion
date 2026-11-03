@@ -107,7 +107,7 @@ Settings are stored at `%LOCALAPPDATA%\WardogCompanion\profile.json`. Installing
 
 Recommendations work offline. Network requests occur only when you explicitly check or download updates from GitHub. There are no accounts, analytics or image uploads. Experimental OCR processes a single image locally and cleans up temporary captures.
 
-The app does not read game memory, inject code, modify game files or automate play. This does not imply official anti-cheat approval.
+The app does not read game memory, inject code or modify game files. Optional Click assist sends ordinary Windows mouse input while the WARDOGS client is in the foreground; it reads foreground process metadata to identify that client. It does not detect team availability or acceptance. This does not imply official anti-cheat approval.
 
 ## Build from source
 
@@ -158,3 +158,9 @@ Created by [Carlos Carvalho](https://github.com/cccarv82), with contributions we
 - **Built with:** [Rust](https://www.rust-lang.org/), [Iced](https://iced.rs/) and [Inno Setup](https://jrsoftware.org/isinfo.php).
 
 Game names, trademarks and underlying game content belong to their respective owners. This independent community project is not affiliated with BULKHEAD, Team17 or WARDOGS WEAPONS. Bundled data is not relicensed under the app's MIT license. No game binaries, icons or textures are distributed.
+
+### Optional Click assist (Windows)
+
+In Settings, enable **Click assist** for the current session. Put the cursor on the team-selection button in WARDOGS and press **F8** to start or stop repeated left clicks. **Esc**, moving the cursor more than four pixels, switching foreground windows, disabling the feature or reaching the **10-second** attempt limit also stops. Press F8 again to start a new attempt. Stop when accepted; the app cannot detect team entry.
+
+The requested start-to-start interval is adjustable from **2 to 100 ms**, defaulting to 2 ms. Each press lasts at least a requested 1 ms, with a release before the next press. Windows scheduling and the game's input handling determine actual timing and accepted clicks; there is no guarantee of 500 accepted clicks per second or improved queue priority. The feature uses a high-resolution waitable timer when available, without busy-spinning. It is off at every launch and does not register itself to start with Windows.

@@ -1,3 +1,12 @@
+# WARDOGS Companion 1.2.0 — optional Click assist
+
+- Enable Click assist in Settings for the current session; position the cursor over the team button and press F8 to start or stop.
+- Esc, cursor movement, a foreground-window change, disabling the feature or a 10-second attempt limit also stops input.
+- Requested click interval: 2–100 ms, default 2 ms, using a Windows high-resolution waitable timer when available. Timing and game acceptance are not guaranteed.
+- Input is restricted to the foreground WardogsClient-Win64-Shipping.exe process. No injection, input hooks, game memory access or game-file changes are used. Team entry is not detected; stop when accepted.
+- The feature is disabled on every launch. Existing builds, game data and profile settings remain unchanged.
+- Corrected an outdated explanation that still described missing prices as excluded.
+
 # WARDOGS Companion 1.1.1 — missing prices no longer hide useful gear
 
 - All compatible, eligible attachments with supported effects can enter automatic recommendations, regardless of whether a purchase price is published. This covers every slot, Keep selections and preferred sights.
