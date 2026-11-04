@@ -71,3 +71,7 @@ The player's installed 1.0.1 app was temporarily closed for the single-instance 
 ## 1.2.1 click status and count
 
 65 Rust release tests and four importer tests pass. Formatting and Clippy pass. The new regression simulates timer observations and completed button pairs, verifies that ticks are not counted as clicks, and checks attempt reset/last-count retention. No synthetic clicks were sent during validation; game acceptance and native input timing remain unverified.
+
+## 1.2.2 continuous Click assist
+
+66 Rust release tests and four importer tests pass, along with formatting and Clippy. The new regression advances a simulated click cycle beyond ten seconds, one minute and one hour, then checks that F8 explicitly stops it. Existing cursor/focus, Esc, disarming and press/release tests remain in place. No synthetic clicks were sent during validation.

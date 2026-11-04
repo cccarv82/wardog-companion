@@ -1,3 +1,9 @@
+# WARDOGS Companion 1.2.2 — continuous Click assist
+
+- Removed the automatic ten-second stop. Click assist continues until F8 is pressed again, the cursor moves beyond the existing tolerance or the foreground window changes.
+- Esc, disabling the feature, input rejection and normal app shutdown still stop input. No automatic restart is introduced.
+- Updated the Settings instructions and active status text. The live counter and last-attempt total remain available.
+
 # WARDOGS Companion 1.2.1 — Click assist status at a glance
 
 - The main panel and compact Play view show Auto click: Off, Ready or Clicking, outside the scrolling build content.

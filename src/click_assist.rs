@@ -123,7 +123,6 @@ impl Drop for Assist {
 struct Gate {
     previous: bool,
     active: bool,
-    started: u64,
     armed: bool,
 }
 
@@ -155,22 +154,10 @@ impl Cycle {
     }
 }
 impl Gate {
-    fn step(
-        &mut self,
-        enabled: bool,
-        key: bool,
-        escape: bool,
-        target: bool,
-        toggle: bool,
-        ms: u64,
-    ) -> bool {
+    fn step(&mut self, enabled: bool, key: bool, escape: bool, target: bool, toggle: bool) -> bool {
         let pressed = key && !self.previous;
         self.previous = key;
-        if !enabled
-            || escape
-            || !target
-            || (self.active && ms.saturating_sub(self.started) >= 10_000)
-        {
+        if !enabled || escape || !target {
             self.active = false;
             self.armed = false;
             return false;
@@ -180,7 +167,6 @@ impl Gate {
         }
         if pressed && self.armed {
             self.active = if toggle { !self.active } else { true };
-            self.started = ms;
         }
         if !toggle && !key {
             self.active = false;
@@ -333,14 +319,13 @@ mod windows {
                     && stationary
                     && (was_active || unsafe { GetAsyncKeyState(VK_LBUTTON as i32) >= 0 }),
                 true,
-                epoch.elapsed().as_millis() as u64,
             );
             if active && !was_active {
                 activity.lock().unwrap_or_else(|e| e.into_inner()).begin();
                 origin = cursor;
                 window = foreground;
                 cycle.last_press = None;
-                set_status("Clicking · F8 / Esc to stop · 10 s limit");
+                set_status("Clicking · F8 / Esc to stop");
             }
             if let Some(press) =
                 cycle.step(active, epoch.elapsed(), interval.load(Ordering::Relaxed))
@@ -434,34 +419,53 @@ mod tests {
         assert_eq!(c.step(false, Duration::from_millis(3), 1), None);
     }
     #[test]
-    fn hold_requires_fresh_press_and_stops_on_release_focus_escape_or_timeout() {
+    fn hold_requires_fresh_press_and_stops_on_release_focus_or_escape() {
         let mut g = Gate::default();
-        assert!(!g.step(true, true, false, true, false, 0));
-        assert!(!g.step(true, false, false, true, false, 1));
-        assert!(g.step(true, true, false, true, false, 2));
-        assert!(!g.step(true, false, false, true, false, 3));
-        assert!(g.step(true, true, false, true, false, 4));
-        assert!(!g.step(true, true, false, false, false, 5));
-        assert!(!g.step(true, true, false, true, false, 6));
-        g.step(true, false, false, true, false, 7);
-        assert!(g.step(true, true, false, true, false, 8));
-        assert!(!g.step(true, true, true, true, false, 9));
-        g.step(true, false, false, true, false, 10);
-        assert!(g.step(true, true, false, true, false, 11));
-        assert!(!g.step(true, true, false, true, false, 10_011));
-        assert!(!g.step(true, true, false, true, false, 10_012));
+        assert!(!g.step(true, true, false, true, false));
+        assert!(!g.step(true, false, false, true, false));
+        assert!(g.step(true, true, false, true, false));
+        assert!(!g.step(true, false, false, true, false));
+        assert!(g.step(true, true, false, true, false));
+        assert!(!g.step(true, true, false, false, false));
+        assert!(!g.step(true, true, false, true, false));
+        g.step(true, false, false, true, false);
+        assert!(g.step(true, true, false, true, false));
+        assert!(!g.step(true, true, true, true, false));
+        g.step(true, false, false, true, false);
+        assert!(g.step(true, true, false, true, false));
+        assert!(g.step(true, true, false, true, false));
+        assert!(g.step(true, true, false, true, false));
+    }
+    #[test]
+    fn continuous_attempt_survives_long_elapsed_time_until_explicit_stop() {
+        use std::time::Duration;
+        let mut g = Gate::default();
+        let mut cycle = Cycle::default();
+        g.step(true, false, false, true, true);
+        assert!(g.step(true, true, false, true, true));
+        for ms in [0, 2, 10_001, 60_000, 3_600_000] {
+            let active = g.step(true, false, false, true, true);
+            assert!(active);
+            assert_eq!(cycle.step(active, Duration::from_millis(ms), 2), Some(true));
+            assert_eq!(
+                cycle.step(active, Duration::from_millis(ms + 1), 2),
+                Some(false)
+            );
+        }
+        assert!(!g.step(true, true, false, true, true));
+        assert_eq!(cycle.step(false, Duration::from_secs(7200), 2), None);
     }
     #[test]
     fn toggle_is_edge_triggered_and_disarming_always_stops() {
         let mut g = Gate::default();
-        g.step(true, false, false, true, true, 0);
-        assert!(g.step(true, true, false, true, true, 1));
-        assert!(g.step(true, true, false, true, true, 2));
-        assert!(g.step(true, false, false, true, true, 3));
-        assert!(!g.step(true, true, false, true, true, 4));
-        g.step(true, false, false, true, true, 5);
-        assert!(g.step(true, true, false, true, true, 6));
-        assert!(!g.step(false, true, false, true, true, 7));
-        assert!(!g.step(true, true, false, true, true, 8));
+        g.step(true, false, false, true, true);
+        assert!(g.step(true, true, false, true, true));
+        assert!(g.step(true, true, false, true, true));
+        assert!(g.step(true, false, false, true, true));
+        assert!(!g.step(true, true, false, true, true));
+        g.step(true, false, false, true, true);
+        assert!(g.step(true, true, false, true, true));
+        assert!(!g.step(false, true, false, true, true));
+        assert!(!g.step(true, true, false, true, true));
     }
 }

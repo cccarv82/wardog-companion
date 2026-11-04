@@ -2116,7 +2116,7 @@ impl App {
             card(column![
                 text("Click assist").size(19),
                 checkbox(self.click_assist.enabled()).label("Enable for this session").on_toggle(Message::ClickEnable),
-                text("Point at the team button, then press F8 to start. F8 again or Esc stops. Moving the cursor or switching windows also stops. Each attempt is limited to 10 seconds.").size(11).color(MUTED).width(Fill),
+                text("Point at the team button, then press F8 to start. F8 again or Esc stops. Moving the cursor or switching windows also stops. Continues until you stop it; no time limit.").size(11).color(MUTED).width(Fill),
                 row![text("Click interval").size(12), space::horizontal(), text(format!("{} ms", self.click_assist.interval())).size(13)],
                 slider(2..=100, self.click_assist.interval(), Message::ClickInterval),
                 text(self.click_assist.status()).size(11).color(ACCENT).width(Fill),
