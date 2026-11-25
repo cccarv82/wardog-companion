@@ -15,6 +15,7 @@ __pycache__/
 /research/*
 !/research/wardogs-data/
 !/research/muzzle-compatibility-all.json
+!/research/muzzle-compatibility-26615518.json
 /research/wardogs-data/*
 !/research/wardogs-data/MANIFEST.json
 !/research/wardogs-data/LICENSE

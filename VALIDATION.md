@@ -1,5 +1,21 @@
 # Release validation — 1.0.0
 
+## Release 1.2.3 — 2026-11-25
+
+Formatting, Clippy with warnings denied, all 68 Rust tests, five Python tests and the Windows release build passed. The additional regression verifies that loading an already-downloaded source-only catalogue restores reviewed Muzzle slots, while changing a source hash leaves those slots unavailable.
+
+The Inno Setup 7.1.1 package passed clean installation, installed-executable hash comparison, Start menu shortcut creation, real 1.2.2-to-1.2.3 upgrade, external-dataset retention and uninstall checks in isolated directories. The real player profile remained byte-for-byte unchanged during installer testing. Original uninstall registration and shortcuts were restored after QA.
+
+A separate native 1.2.3 session loaded copies of the affected source-only build 26615518 catalogue and a legacy profile. Startup left the profile byte-for-byte unchanged, restored the Muzzle slot and offered Update setup. Applying it selected CQB 74 Brake for AK-74 and saved recommendation model 3. The real player profile was not used for this UI test. The portable package includes its bundled-data model audit and both compatibility review receipts. The bundled game snapshot remains 25937608. No in-game numerical or fit checks were added.
+
+## Muzzle compatibility repair — 2026-11-25
+
+Rechecked 120 published weapon–muzzle links across 24 weapons against build 26615518, revision f9b691066b71d0c378a58d08a181b475e6eaffd8. Every retained pair resolved to a unique source attachment and matched the four compared source modifiers. The review records all nine source hashes and response hashes. Importers require an exact revision, build and hash match. No in-game fit checks were performed.
+
+All 67 Rust tests and five Python importer tests passed. Formatting, Clippy with warnings denied and the release build passed. Regression coverage checks source mismatch rejection, idempotent restoration, unchanged source effects/prices/unlocks and Muzzle suggestions for AK-74 and TCX-SPR.
+
+The installed 1.2.2 catalogue was backed up and repaired. Its existing weapon records and non-muzzle part records matched before and after. Native Reload dataset accepted the repaired file. Recalculating Control at Medium range with the existing levels and budget selected CQB 74 Brake for AK-74 and Three Port Brake for TCX-SPR. Returned to AK-74 afterward. Only lab_parts changed in the saved profile. A profile backup was retained alongside the catalogue backup.
+
 2026-10-25 · Windows MSVC · Rust + Iced
 
 Formatting and Clippy with warnings denied passed. All 46 Rust release tests and four Python importer tests passed. The catalogue contains 40 weapon records and 298 attachment records. No new runtime dependency was added.

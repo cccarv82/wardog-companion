@@ -4,7 +4,9 @@ import time
 import hashlib
 import json
 import re
-from update_data import ROOT, REVISION, fetch, read_json, norm
+from datetime import date
+from pathlib import Path
+from update_data import ROOT, REVISION, build, fetch, read_json, norm
 
 def resolve_candidate(matches, weapon_id, attachments):
     matches = [m for m in matches if m['id'].lower() in attachments]
@@ -17,24 +19,36 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--retry-unavailable', action='store_true', help='Retry only previous 429 responses, preserving verified mappings')
     parser.add_argument('--retry-gaps', action='store_true', help='Recheck only unresolved named attachment joins')
+    parser.add_argument('--resume', action='store_true', help='Continue weapons without a successful response')
+    parser.add_argument('--source-dir', type=Path, default=ROOT / 'research/wardogs-data')
+    parser.add_argument('--revision', default=REVISION)
+    parser.add_argument('--output', type=Path, default=ROOT / 'research/muzzle-compatibility-all.json')
     args = parser.parse_args()
-    raw = ROOT / 'research/wardogs-data'
+    if not re.fullmatch('[0-9a-f]{40}', args.revision):
+        raise ValueError('A pinned 40-character commit is required')
+    raw = args.source_dir
+    baseline = build(raw, args.revision, {})
     items = read_json(raw / 'items.json')['items']
     weapons = read_json(raw / 'weapons.json')['weapons']
     attachments = {p['id'].lower(): p for p in read_json(raw / 'attachments.json')['attachments']}
-    catalogue = read_json(ROOT / 'research/public-catalog.json')
-    script = (ROOT / 'research/catalog.js').read_text(encoding='utf-8-sig')
-    match = re.search(r'window.WARDOGS_PROFILE_PATHS=(\{[^\n]+\});', script)
-    route_ids = list(json.loads(match[1])) if match else []
+    catalogue = json.loads(fetch('https://wardogsweapons.com/api/catalog'))
     lookup = {norm(p['name']): p['id'] for p in catalogue['weapons']}
-    lookup.update({norm(key): key for key in route_ids})
+    lookup.update({norm(p['id']): p['id'] for p in catalogue['weapons']})
     by_name = {}
     for item in items: by_name.setdefault(norm(item.get('name', '')), []).append(item)
-    audit = {'revision': REVISION, 'checked_on': '2026-10-24', 'mapping': {}, 'responses': [], 'excluded': []}
-    output = ROOT / 'research/muzzle-compatibility-all.json'
-    if output.exists():
-        audit = read_json(output)
-        if audit['revision'] != REVISION: raise ValueError('Supplement revision mismatch')
+    audit = {'revision': args.revision, 'game_build': baseline['game_build'], 'sources': baseline['sources'],
+             'checked_on': str(date.today()), 'mapping': {}, 'responses': [], 'excluded': []}
+    output = args.output
+    if output.exists() and (args.retry_unavailable or args.retry_gaps or args.resume):
+        previous = read_json(output)
+        if previous['revision'] != args.revision: raise ValueError('Supplement revision mismatch')
+        if previous.get('sources') not in (None, audit['sources']):
+            raise ValueError('Supplement source hashes mismatch')
+        previous.update({key: audit[key] for key in ['game_build', 'sources', 'checked_on']})
+        audit = previous
+    if args.resume:
+        completed = {entry['weapon'].lower() for entry in audit['responses']}
+        weapons = [weapon for weapon in weapons if weapon['id'].lower() not in completed]
     if args.retry_unavailable:
         retry_ids = {e['weapon'].lower() for e in audit['excluded'] if '429' in e['reason']}
         weapons = [w for w in weapons if w['id'].lower() in retry_ids]
@@ -52,10 +66,11 @@ def main():
         except Exception as error: return weapon, url, None, str(error)
     # Sequential, paced requests; stop on a rate-limit response instead of hammering the service.
     for position, source_weapon in enumerate(weapons):
-        if position: time.sleep(3)
+        if position: time.sleep(5)
         weapon, url, blob, error = query(source_weapon)
         if error:
             if not args.retry_unavailable:
+                audit['excluded'] = [e for e in audit['excluded'] if e['weapon'].lower() != weapon['id'].lower()]
                 audit['excluded'].append({'weapon': weapon['id'], 'reason': error})
             if '429' in error:
                 print('Service rate limit reached; verified results preserved. Retry later.')
@@ -68,6 +83,7 @@ def main():
         response = json.loads(blob)
         if not isinstance(response.get('attachments'), list): raise ValueError('Unexpected endpoint schema')
         audit['responses'].append({'weapon': weapon['id'], 'url': url, 'sha256': hashlib.sha256(blob).hexdigest()})
+        print(f"Reviewed {weapon['id']}: {len(response['attachments'])} published muzzles", flush=True)
         for candidate in response['attachments']:
             alias = {'SRD762TI-QD Suppressor': 'SRD762TI-QD'}.get(candidate['name'], candidate['name'])
             item = resolve_candidate(by_name.get(norm(alias), []), weapon['id'], attachments)
@@ -93,8 +109,8 @@ def main():
             audit['mapping'].setdefault(weapon['id'].lower(), []).append({'item_id': item['id'], 'url': url})
             if any(m['op'] != 'multiplyCompound' for m in part['modifiers'] if m['attribute'] in checks):
                 audit['limitations'].append({'weapon': weapon['id'], 'part': item['name'],
-                    'reason': 'Compatibility cross-checked; multiply stacking is not modeled, so automatic suggestions exclude this part'})
-    audit['checked_on'] = '2026-10-25'
+                    'reason': 'Compatibility cross-checked; ordinary multiplication requires a supported combination in the recommendation engine'})
+    audit['checked_on'] = str(date.today())
     output.write_text(json.dumps(audit, indent=2), encoding='utf-8')
     print(json.dumps({'verified_weapons': len(audit['mapping']), 'verified_pairs': sum(map(len, audit['mapping'].values())), 'excluded': len(audit['excluded'])}))
 

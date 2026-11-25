@@ -1153,7 +1153,7 @@ impl App {
                 .align_y(iced::Center),
             );
             if self.profile.recommendation_model < purpose::MODEL {
-                content=content.push(card(column![text("Smarter recommendations are ready.").size(14),text("Your saved parts are unchanged. Apply the new role, sight and capacity rules when you're ready.").size(11).color(MUTED).width(Fill),button("Update setup").on_press(Message::RefreshRecommendation)].spacing(8)));
+                content=content.push(card(column![text("Smarter recommendations are ready.").size(14),text("Recalculate your saved setup using the latest recommendation rules and verified compatibility.").size(11).color(MUTED).width(Fill),button("Update setup").on_press(Message::RefreshRecommendation)].spacing(8)));
             }
             for note in purpose::notes(&self.reference, &self.profile, &self.profile.lab_parts)
                 .into_iter()
@@ -1184,6 +1184,18 @@ impl App {
                 ]
                 .spacing(9),
             ));
+        }
+        if !lab::slots(&self.reference).contains(&Slot::Muzzle) {
+            let unavailable = column![
+                text("MUZZLE").size(9).color(MUTED),
+                text("No verified compatibility in this dataset.").size(if self.compact {
+                    14
+                } else {
+                    16
+                })
+            ]
+            .spacing(5);
+            content = content.push(card(unavailable).padding(if self.compact { 7 } else { 10 }));
         }
         for slot in lab::slots(&self.reference)
             .into_iter()

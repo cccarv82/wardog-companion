@@ -45,6 +45,10 @@ WARDOGS Companion brings those decisions into a compact panel you can keep above
 
 The pinned 1.0 catalogue contains **40 weapon records and 298 attachment records**. Two test/vehicle weapons are excluded from rankings. Complete catalogue coverage does **not** mean every attachment combination has a supported recommendation model.
 
+### Restored in 1.2.3: Muzzle recommendations
+
+The app restores 120 reviewed Muzzle compatibility links across 24 weapons when loading the affected build 26615518 catalogue. Choose **Update setup** to recalculate an existing saved setup. The review is bound to the exact source revision and all nine input hashes. Compatibility comes from fresh community-list checks against the source attachment effects. In-game fit validation remains pending. See [source notes](SOURCES.md#muzzle-revalidation-for-build-26615518).
+
 ### New in 1.1: context before stats
 
 A sniper setup should not choose a reflex just because it improves aim time. Automatic recommendations now constrain sights by role/range, protect magazine capacity, and balance six handling dimensions using weapon role and source recoil-axis information. Explicit kept parts and sight preferences remain yours.
@@ -57,7 +61,7 @@ With the WARDOGS arsenal in the foreground, **Ctrl + Shift + R** can read a visi
 
 ## Get started
 
-1. Download **`WARDOG-Companion-1.1.0-Setup.exe`** from [Releases](https://github.com/cccarv82/wardog-companion/releases/latest). Install for your Windows user; administrator rights are not required. A portable ZIP is also available.
+1. Download **`WARDOG-Companion-1.2.3-Setup.exe`** from [Releases](https://github.com/cccarv82/wardog-companion/releases/latest). Install for your Windows user; administrator rights are not required. A portable ZIP is also available.
 2. Set your **Overall, Assault, Medic, Recon and Support** levels and your attachment budget. Choose **Done**.
 3. Pick a weapon and a goal. Leave Range on Auto for role-aware recommendations, or choose Close / Medium / Long. Use **Find my weapon** for a class/range recommendation or **Customize** to keep particular parts.
 4. Choose **Hide & play**. Bring the panel back when you need it.

@@ -21,6 +21,8 @@ A new dataset schema or modifier operation can require code changes; a JSON repl
 
 External supplement mappings are disabled for a different wardogs-data revision until revalidated. Core direct-slot compatibility still imports from the new source. The full attachment dictionary remains searchable even when fit or calculations are unknown.
 
+Build `26615518`, revision `f9b691066b71d0c378a58d08a181b475e6eaffd8`, has a reviewed supplement in `research/muzzle-compatibility-26615518.json`. Python and Rust importers apply it only when the revision, build and all nine source-file hashes match. Version 1.2.3 also restores these links in memory when loading an existing affected catalogue. Saved parts remain available until a recommendation action. To review a new snapshot, run `python tools/refresh_compatibility.py --source-dir <staged-source> --revision <commit> --output <audit.json>`. Use `--resume` after a rate limit to continue weapons without successful responses. Review exclusions before accepting the output. A new build requires its own review.
+
 ## Validation behavior
 
 Corrupted original downloads, mixed game builds, duplicate IDs and inconsistent published DPS stop generation. Check-only mode never replaces the active catalogue. Runtime reload checks structure, IDs, builds, finite values, source-manifest shape and compatibility references; it does not authenticate an arbitrary JSON payload. The update tool verifies original file hashes before deriving that payload.

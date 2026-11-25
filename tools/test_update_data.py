@@ -4,10 +4,18 @@ from pathlib import Path
 import shutil
 import tempfile
 import unittest
-from update_data import ROOT, REVISION, FILES, build
+from update_data import ROOT, REVISION, FILES, build, supplement_matches
 from refresh_compatibility import resolve_candidate
 
 class UpdateDataTests(unittest.TestCase):
+    def test_review_is_bound_to_revision_build_and_all_source_hashes(self):
+        candidate = build(ROOT / 'research/wardogs-data', REVISION, {})
+        audit = {'revision': REVISION, 'game_build': candidate['game_build'], 'sources': candidate['sources']}
+        self.assertTrue(supplement_matches(audit, candidate))
+        for field in ['revision', 'game_build', 'sources']:
+            mismatch = dict(audit)
+            mismatch[field] = None
+            self.assertFalse(supplement_matches(mismatch, candidate))
     def test_duplicate_names_resolve_only_with_an_exact_weapon_context(self):
         items=json.loads((ROOT/'research/wardogs-data/items.json').read_text())['items']
         attachments={a['id'].lower():a for a in json.loads((ROOT/'research/wardogs-data/attachments.json').read_text())['attachments']}

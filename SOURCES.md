@@ -65,3 +65,9 @@ Patch impact compares parsed source fields between the active and previous/avail
 ## 1.1 recommendation policy
 
 The pinned game-data snapshot is unchanged. Application policies now constrain automatic sights by source zoom and magazines by a published default or documented class fallback. Handling weights adapt to role, range and published recoil-axis balance. This changes recommendations without claiming a source patch. Ordinary multiplication is supported only once per modeled attribute; an isolated additive aim-time effect needs a known source base. Ambiguous combinations remain excluded. See docs/RECOMMENDATIONS.md; the source ADS zoom scalar is not assumed to describe a variable scope's complete optical range.
+
+## Muzzle revalidation for build 26615518
+
+On 2026-11-25, published per-weapon MUZZLE lists from wardogsweapons.com were queried again and joined to revision `f9b691066b71d0c378a58d08a181b475e6eaffd8`. All 120 previous links across 24 weapons resolved without ambiguous IDs and matched the new source's vertical recoil, horizontal recoil, aim-time and spread modifiers. The audit records response URLs, response SHA-256 hashes, all nine input-file hashes, 15 excluded weapons and operation limitations in `research/muzzle-compatibility-26615518.json`. A rate limit interrupted the first pass. The remaining weapons were queried sequentially in a resumed pass.
+
+This is a fresh community compatibility cross-check against that source snapshot. The website does not declare a game build, and no in-game fit checks were performed. The reviewed links are enabled only for the exact revision, build and input hashes. Prices, unlocks and effects come from the new pinned game-data records. The original bundled snapshot remains build 25937608.

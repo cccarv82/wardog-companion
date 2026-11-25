@@ -43,6 +43,11 @@ def index(rows):
 def norm(name):
     return re.sub('[^a-z0-9]', '', name.lower())
 
+def supplement_matches(audit, candidate):
+    return (audit.get('revision') == candidate['source_commit']
+            and audit.get('game_build') == candidate['game_build']
+            and audit.get('sources') == candidate['sources'])
+
 def build(raw, revision, supplement):
     manifest = read_json(raw / 'MANIFEST.json')
     hashes = {entry['path']: entry['sha256'] for entry in manifest['files']}
@@ -162,12 +167,18 @@ def main():
             (raw / name.replace('/', '-')).write_bytes(fetch(url))
     elif args.revision != REVISION and raw == ROOT / 'research/wardogs-data':
         raise ValueError('A different revision must be downloaded into staging or supplied with --source-dir')
-    supplement_path = ROOT / 'research/muzzle-compatibility-all.json'
-    supplement = read_json(supplement_path).get('mapping', {}) if supplement_path.exists() else {}
-    if args.revision != REVISION: supplement = {}  # Revalidate external compatibility for a new source revision.
-    candidate = build(raw, args.revision, supplement)
-    if supplement_path.exists() and args.revision == REVISION:
+    candidate = build(raw, args.revision, {})
+    supplement_path = ROOT / 'research' / f"muzzle-compatibility-{candidate['game_build']}.json"
+    if args.revision == REVISION:
+        supplement_path = ROOT / 'research/muzzle-compatibility-all.json'
+    if supplement_path.exists():
         audit = read_json(supplement_path)
+        reviewed = supplement_matches(audit, candidate) or (
+            args.revision == REVISION and audit.get('revision') == REVISION)
+    else:
+        reviewed = False
+    if reviewed:
+        candidate = build(raw, args.revision, audit['mapping'])
         for excluded in audit.get('excluded', []):
             candidate['coverage_notes'].append({'weapon': excluded['weapon'], 'note':
                 'Supplemental muzzle coverage: ' + excluded.get('part', 'weapon') + ' — ' + excluded['reason']})

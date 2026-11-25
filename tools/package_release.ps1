@@ -28,6 +28,7 @@ Copy-Item (Join-Path $sourceRoot 'data\WARDOGS-DATA-LICENSE.txt') (Join-Path $pa
 Copy-Item (Join-Path $sourceRoot 'research\wardogs-data\MANIFEST.json') (Join-Path $payload 'About\source-manifest.json')
 Copy-Item (Join-Path $sourceRoot 'research\wardogs-data\csv-weapon-damage.csv') (Join-Path $payload 'About\weapon-damage.csv')
 Copy-Item (Join-Path $sourceRoot 'research\muzzle-compatibility-all.json') (Join-Path $payload 'About')
+Copy-Item (Join-Path $sourceRoot 'research\muzzle-compatibility-26615518.json') (Join-Path $payload 'About')
 Copy-Item (Join-Path $sourceRoot 'data\update-report.json') (Join-Path $payload 'About')
 $audit = Start-Process -FilePath $exe -ArgumentList '--audit-output',('"' + (Join-Path $payload 'About\ranking-audit.json') + '"') -WindowStyle Hidden -Wait -PassThru
 if ($audit.ExitCode -ne 0) { throw 'Model audit failed' }

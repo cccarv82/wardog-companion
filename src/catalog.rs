@@ -32,7 +32,11 @@ impl Catalog {
         Self::parse(include_str!("../data/catalog.json")).expect("Validated built-in catalogue")
     }
     pub fn parse(json: &str) -> Result<Self, String> {
-        let data: Self = serde_json::from_str(json).map_err(|e| format!("Invalid dataset: {e}"))?;
+        let mut value: serde_json::Value =
+            serde_json::from_str(json).map_err(|e| format!("Invalid dataset: {e}"))?;
+        crate::updates::restore_reviewed_muzzles(&mut value)?;
+        let data: Self =
+            serde_json::from_value(value).map_err(|e| format!("Invalid dataset: {e}"))?;
         if data.schema_version != 2
             || data.weapons.is_empty()
             || data.weapons.len() > 1000
@@ -183,6 +187,55 @@ impl Catalog {
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn loading_a_reviewed_source_only_snapshot_restores_muzzle_slots() {
+        let mut value: serde_json::Value =
+            serde_json::from_str(include_str!("../data/catalog.json")).unwrap();
+        let review: serde_json::Value = serde_json::from_str(include_str!(
+            "../research/muzzle-compatibility-26615518.json"
+        ))
+        .unwrap();
+        value["source_commit"] = review["revision"].clone();
+        value["game_build"] = review["game_build"].clone();
+        value["sources"] = review["sources"].clone();
+        for weapon in value["weapons"].as_array_mut().unwrap() {
+            weapon["source_commit"] = review["revision"].clone();
+            weapon["game_build"] = review["game_build"].clone();
+            weapon["items"]
+                .as_array_mut()
+                .unwrap()
+                .retain(|part| part["slot"] != "Muzzle");
+            weapon["slots"]
+                .as_array_mut()
+                .unwrap()
+                .retain(|slot| slot != "muzzle");
+        }
+        let raw = serde_json::to_string(&value).unwrap();
+        let data = Catalog::parse(&raw).unwrap();
+        assert_eq!(
+            data.weapons
+                .iter()
+                .flat_map(|w| &w.items)
+                .filter(|part| part.compatible_slots.contains(&Slot::Muzzle))
+                .count(),
+            120
+        );
+        assert!(
+            data.weapon("Id.Item.AK74M")
+                .unwrap()
+                .slots
+                .contains(&Slot::Muzzle)
+        );
+        value["sources"][0]["sha256"] = serde_json::json!("0".repeat(64));
+        let unreviewed = Catalog::parse(&serde_json::to_string(&value).unwrap()).unwrap();
+        assert!(
+            !unreviewed
+                .weapon("Id.Item.AK74M")
+                .unwrap()
+                .slots
+                .contains(&Slot::Muzzle)
+        );
+    }
     #[test]
     fn full_source_catalog_preserves_counts_and_has_closed_links() {
         let data = Catalog::bundled();

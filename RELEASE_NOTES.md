@@ -1,3 +1,11 @@
+# WARDOGS Companion 1.2.3 — Muzzle recommendations restored
+
+- Restores 120 reviewed weapon–muzzle links across 24 weapons for game-data build 26615518, revision f9b691066b71d0c378a58d08a181b475e6eaffd8. Existing affected external catalogues recover their links when loaded. Python and Rust importers require the exact reviewed revision, build and all nine source-file hashes.
+- Recommendations again consider eligible Muzzles alongside sights, foregrips and magazines. AK-74 and TCX-SPR were checked in the installed app with Control and Medium range.
+- Saved parts stay available until you choose **Update setup** or another recommendation action. The main panel explains missing Muzzle compatibility when a dataset has no verified links.
+- Revalidation compares current published community compatibility lists and four attachment effects with the pinned source records. The community site does not declare a game build. No in-game fit or live-server balance validation is claimed.
+- The bundled catalogue remains build 25937608. This patch also repairs the separately downloaded build 26615518 without replacing its weapon statistics, prices or unlocks.
+
 # WARDOGS Companion 1.2.2 — continuous Click assist
 
 - Removed the automatic ten-second stop. Click assist continues until F8 is pressed again, the cursor moves beyond the existing tolerance or the foreground window changes.

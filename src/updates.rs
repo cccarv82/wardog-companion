@@ -59,6 +59,59 @@ fn num(s: Option<&String>) -> Result<V, String> {
 fn part(item: &V, a: &V) -> V {
     json!({"id":item["id"],"name":item["name"],"slot":a["type"],"is_default":false,"unlock_free":item["unlock"].is_null()&&!item["developer"].as_bool().unwrap_or(false),"developer":item["developer"].as_bool().unwrap_or(false),"unlock":item["unlock"],"weight":item["weight"],"vendor":item["vendor"].as_array().cloned().unwrap_or_default(),"modifiers":a["modifiers"].as_array().cloned().unwrap_or_default(),"character_modifiers":a["characterModifiers"].as_array().cloned().unwrap_or_default(),"magazine_capacity":a["magazine"]["capacity"],"compatible_slots":[],"conditional":a["type"]=="Bipod"})
 }
+fn apply_reviewed_muzzles(catalog: &mut V, review: &V) -> Result<usize, String> {
+    if catalog["source_commit"] != review["revision"]
+        || catalog["game_build"] != review["game_build"]
+        || catalog["sources"] != review["sources"]
+    {
+        return Ok(0);
+    }
+    let attachments = index(catalog, "all_attachments")?;
+    let weapons = catalog["weapons"].as_array_mut().ok_or("Missing weapons")?;
+    let mut added = 0;
+    for weapon in weapons {
+        let key = string(&weapon["weapon"]["id"]).to_lowercase();
+        let Some(mounts) = review["mapping"][&key].as_array() else {
+            continue;
+        };
+        for mount in mounts {
+            let id = string(&mount["item_id"]).to_lowercase();
+            let mut attachment = attachments
+                .get(&id)
+                .ok_or("Reviewed muzzle has no source record")?
+                .clone();
+            if attachment["slot"] != "Muzzle" {
+                return Err("Reviewed muzzle has an invalid source type".into());
+            }
+            attachment["compatible_slots"] = json!(["muzzle"]);
+            attachment["compatibility_source"] = mount["url"].clone();
+            let items = weapon["items"]
+                .as_array_mut()
+                .ok_or("Missing attachments")?;
+            if items
+                .iter()
+                .any(|item| string(&item["id"]).eq_ignore_ascii_case(&id))
+            {
+                continue;
+            }
+            items.push(attachment);
+            added += 1;
+            let slots = weapon["slots"].as_array_mut().ok_or("Missing slots")?;
+            if !slots.iter().any(|slot| slot == "muzzle") {
+                slots.push(json!("muzzle"));
+            }
+        }
+    }
+    Ok(added)
+}
+pub(crate) fn restore_reviewed_muzzles(catalog: &mut V) -> Result<(), String> {
+    let review: V = serde_json::from_str(include_str!(
+        "../research/muzzle-compatibility-26615518.json"
+    ))
+    .map_err(|e| e.to_string())?;
+    apply_reviewed_muzzles(catalog, &review)?;
+    Ok(())
+}
 pub fn build(
     raw: &BTreeMap<String, Vec<u8>>,
     revision: &str,
@@ -243,10 +296,11 @@ pub fn build(
             None
         };
         let weapon = json!({"id":w["id"],"name":if key=="id.item.ak74m"{"AK-74"}else{name},"class_name":class,"test_record":test,"unlock":item["unlock"],"unlock_free":item["unlock"].is_null()&&!test,"rpm":w["rpm"],"accuracy":w["accuracy"],"ads_time":w["adsTime"],"fire_modes":w["fireModes"].as_array().cloned().unwrap_or_default(),"recoil_index":recoil,"damage_per_hit":baseline.map(|b|b["damage"].clone()),"projectile":baseline.map(|b|b["projectile"].clone()),"comparable":comparable,"damage_rows":rows,"falloff":w["damageFalloff"].as_array().cloned().unwrap_or_default(),"recoil_pattern":first});
-        notes.push(json!({"weapon":w["id"],"note":"Downloaded revision: community muzzle supplement is not carried across revisions. Only source-linked mounts are used."}));
+        notes.push(json!({"weapon":w["id"],"note":"Source-linked mounts are imported directly. Supplemental muzzle links require an exact reviewed revision, build and source hashes."}));
         refs.push(json!({"schema_version":1,"game_build":build,"local_build_at_import":"25937608","imported_on":imported,"source_commit":revision,"source_url":"https://github.com/warpuppies/wardogs-data","weapon":weapon,"slots":slots,"items":parts.into_values().collect::<Vec<_>>() }));
     }
-    let value = json!({"schema_version":2,"game_build":build,"imported_on":imported,"source_commit":revision,"source_url":"https://github.com/warpuppies/wardogs-data","sources":sources,"weapons":refs,"all_attachments":all,"coverage_notes":notes});
+    let mut value = json!({"schema_version":2,"game_build":build,"imported_on":imported,"source_commit":revision,"source_url":"https://github.com/warpuppies/wardogs-data","sources":sources,"weapons":refs,"all_attachments":all,"coverage_notes":notes});
+    restore_reviewed_muzzles(&mut value)?;
     let json = serde_json::to_string_pretty(&value).map_err(|e| e.to_string())?;
     Catalog::parse(&json)?;
     Ok(json)
@@ -377,13 +431,18 @@ fn check_with_client(
         .filter(|r| next.weapon(&r.weapon.id).is_none())
         .count();
     let summary = format!(
-        "Build {} → {} · {} changed/new and {} removed weapon records · {} → {} attachments. Source-only mounts: unreviewed community muzzle links are removed. Revision {}.",
+        "Build {} → {} · {} changed/new and {} removed weapon records · {} → {} attachments. Muzzle links: {} source-linked or reviewed; other community links are excluded. Revision {}.",
         current.game_build,
         next.game_build,
         changed,
         removed,
         current.all_attachments.len(),
         next.all_attachments.len(),
+        next.weapons
+            .iter()
+            .flat_map(|weapon| &weapon.items)
+            .filter(|item| item.compatible_slots.contains(&crate::engine::Slot::Muzzle))
+            .count(),
         &revision[..8]
     );
     Ok(Some(Candidate { json, summary }))
@@ -421,6 +480,72 @@ pub fn rollback(path: &Path) -> Result<(), String> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[test]
+    fn reviewed_muzzles_restore_suggestions_only_for_exact_source_files() {
+        use crate::{
+            engine::{Engagement, Goal, Profile, Slot},
+            lab,
+        };
+        let mut catalog: V = serde_json::from_str(include_str!("../data/catalog.json")).unwrap();
+        let mut review: V =
+            serde_json::from_str(include_str!("../research/muzzle-compatibility-all.json"))
+                .unwrap();
+        review["game_build"] = catalog["game_build"].clone();
+        review["sources"] = catalog["sources"].clone();
+        for weapon in catalog["weapons"].as_array_mut().unwrap() {
+            weapon["items"]
+                .as_array_mut()
+                .unwrap()
+                .retain(|part| part["slot"] != "Muzzle");
+            weapon["slots"]
+                .as_array_mut()
+                .unwrap()
+                .retain(|slot| slot != "muzzle");
+        }
+        for field in ["revision", "game_build", "sources"] {
+            let mut mismatched = review.clone();
+            mismatched[field] = V::Null;
+            let mut unchanged = catalog.clone();
+            assert_eq!(
+                apply_reviewed_muzzles(&mut unchanged, &mismatched).unwrap(),
+                0
+            );
+            assert_eq!(unchanged, catalog);
+        }
+        let original = catalog.clone();
+        assert_eq!(apply_reviewed_muzzles(&mut catalog, &review).unwrap(), 120);
+        assert_eq!(catalog["all_attachments"], original["all_attachments"]);
+        assert_eq!(apply_reviewed_muzzles(&mut catalog, &review).unwrap(), 0);
+        let data = Catalog::parse(&serde_json::to_string(&catalog).unwrap()).unwrap();
+        for name in ["AK-74", "TCX-SPR"] {
+            let reference = data
+                .weapons
+                .iter()
+                .find(|weapon| weapon.weapon.name == name)
+                .unwrap();
+            let profile = Profile {
+                levels: [100; 5],
+                budget: 10000,
+                goal: Goal::Control,
+                engagement: Engagement::Medium,
+                ..Profile::default()
+            };
+            let parts = lab::suggest(reference, &profile).unwrap();
+            assert!(parts.contains_key(&Slot::Muzzle), "{name}");
+            for part in &reference.items {
+                if part.compatible_slots.contains(&Slot::Muzzle) {
+                    let source = data
+                        .all_attachments
+                        .iter()
+                        .find(|item| item.id == part.id)
+                        .unwrap();
+                    assert_eq!(part.modifiers, source.modifiers);
+                    assert_eq!(part.vendor, source.vendor);
+                    assert_eq!(part.unlock, source.unlock);
+                }
+            }
+        }
+    }
     #[test]
     fn connection_failure_returns_no_candidate_and_keeps_active_data() {
         let listener = std::net::TcpListener::bind("127.0.0.1:0").unwrap();

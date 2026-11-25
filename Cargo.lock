@@ -2680,7 +2680,7 @@ dependencies = [
 
 [[package]]
 name = "wardog-companion"
-version = "1.2.2"
+version = "1.2.3"
 dependencies = [
  "csv",
  "global-hotkey",

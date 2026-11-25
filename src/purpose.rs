@@ -6,7 +6,7 @@ use crate::{
 };
 use std::collections::BTreeMap;
 
-pub const MODEL: u8 = 2;
+pub const MODEL: u8 = 3;
 
 pub fn engagement(data: &Reference, p: &Profile) -> Engagement {
     if p.engagement != Engagement::Automatic {

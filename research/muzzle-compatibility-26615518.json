@@ -1,0 +1,784 @@
+{
+  "revision": "f9b691066b71d0c378a58d08a181b475e6eaffd8",
+  "game_build": "26615518",
+  "sources": [
+    {
+      "path": "items.json",
+      "sha256": "d3aa79174b74613166c53c8a7ba85632f3e410e6c12bf759988f3b66ee9b1934"
+    },
+    {
+      "path": "weapons.json",
+      "sha256": "66dd3ba9d608e42345bbf274686abe5ebbc07f9df61a79416e708be6fdeceaca"
+    },
+    {
+      "path": "attachments.json",
+      "sha256": "830d11489ad2fb2b82871ae2189c7f1b660eabb0874fa5af5c1f94b725158e7b"
+    },
+    {
+      "path": "ammo.json",
+      "sha256": "5d98947d35adaf3e5b5c533dce878b921d2984b2c37e989cd454234b2f76964f"
+    },
+    {
+      "path": "damage.json",
+      "sha256": "30c7ceee9e8e582f43f46d3797f3a579d239d9c2f3f35af8a64b3d187a9715b1"
+    },
+    {
+      "path": "equipment.json",
+      "sha256": "18dd15a609f99dca105a6737a22278195ba095b3236c84191b183816cc61a7d0"
+    },
+    {
+      "path": "tags.json",
+      "sha256": "427edfd299747a9dc242403e208d78f036f347e49c4a734dd97e8784dd6ddd6c"
+    },
+    {
+      "path": "csv/weapon-compatibility.csv",
+      "sha256": "69daceb19021cf0525e867004aa48c3a557ba4579bcb79ad0db33dea24474698"
+    },
+    {
+      "path": "csv/weapon-damage.csv",
+      "sha256": "e4c39ead9d76930ea35357ba1200a331fe46e07dbdb4de41353b1e06ac76da2c"
+    }
+  ],
+  "checked_on": "2026-11-25",
+  "mapping": {
+    "id.item.ak74m": [
+      {
+        "item_id": "Id.Item.MUZL_020",
+        "url": "https://wardogsweapons.com/api/weapon/ak74/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_039",
+        "url": "https://wardogsweapons.com/api/weapon/ak74/attachments/MUZZLE"
+      },
+      {
+        "item_id": "ID.Item.PWSCQB74Muzzle",
+        "url": "https://wardogsweapons.com/api/weapon/ak74/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MZL_09",
+        "url": "https://wardogsweapons.com/api/weapon/ak74/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MZL_10",
+        "url": "https://wardogsweapons.com/api/weapon/ak74/attachments/MUZZLE"
+      }
+    ],
+    "id.item.lmg_02": [
+      {
+        "item_id": "Id.Item.MUZL_022",
+        "url": "https://wardogsweapons.com/api/weapon/pkm/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_042",
+        "url": "https://wardogsweapons.com/api/weapon/pkm/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MZL_08",
+        "url": "https://wardogsweapons.com/api/weapon/pkm/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_029",
+        "url": "https://wardogsweapons.com/api/weapon/pkm/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_038",
+        "url": "https://wardogsweapons.com/api/weapon/pkm/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_041",
+        "url": "https://wardogsweapons.com/api/weapon/pkm/attachments/MUZZLE"
+      }
+    ],
+    "id.item.m249": [
+      {
+        "item_id": "Id.Item.MUZL_013",
+        "url": "https://wardogsweapons.com/api/weapon/m249-saw/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_027",
+        "url": "https://wardogsweapons.com/api/weapon/m249-saw/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MZL_07",
+        "url": "https://wardogsweapons.com/api/weapon/m249-saw/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_029",
+        "url": "https://wardogsweapons.com/api/weapon/m249-saw/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_032",
+        "url": "https://wardogsweapons.com/api/weapon/m249-saw/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_014",
+        "url": "https://wardogsweapons.com/api/weapon/m249-saw/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_023",
+        "url": "https://wardogsweapons.com/api/weapon/m249-saw/attachments/MUZZLE"
+      }
+    ],
+    "id.item.m4": [
+      {
+        "item_id": "Id.Item.MUZL_013",
+        "url": "https://wardogsweapons.com/api/weapon/m4/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_027",
+        "url": "https://wardogsweapons.com/api/weapon/m4/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MZL_07",
+        "url": "https://wardogsweapons.com/api/weapon/m4/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_020",
+        "url": "https://wardogsweapons.com/api/weapon/m4/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_024",
+        "url": "https://wardogsweapons.com/api/weapon/m4/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_032",
+        "url": "https://wardogsweapons.com/api/weapon/m4/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_014",
+        "url": "https://wardogsweapons.com/api/weapon/m4/attachments/MUZZLE"
+      }
+    ],
+    "id.item.m500": [
+      {
+        "item_id": "Id.Item.MZL_06",
+        "url": "https://wardogsweapons.com/api/weapon/m500/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_045",
+        "url": "https://wardogsweapons.com/api/weapon/m500/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_044",
+        "url": "https://wardogsweapons.com/api/weapon/m500/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_031",
+        "url": "https://wardogsweapons.com/api/weapon/m500/attachments/MUZZLE"
+      }
+    ],
+    "id.item.mk22": [
+      {
+        "item_id": "Id.Item.MUZL_022",
+        "url": "https://wardogsweapons.com/api/weapon/mk22/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_042",
+        "url": "https://wardogsweapons.com/api/weapon/mk22/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_057",
+        "url": "https://wardogsweapons.com/api/weapon/mk22/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MZL_04",
+        "url": "https://wardogsweapons.com/api/weapon/mk22/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_030",
+        "url": "https://wardogsweapons.com/api/weapon/mk22/attachments/MUZZLE"
+      }
+    ],
+    "id.item.mosin": [
+      {
+        "item_id": "Id.Item.MUZL_022",
+        "url": "https://wardogsweapons.com/api/weapon/mosin-nagant/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_042",
+        "url": "https://wardogsweapons.com/api/weapon/mosin-nagant/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MZL_04",
+        "url": "https://wardogsweapons.com/api/weapon/mosin-nagant/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MZL_08",
+        "url": "https://wardogsweapons.com/api/weapon/mosin-nagant/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_041",
+        "url": "https://wardogsweapons.com/api/weapon/mosin-nagant/attachments/MUZZLE"
+      }
+    ],
+    "id.item.mp9": [
+      {
+        "item_id": "Id.Item.MUZL_051",
+        "url": "https://wardogsweapons.com/api/weapon/amp-9/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_052",
+        "url": "https://wardogsweapons.com/api/weapon/amp-9/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_020",
+        "url": "https://wardogsweapons.com/api/weapon/amp-9/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_019",
+        "url": "https://wardogsweapons.com/api/weapon/amp-9/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_037",
+        "url": "https://wardogsweapons.com/api/weapon/amp-9/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MZL_05",
+        "url": "https://wardogsweapons.com/api/weapon/amp-9/attachments/MUZZLE"
+      }
+    ],
+    "id.item.rfb": [
+      {
+        "item_id": "Id.Item.MUZL_055",
+        "url": "https://wardogsweapons.com/api/weapon/bmr-308/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_056",
+        "url": "https://wardogsweapons.com/api/weapon/bmr-308/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_022",
+        "url": "https://wardogsweapons.com/api/weapon/bmr-308/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_042",
+        "url": "https://wardogsweapons.com/api/weapon/bmr-308/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MZL_04",
+        "url": "https://wardogsweapons.com/api/weapon/bmr-308/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_030",
+        "url": "https://wardogsweapons.com/api/weapon/bmr-308/attachments/MUZZLE"
+      }
+    ],
+    "id.item.sks": [
+      {
+        "item_id": "Id.Item.MUZL_022",
+        "url": "https://wardogsweapons.com/api/weapon/sks/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_042",
+        "url": "https://wardogsweapons.com/api/weapon/sks/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_028",
+        "url": "https://wardogsweapons.com/api/weapon/sks/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MZL_04",
+        "url": "https://wardogsweapons.com/api/weapon/sks/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MZL_08",
+        "url": "https://wardogsweapons.com/api/weapon/sks/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_025",
+        "url": "https://wardogsweapons.com/api/weapon/sks/attachments/MUZZLE"
+      }
+    ],
+    "id.item.smg_03": [
+      {
+        "item_id": "Id.Item.MUZL_020",
+        "url": "https://wardogsweapons.com/api/weapon/pp-19-vityaz/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_019",
+        "url": "https://wardogsweapons.com/api/weapon/pp-19-vityaz/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_037",
+        "url": "https://wardogsweapons.com/api/weapon/pp-19-vityaz/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_054",
+        "url": "https://wardogsweapons.com/api/weapon/pp-19-vityaz/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_053",
+        "url": "https://wardogsweapons.com/api/weapon/pp-19-vityaz/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MZL_05",
+        "url": "https://wardogsweapons.com/api/weapon/pp-19-vityaz/attachments/MUZZLE"
+      }
+    ],
+    "id.item.sr_04": [
+      {
+        "item_id": "Id.Item.MUZL_049",
+        "url": "https://wardogsweapons.com/api/weapon/amr-50/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_048",
+        "url": "https://wardogsweapons.com/api/weapon/amr-50/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MZL_04",
+        "url": "https://wardogsweapons.com/api/weapon/amr-50/attachments/MUZZLE"
+      }
+    ],
+    "id.item.sv98": [
+      {
+        "item_id": "Id.Item.MUZL_022",
+        "url": "https://wardogsweapons.com/api/weapon/sv98/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_042",
+        "url": "https://wardogsweapons.com/api/weapon/sv98/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MZL_04",
+        "url": "https://wardogsweapons.com/api/weapon/sv98/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MZL_08",
+        "url": "https://wardogsweapons.com/api/weapon/sv98/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_041",
+        "url": "https://wardogsweapons.com/api/weapon/sv98/attachments/MUZZLE"
+      }
+    ],
+    "id.item.svdm": [
+      {
+        "item_id": "Id.Item.MUZL_042",
+        "url": "https://wardogsweapons.com/api/weapon/svd/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MZL_04",
+        "url": "https://wardogsweapons.com/api/weapon/svd/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MZL_08",
+        "url": "https://wardogsweapons.com/api/weapon/svd/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_041",
+        "url": "https://wardogsweapons.com/api/weapon/svd/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_040",
+        "url": "https://wardogsweapons.com/api/weapon/svd/attachments/MUZZLE"
+      }
+    ],
+    "id.item.tar21": [
+      {
+        "item_id": "Id.Item.MUZL_013",
+        "url": "https://wardogsweapons.com/api/weapon/t-21/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_027",
+        "url": "https://wardogsweapons.com/api/weapon/t-21/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MZL_07",
+        "url": "https://wardogsweapons.com/api/weapon/t-21/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_020",
+        "url": "https://wardogsweapons.com/api/weapon/t-21/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_024",
+        "url": "https://wardogsweapons.com/api/weapon/t-21/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_032",
+        "url": "https://wardogsweapons.com/api/weapon/t-21/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_014",
+        "url": "https://wardogsweapons.com/api/weapon/t-21/attachments/MUZZLE"
+      }
+    ],
+    "id.item.vector": [
+      {
+        "item_id": "Id.Item.MUZL_047",
+        "url": "https://wardogsweapons.com/api/weapon/super-45/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MZL_05",
+        "url": "https://wardogsweapons.com/api/weapon/super-45/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_046",
+        "url": "https://wardogsweapons.com/api/weapon/super-45/attachments/MUZZLE"
+      }
+    ],
+    "id.item.wepn_028": [
+      {
+        "item_id": "Id.Item.MUZL_020",
+        "url": "https://wardogsweapons.com/api/weapon/mp5/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_019",
+        "url": "https://wardogsweapons.com/api/weapon/mp5/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_037",
+        "url": "https://wardogsweapons.com/api/weapon/mp5/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_058",
+        "url": "https://wardogsweapons.com/api/weapon/mp5/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MZL_05",
+        "url": "https://wardogsweapons.com/api/weapon/mp5/attachments/MUZZLE"
+      }
+    ],
+    "id.item.wepn_029": [
+      {
+        "item_id": "Id.Item.MUZL_013",
+        "url": "https://wardogsweapons.com/api/weapon/galil/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_027",
+        "url": "https://wardogsweapons.com/api/weapon/galil/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MZL_07",
+        "url": "https://wardogsweapons.com/api/weapon/galil/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_020",
+        "url": "https://wardogsweapons.com/api/weapon/galil/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_024",
+        "url": "https://wardogsweapons.com/api/weapon/galil/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_032",
+        "url": "https://wardogsweapons.com/api/weapon/galil/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_014",
+        "url": "https://wardogsweapons.com/api/weapon/galil/attachments/MUZZLE"
+      }
+    ],
+    "id.item.wepn_030": [
+      {
+        "item_id": "Id.Item.MZL_07",
+        "url": "https://wardogsweapons.com/api/weapon/fal/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_022",
+        "url": "https://wardogsweapons.com/api/weapon/fal/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_042",
+        "url": "https://wardogsweapons.com/api/weapon/fal/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_030",
+        "url": "https://wardogsweapons.com/api/weapon/fal/attachments/MUZZLE"
+      }
+    ],
+    "id.item.wepn_031": [
+      {
+        "item_id": "Id.Item.MUZL_020",
+        "url": "https://wardogsweapons.com/api/weapon/pp-19-bizon/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_019",
+        "url": "https://wardogsweapons.com/api/weapon/pp-19-bizon/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_037",
+        "url": "https://wardogsweapons.com/api/weapon/pp-19-bizon/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MZL_05",
+        "url": "https://wardogsweapons.com/api/weapon/pp-19-bizon/attachments/MUZZLE"
+      }
+    ],
+    "id.item.wepn_034": [
+      {
+        "item_id": "Id.Item.MUZL_071",
+        "url": "https://wardogsweapons.com/api/weapon/m14/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_072",
+        "url": "https://wardogsweapons.com/api/weapon/m14/attachments/MUZZLE"
+      }
+    ],
+    "id.item.wepn_035": [
+      {
+        "item_id": "Id.Item.MUZL_042",
+        "url": "https://wardogsweapons.com/api/weapon/scout-rifle-td/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_062",
+        "url": "https://wardogsweapons.com/api/weapon/scout-rifle-td/attachments/MUZZLE"
+      }
+    ],
+    "id.item.wepn_036": [
+      {
+        "item_id": "Id.Item.MUZL_022",
+        "url": "https://wardogsweapons.com/api/weapon/evo-3-ultra/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_042",
+        "url": "https://wardogsweapons.com/api/weapon/evo-3-ultra/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_030",
+        "url": "https://wardogsweapons.com/api/weapon/evo-3-ultra/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_070",
+        "url": "https://wardogsweapons.com/api/weapon/evo-3-ultra/attachments/MUZZLE"
+      }
+    ],
+    "id.item.wepn_037": [
+      {
+        "item_id": "Id.Item.MUZL_022",
+        "url": "https://wardogsweapons.com/api/weapon/tcx-spr/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_042",
+        "url": "https://wardogsweapons.com/api/weapon/tcx-spr/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_030",
+        "url": "https://wardogsweapons.com/api/weapon/tcx-spr/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_067",
+        "url": "https://wardogsweapons.com/api/weapon/tcx-spr/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_068",
+        "url": "https://wardogsweapons.com/api/weapon/tcx-spr/attachments/MUZZLE"
+      },
+      {
+        "item_id": "Id.Item.MUZL_069",
+        "url": "https://wardogsweapons.com/api/weapon/tcx-spr/attachments/MUZZLE"
+      }
+    ]
+  },
+  "responses": [
+    {
+      "weapon": "Id.Item.AK74M",
+      "url": "https://wardogsweapons.com/api/weapon/ak74/attachments/MUZZLE",
+      "sha256": "e4167d7d0b61efdcfaa14b0d95f95e569d38011c33338b14572552b7e2e1d795"
+    },
+    {
+      "weapon": "Id.Item.LMG_02",
+      "url": "https://wardogsweapons.com/api/weapon/pkm/attachments/MUZZLE",
+      "sha256": "a891b79429c053727574f1fa4768879cc0fce456fae6523df7009eb65e87233a"
+    },
+    {
+      "weapon": "Id.Item.M249",
+      "url": "https://wardogsweapons.com/api/weapon/m249-saw/attachments/MUZZLE",
+      "sha256": "b6eb024344297a2bc4e80019418684118d73e5a47c85461136764f1ed4cac4bc"
+    },
+    {
+      "weapon": "Id.Item.M4",
+      "url": "https://wardogsweapons.com/api/weapon/m4/attachments/MUZZLE",
+      "sha256": "7f28bcebdc59c781dfb783469fe325485be5a12a1168e6956deca7fa41e8a076"
+    },
+    {
+      "weapon": "Id.Item.M500",
+      "url": "https://wardogsweapons.com/api/weapon/m500/attachments/MUZZLE",
+      "sha256": "e283bcecd214f301012332c01505374cd913944442f2da6730bc8dded8d1caee"
+    },
+    {
+      "weapon": "Id.Item.MK22",
+      "url": "https://wardogsweapons.com/api/weapon/mk22/attachments/MUZZLE",
+      "sha256": "dbd22b5bf5b125d6cad7d5309b41a1311fc3e87222686e3c424a12bec634ebfb"
+    },
+    {
+      "weapon": "Id.Item.Mosin",
+      "url": "https://wardogsweapons.com/api/weapon/mosin-nagant/attachments/MUZZLE",
+      "sha256": "df087912c06f86c4fedd6bd84c8ce906709c324385ba8c503f507bbbc861253e"
+    },
+    {
+      "weapon": "Id.Item.MP43",
+      "url": "https://wardogsweapons.com/api/weapon/mp43/attachments/MUZZLE",
+      "sha256": "9559dc4162f365894016fb289f01cdc6b6a05e236805063a8bdb25f1519a0ef2"
+    },
+    {
+      "weapon": "Id.Item.MP9",
+      "url": "https://wardogsweapons.com/api/weapon/amp-9/attachments/MUZZLE",
+      "sha256": "847002f62c7380f0153b38d7808d815540efb73d3767485bacf167f4ac0806f9"
+    },
+    {
+      "weapon": "Id.Item.RFB",
+      "url": "https://wardogsweapons.com/api/weapon/bmr-308/attachments/MUZZLE",
+      "sha256": "00cdeb6f07756a0ec8ce685f036f70d4b1750877357f5acda430e544cb2d00f0"
+    },
+    {
+      "weapon": "Id.Item.SKS",
+      "url": "https://wardogsweapons.com/api/weapon/sks/attachments/MUZZLE",
+      "sha256": "51c6a4478c9fbe61af6c64a9b849f24dcf055031afaede4a883d3983e4347eea"
+    },
+    {
+      "weapon": "Id.Item.SMG_03",
+      "url": "https://wardogsweapons.com/api/weapon/pp-19-vityaz/attachments/MUZZLE",
+      "sha256": "922f85f1f1b3c9db3cc6d7da8efbe2977274579062de2a197944ee3c243f30d8"
+    },
+    {
+      "weapon": "Id.Item.SR_04",
+      "url": "https://wardogsweapons.com/api/weapon/amr-50/attachments/MUZZLE",
+      "sha256": "d1d4e1a67a8acb06a4d49367385d969c7987cd472804cf50a6834bd3a175a434"
+    },
+    {
+      "weapon": "Id.Item.SV98",
+      "url": "https://wardogsweapons.com/api/weapon/sv98/attachments/MUZZLE",
+      "sha256": "df087912c06f86c4fedd6bd84c8ce906709c324385ba8c503f507bbbc861253e"
+    },
+    {
+      "weapon": "Id.Item.SVDM",
+      "url": "https://wardogsweapons.com/api/weapon/svd/attachments/MUZZLE",
+      "sha256": "25f188a6e0d8ad1da6a6433658fc9ef5b4a7d3231169f793ee8d84b647caaf4a"
+    },
+    {
+      "weapon": "Id.Item.TAR21",
+      "url": "https://wardogsweapons.com/api/weapon/t-21/attachments/MUZZLE",
+      "sha256": "7f28bcebdc59c781dfb783469fe325485be5a12a1168e6956deca7fa41e8a076"
+    },
+    {
+      "weapon": "Id.Item.Vector",
+      "url": "https://wardogsweapons.com/api/weapon/super-45/attachments/MUZZLE",
+      "sha256": "193496871bafafc7530460a3561322a78663a60d0304146fd1fafd85b993295a"
+    },
+    {
+      "weapon": "Id.Item.WEPN_028",
+      "url": "https://wardogsweapons.com/api/weapon/mp5/attachments/MUZZLE",
+      "sha256": "2e877ec2d032df21da61b06dc0e3b1404e9aa08cd84c6b6f8b3f02f220ce7f35"
+    },
+    {
+      "weapon": "Id.Item.WEPN_029",
+      "url": "https://wardogsweapons.com/api/weapon/galil/attachments/MUZZLE",
+      "sha256": "7f28bcebdc59c781dfb783469fe325485be5a12a1168e6956deca7fa41e8a076"
+    },
+    {
+      "weapon": "Id.Item.WEPN_030",
+      "url": "https://wardogsweapons.com/api/weapon/fal/attachments/MUZZLE",
+      "sha256": "21acb4602caf8f672c09ab023060d31a05d55c0f4ffadd47c7e13f6a600ec5f3"
+    },
+    {
+      "weapon": "Id.Item.WEPN_031",
+      "url": "https://wardogsweapons.com/api/weapon/pp-19-bizon/attachments/MUZZLE",
+      "sha256": "9536b7c799bbf7b54f98c6cedcc3bfeb39e2c44e01fb0fc638d6e646ff7698e6"
+    },
+    {
+      "weapon": "Id.Item.WEPN_034",
+      "url": "https://wardogsweapons.com/api/weapon/m14/attachments/MUZZLE",
+      "sha256": "5c711ec9b4337af1b3a0d131f9498c22ebb9a102c1f4ae4abfa4de6d5094b460"
+    },
+    {
+      "weapon": "Id.Item.WEPN_035",
+      "url": "https://wardogsweapons.com/api/weapon/scout-rifle-td/attachments/MUZZLE",
+      "sha256": "4ab1a4e3f18419fff3343719fac1fac9756821b2ba5e80caee8be86b70222318"
+    },
+    {
+      "weapon": "Id.Item.WEPN_036",
+      "url": "https://wardogsweapons.com/api/weapon/evo-3-ultra/attachments/MUZZLE",
+      "sha256": "0e7fde73b97849c97a96e772376adb5bcad8af9da4dd9ec2e8fb297aa993ad31"
+    },
+    {
+      "weapon": "Id.Item.WEPN_037",
+      "url": "https://wardogsweapons.com/api/weapon/tcx-spr/attachments/MUZZLE",
+      "sha256": "f9043f925213f9da1b496b7c8bdc8e4750e7ebf813bf7d63b3f8c6ab7657b911"
+    }
+  ],
+  "excluded": [
+    {
+      "weapon": "Id.Item.A91",
+      "reason": "No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.ArtilleryBarrelTest",
+      "reason": "No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.CGM4",
+      "reason": "No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.CombatBow",
+      "reason": "No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.Glock17",
+      "reason": "No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.Judge",
+      "reason": "No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.KH2002",
+      "reason": "No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.Launcher_04",
+      "reason": "No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.LeapordBarrel",
+      "reason": "No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.MMGL",
+      "reason": "No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.RPG7",
+      "reason": "No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.WEPN_026",
+      "reason": "No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.WEPN_027",
+      "reason": "No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.WEPN_032",
+      "reason": "No matching published website weapon"
+    },
+    {
+      "weapon": "Id.Item.WEPN_033",
+      "reason": "No matching published website weapon"
+    }
+  ],
+  "limitations": [
+    {
+      "weapon": "Id.Item.M249",
+      "part": "TopComp Brake",
+      "reason": "Compatibility cross-checked; ordinary multiplication requires a supported combination in the recommendation engine"
+    },
+    {
+      "weapon": "Id.Item.M4",
+      "part": "TopComp Brake",
+      "reason": "Compatibility cross-checked; ordinary multiplication requires a supported combination in the recommendation engine"
+    },
+    {
+      "weapon": "Id.Item.TAR21",
+      "part": "TopComp Brake",
+      "reason": "Compatibility cross-checked; ordinary multiplication requires a supported combination in the recommendation engine"
+    },
+    {
+      "weapon": "Id.Item.WEPN_029",
+      "part": "TopComp Brake",
+      "reason": "Compatibility cross-checked; ordinary multiplication requires a supported combination in the recommendation engine"
+    }
+  ]
+}
