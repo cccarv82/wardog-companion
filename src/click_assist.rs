@@ -11,6 +11,7 @@ pub struct Assist {
     status: Arc<Mutex<String>>,
     shutdown: Arc<AtomicBool>,
     worker: Option<std::thread::JoinHandle<()>>,
+    feedback_worker: Option<std::thread::JoinHandle<()>>,
 }
 #[derive(Debug, Default, Clone, Copy)]
 pub struct Activity {
@@ -66,6 +67,18 @@ impl Assist {
         if worker.is_none() {
             *status.lock().unwrap() = "Unavailable on this system".into();
         }
+        #[cfg(windows)]
+        let feedback_worker = if worker.is_some() {
+            let (activity, shutdown) = (activity.clone(), shutdown.clone());
+            std::thread::Builder::new()
+                .name("click-feedback".into())
+                .spawn(move || crate::click_feedback::run(activity, shutdown))
+                .ok()
+        } else {
+            None
+        };
+        #[cfg(not(windows))]
+        let feedback_worker = None;
         Self {
             activity,
             enabled,
@@ -73,6 +86,7 @@ impl Assist {
             status,
             shutdown,
             worker,
+            feedback_worker,
         }
     }
     pub fn enable(&self, enabled: bool) {
@@ -114,6 +128,9 @@ impl Drop for Assist {
     fn drop(&mut self) {
         self.shutdown.store(true, Ordering::SeqCst);
         if let Some(worker) = self.worker.take() {
+            let _ = worker.join();
+        }
+        if let Some(worker) = self.feedback_worker.take() {
             let _ = worker.join();
         }
     }

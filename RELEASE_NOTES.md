@@ -1,3 +1,9 @@
+# WARDOGS Companion 1.2.4 — cursor click feedback
+
+- Click assist displays a soft orange ring around the cursor after completed clicks. Each pulse expands and fades over 240 ms, grouping fast clicks into a readable rhythm.
+- Feedback runs on a separate worker and uses a transparent, nonactivating Windows overlay. It stops when click assist stops and stays idle until clicks are sent.
+- Added `--preview-click-feedback` for a three-second visual preview without mouse input. Exclusive fullscreen overlay visibility remains unverified.
+
 # WARDOGS Companion 1.2.3 — Muzzle recommendations restored
 
 - Restores 120 reviewed weapon–muzzle links across 24 weapons for game-data build 26615518, revision f9b691066b71d0c378a58d08a181b475e6eaffd8. Existing affected external catalogues recover their links when loaded. Python and Rust importers require the exact reviewed revision, build and all nine source-file hashes.

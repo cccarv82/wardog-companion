@@ -1,5 +1,11 @@
 # Release validation — 1.0.0
 
+## Cursor feedback 1.2.4 — 2026-11-25
+
+Formatting, Clippy with warnings denied, 70 Rust tests and the release build passed. One native desktop test is excluded from the ordinary test run and passed when run explicitly. It checks the layered, transparent and nonactivating window styles, foreground preservation, hiding/destruction and stable GDI resource counts over repeated surface lifecycles. Pure tests cover completed-click gating, fast-click coalescing, attempt reset, transparent center, premultiplied alpha and complete fade-out at several display scales. The three-second diagnostic preview sends no input. No auto clicks were sent during validation. WARDOGS in-game rendering and exclusive fullscreen visibility remain unverified.
+
+Five Python importer tests passed. Packaging with Inno Setup 7.1.1 passed its bundled model audit. Clean installation, executable hash comparison, Start menu shortcut creation, real 1.2.3-to-1.2.4 upgrade, external-dataset retention and uninstall checks passed in isolated directories. The player profile remained byte-for-byte unchanged. Original uninstall registration and shortcuts were restored after testing.
+
 ## Release 1.2.3 — 2026-11-25
 
 Formatting, Clippy with warnings denied, all 68 Rust tests, five Python tests and the Windows release build passed. The additional regression verifies that loading an already-downloaded source-only catalogue restores reviewed Muzzle slots, while changing a source hash leaves those slots unavailable.

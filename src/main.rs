@@ -3,6 +3,8 @@ mod app_updates;
 mod audit;
 mod catalog;
 mod click_assist;
+#[cfg(any(windows, test))]
+mod click_feedback;
 mod costs;
 mod engine;
 mod hotkey;
@@ -37,6 +39,11 @@ const MUTED: Color = Color::from_rgb(0.58, 0.65, 0.68);
 const GREEN: Color = Color::from_rgb(0.48, 0.85, 0.69);
 
 fn main() -> iced::Result {
+    #[cfg(windows)]
+    if std::env::args().any(|arg| arg == "--preview-click-feedback") {
+        click_feedback::preview();
+        return Ok(());
+    }
     if let Some(path) = std::env::args().skip_while(|a| a != "--ocr-image").nth(1) {
         match recognition::read(Some(path)) {
             Ok(text) => {
@@ -2128,6 +2135,7 @@ impl App {
             card(column![
                 text("Click assist").size(19),
                 checkbox(self.click_assist.enabled()).label("Enable for this session").on_toggle(Message::ClickEnable),
+                text("A soft orange cursor ring confirms sent clicks. Fast clicks are grouped into readable pulses.").size(10).color(MUTED).width(Fill),
                 text("Point at the team button, then press F8 to start. F8 again or Esc stops. Moving the cursor or switching windows also stops. Continues until you stop it; no time limit.").size(11).color(MUTED).width(Fill),
                 row![text("Click interval").size(12), space::horizontal(), text(format!("{} ms", self.click_assist.interval())).size(13)],
                 slider(2..=100, self.click_assist.interval(), Message::ClickInterval),

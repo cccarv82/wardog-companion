@@ -61,7 +61,7 @@ With the WARDOGS arsenal in the foreground, **Ctrl + Shift + R** can read a visi
 
 ## Get started
 
-1. Download **`WARDOG-Companion-1.2.3-Setup.exe`** from [Releases](https://github.com/cccarv82/wardog-companion/releases/latest). Install for your Windows user; administrator rights are not required. A portable ZIP is also available.
+1. Download **`WARDOG-Companion-1.2.4-Setup.exe`** from [Releases](https://github.com/cccarv82/wardog-companion/releases/latest). Install for your Windows user; administrator rights are not required. A portable ZIP is also available.
 2. Set your **Overall, Assault, Medic, Recon and Support** levels and your attachment budget. Choose **Done**.
 3. Pick a weapon and a goal. Leave Range on Auto for role-aware recommendations, or choose Close / Medium / Long. Use **Find my weapon** for a class/range recommendation or **Customize** to keep particular parts.
 4. Choose **Hide & play**. Bring the panel back when you need it.
@@ -164,6 +164,8 @@ Created by [Carlos Carvalho](https://github.com/cccarv82), with contributions we
 Game names, trademarks and underlying game content belong to their respective owners. This independent community project is not affiliated with BULKHEAD, Team17 or WARDOGS WEAPONS. Bundled data is not relicensed under the app's MIT license. No game binaries, icons or textures are distributed.
 
 ### Optional Click assist (Windows)
+
+A soft orange ring expands and fades around the cursor while completed clicks are being sent. Fast clicks are grouped into approximately four visible pulses per second. The transparent Windows overlay follows the cursor without taking focus or receiving mouse input. It may be hidden in exclusive fullscreen mode. `wardog-companion.exe --preview-click-feedback` previews the animation for three seconds without sending mouse input.
 
 In Settings, enable **Click assist** for the current session. Put the cursor on the team-selection button in WARDOGS and press **F8** to start or stop repeated left clicks. **Esc**, moving the cursor more than four pixels, switching foreground windows, or disabling the feature also stops. There is **no automatic time limit**. Press F8 again to start a new attempt. Stop when accepted; the app cannot detect team entry.
 
